@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 
 
 class PlotWidget(QtGui.QWidget):
+    '''Clase para plotear la data obtenida en la clase Data Processing'''
+
     time_window = 1  # Longitud de cada ventana temporal en ms
     number_of_windows = 256
     cutoff_frequency = 5000
