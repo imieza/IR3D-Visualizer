@@ -27,7 +27,7 @@ class PlotWidget(QtGui.QWidget):
         self.setLayout(layout)
 
     def plot(self, data, fs, title, peaks=None):
-        plt.clf()
+        self.figure.clear()
         time = numpy.arange(0.0, float(len(data.tolist()[0])) / fs, 1.0 / fs)
         for channel in range(len(data)):
             ax = self.figure.add_subplot(len(data) * 100 + 11 + channel)
@@ -42,9 +42,10 @@ class PlotWidget(QtGui.QWidget):
     def ploter3d(self, i_db, az_el_windows):
         from mpl_toolkits.mplot3d import Axes3D
 
-        plt.clf()
-        fig = plt.figure(dpi=100)
+        self.figure.clear()
         ax = self.figure.add_subplot(111, projection='3d')
+        self.figure._set_dpi(80)
+
         [x, y, z] = self.sph2cart(az_el_windows[0], az_el_windows[1], i_db)
         colors_of_red = 20
         color = iter(plt.cm.Spectral(numpy.linspace(0.2, 1, len(x) + colors_of_red)))
@@ -56,7 +57,6 @@ class PlotWidget(QtGui.QWidget):
         self.canvas.draw()
 
     def axisEqual3D(self, ax):
-        plt.clf()
         extents = numpy.array([getattr(ax, 'get_{}lim'.format(dim))() for dim in 'xyz'])
         sz = extents[:, 1] - extents[:, 0]
         centers = numpy.mean(extents, axis=1)
@@ -66,7 +66,8 @@ class PlotWidget(QtGui.QWidget):
             getattr(ax, 'set_{}lim'.format(dim))(ctr - r, ctr + r)
 
     def plot_spectrogram(self, data, fs):
-        plt.clf()
+        self.figure.clear()
+
         title = ["W Spectrogram", "X Spectrogram", "Y Spectrogram", "Z Spectrogram"]
         NFFT = 2048
 
@@ -80,7 +81,7 @@ class PlotWidget(QtGui.QWidget):
                 else:
                     x[index] = (x[index])
 
-            plt.subplot(411 + channel)
+            self.figure.add_subplot(411 + channel)
             plt.title(title[channel])
             plt.subplots_adjust(hspace=1)
             Pxx, freqs, bins, im = plt.specgram(x, NFFT=NFFT, Fs=fs, noverlap=10)
@@ -88,9 +89,8 @@ class PlotWidget(QtGui.QWidget):
         self.canvas.draw()
 
     def plotLowFilteredSignals(self, filterFrequency, filterAmplitudeResponse):
-        plt.clf()
-
-        plt.subplot(111)
+        self.figure.clear()
+        self.figure.add_subplot(111)
         plt.semilogx(filterFrequency, 20 * numpy.log10(abs(filterAmplitudeResponse)))
         plt.title('Butterworth filter frequency response')
         plt.xlabel('Frequency [radians / second]')
