@@ -38,6 +38,10 @@ class MainView(QtGui.QWidget):
         if fileName[0] != []:
             [self.audio, self.fs] = self.dataProcceser.load_wavefile(fileName[0][0])
             self.audio_filtered = self.dataProcceser.low_filtering(self.audio, self.fs)
+            intensity = self.dataProcceser.pressure_to_intensity(self.audio_filtered)
+            [self.intensity_windows, self.az_el_windows, i_db] = self.dataProcceser.temporal_windowing(intensity,                                                                                         self.fs)
+            self.index_of_peaks = self.dataProcceser.window_selector(i_db, self.fs)
+            self.normalizado = self.dataProcceser.min_vector_be_equal_to_0(i_db[0, self.index_of_peaks])
             self.widMatplot.plot(self.audio, self.fs, "Audio")
 
     def _plotIR3D(self):
@@ -51,11 +55,6 @@ class MainView(QtGui.QWidget):
 
     def showSignalWithStarts(self):
         # audio_filtered = self.widMatplot.low_filtering(self.audio, False, self.fs)
-        intensity = self.dataProcceser.pressure_to_intensity(self.audio_filtered)
-        [self.intensity_windows, self.az_el_windows, i_db] = self.dataProcceser.temporal_windowing(intensity, self.fs)
-        self.index_of_peaks = self.dataProcceser.window_selector(i_db, self.fs)
-        self.normalizado = self.dataProcceser.min_vector_be_equal_to_0(i_db[0, self.index_of_peaks])
-
         self.widMatplot.plot(self.audio, self.fs, "Audio with windows",self.index_of_peaks)
 
     def _setLayout(self):
