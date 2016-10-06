@@ -38,8 +38,8 @@ class MainView(QtGui.QWidget):
         if fileName[0] != []:
             [self.audio, self.fs] = self.dataProcceser.load_wavefile(fileName[0][0])
             self.audio_filtered = self.dataProcceser.low_filtering(self.audio, self.fs)
-            intensity = self.dataProcceser.pressure_to_intensity(self.audio_filtered)
-            [self.intensity_windows, self.az_el_windows, self.i_db] = self.dataProcceser.temporal_windowing(intensity,                                                                                         self.fs)
+            self.intensity = self.dataProcceser.pressure_to_intensity(self.audio_filtered)
+            [self.intensity_windows, self.az_el_windows, self.i_db] = self.dataProcceser.temporal_windowing(self.intensity,                                                                                         self.fs)
             self.index_of_peaks = self.dataProcceser.window_selector(self.i_db, self.fs)
             self.normalizado = self.dataProcceser.min_vector_be_equal_to_0(self.i_db[0, self.index_of_peaks])
             self.widMatplot.plot(self.audio, self.fs, "Audio")

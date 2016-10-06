@@ -1,0 +1,77 @@
+[33mcommit 710e1875768df9067d0f8020b4af3d1755f9d1a1[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Tue Oct 4 05:43:23 2016 -0300
+
+    arreglo de los graficos. Limpia la grafica del IR para que se puedan graficar las cosas anteriores
+
+[33mcommit 0c1f103b4a3e181c1f817ed3d1a7c958c1224d47[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Tue Oct 4 03:23:48 2016 -0300
+
+    procesa todo cuando cargas el audio
+
+[33mcommit 10ab7ee7cf66218c8bc2ea4750fefb877b331718[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Thu Sep 29 23:00:47 2016 -0300
+
+    limpié un archivo
+
+[33mcommit 51c9dc42dd50a5f2e5e5f67f6efff3628c882002[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Thu Sep 29 22:50:28 2016 -0300
+
+    kk
+
+[33mcommit 962c96e645a59d2a04c1d1467c009838cf9dd18c[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Thu Sep 29 22:49:43 2016 -0300
+
+    aclaración de la clase plotWidget
+
+[33mcommit f7a2c957520e60e890d557df21c65df5ecd777c4[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Thu Sep 29 21:17:25 2016 -0300
+
+    kk
+
+[33mcommit 9ef06a1e76ba054355d3ae1e2244404282114553[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Thu Sep 29 21:15:20 2016 -0300
+
+    archivos necesarios para algo
+
+[33mcommit a37841b0c74f105bfedf4bd1adbe5a6111f1f62d[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Wed Sep 28 20:48:44 2016 -0300
+
+    primer commit nuevo_prueba.py
+
+[33mcommit 9cb58d1a8e86e6473fc9f83a5340ad67bc85c682[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Tue Sep 6 01:13:01 2016 -0300
+
+    Delete plotWidget.pyc
+
+[33mcommit df4afcc88d58e413e20cfe9e7592f96879da296c[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Tue Sep 6 01:12:50 2016 -0300
+
+    Delete detect_peaks.pyc
+
+[33mcommit 5c71961ddd0fe08a592f866e6b76c194bcc721f0[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Tue Sep 6 01:12:32 2016 -0300
+
+    Delete dataProcessing.pyc
+
+[33mcommit bb018c6cbed2bbff2182abd65075111ecf384f91[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Tue Sep 6 00:54:17 2016 -0300
+
+    Add files via upload
+
+[33mcommit a332063d15fc1819a7fee64428a0de7c95668121[m
+Author: fnahuelc <fnahuelc@gmail.com>
+Date:   Sat Sep 3 14:40:52 2016 -0300
+
+    Initial commit

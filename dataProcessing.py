@@ -105,8 +105,8 @@ class DataProcessing(object):
         index_of_peaks = (index_of_peaks[numpy.argsort(data[0, index_of_peaks])])
         index_of_peaks = index_of_peaks[::-1][0:self.number_of_windows - 1]
         index_of_peaks = numpy.insert(index_of_peaks, 0, direct)
-
         index_of_peaks.sort()
+        numpy.insert(index_of_peaks, 0, direct)
         return index_of_peaks
 
     def min_vector_be_equal_to_0(self, values):

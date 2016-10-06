@@ -1,0 +1,51 @@
+from PySide import QtGui
+import sys
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.io import wavfile
+from scipy import signal
+import math
+
+from plotWidget import PlotWidget
+from dataProcessing import DataProcessing
+
+class Cheacker():
+    def __init__(self):
+
+        self.dataProcceser = DataProcessing()
+        self.test()
+        plt.show()
+
+    def ploter(self,data, fs, peaks=None):
+        """Graficador
+         :param data: Matriz (4x4: w,x,y,z)
+         :param fs: Frecuencia de sampleo
+         :param title: lista de 4 strings
+         """
+        plt.figure()
+        n_window_frames = self.dataProcceser.time_window * fs / 1000
+
+        time = np.arange(0.0, float(len(data.tolist()[0])) / fs, 1.0 / fs)
+        for channel in range(len(data)):
+            plt.subplot(len(data) * 100 + 11 + channel)
+            if peaks is not None:
+                window_of_ds = range(peaks[0]-n_window_frames/2, peaks[0]+n_window_frames/2, 1)
+                plt.plot(time, data.tolist()[channel], "b-",
+                         time[peaks[1:]], data[:, peaks[1:]].tolist()[channel], "g*",
+                         time[window_of_ds], data[:, window_of_ds].tolist()[channel], "r")
+            else:
+                plt.plot(time, data.tolist()[channel])
+
+    def process(self):
+        [self.audio, self.fs] = self.dataProcceser.load_wavefile("Audios de prueba/stpatricks_s2r2.wav")
+        self.audio_filtered = self.dataProcceser.low_filtering(self.audio, self.fs)
+        self.intensity = self.dataProcceser.pressure_to_intensity(self.audio_filtered)
+        [self.intensity_windows, self.az_el_windows, self.i_db] = self.dataProcceser.temporal_windowing(self.intensity, self.fs)
+        self.index_of_peaks = self.dataProcceser.window_selector(self.i_db, self.fs)
+        self.normalizado = self.dataProcceser.min_vector_be_equal_to_0(self.i_db[0, self.index_of_peaks])
+
+    def test(self):
+        self.process()
+        self.ploter(self.audio_filtered, self.fs, self.index_of_peaks)
+
+Cheacker()
