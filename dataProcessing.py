@@ -24,8 +24,7 @@ class DataProcessing(object):
         nyq = 0.5 * fs_w
         normal_cutoff = cutoff_w / nyq
 
-        n = 61
-
+        n = 400
         b = signal.firwin(n, cutoff=normal_cutoff, window="hamming")
         a = 1
 
@@ -83,8 +82,7 @@ class DataProcessing(object):
         if self.trucate_value:
             trucate_value_samples = self.trucate_value * fs
             audio = audio[:, trucate_value_samples]
-
-        audio = audio.astype(numpy.float32)
+        audio = audio.astype(numpy.float64)
         maximum = float(audio.max())
         audio = audio.getT() / maximum
         return [audio, fs]
@@ -100,16 +98,17 @@ class DataProcessing(object):
         return value_dB
 
     def window_selector(self, data, fs):
-        direct = detect_peaks(data[0, :], mph=.9)[0]
-        index_of_peaks = detect_peaks(data[0, direct:], mph=-60, mpd=self.time_window * fs / 1000) + direct - 1
+        possible_direct = detect_peaks(data[0, :], mph=.9)
+        direct = possible_direct[numpy.argmax(data[0,possible_direct])]  # max value of the all possible direct
+        index_of_peaks = detect_peaks(data[0, direct:], mph=-300, mpd=self.time_window * fs / 2000) + direct - 1
         index_of_peaks = (index_of_peaks[numpy.argsort(data[0, index_of_peaks])])
         index_of_peaks = index_of_peaks[::-1][0:self.number_of_windows - 1]
         index_of_peaks = numpy.insert(index_of_peaks, 0, direct)
         index_of_peaks.sort()
-        numpy.insert(index_of_peaks, 0, direct)
         return index_of_peaks
 
-    def min_vector_be_equal_to_0(self, values):
+    def normalizer(self, values):
         min_value = min(values)
-        values_normalized = [ value - min_value for value in values]
+        max_value = max(values)-min_value
+        values_normalized = [(value - min_value)/max_value for value in values]
         return values_normalized
