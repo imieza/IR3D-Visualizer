@@ -28,11 +28,15 @@ class PlotWidget(QtGui.QWidget):
 
     def plot(self, data, fs, title, peaks=None):
         self.figure.clear()
+        n_window_frames = self.time_window * fs / 1000
         time = numpy.arange(0.0, float(len(data.tolist()[0])) / fs, 1.0 / fs)
         for channel in range(len(data)):
             ax = self.figure.add_subplot(len(data) * 100 + 11 + channel)
             if peaks is not None:
-                ax.plot(time, data.tolist()[channel], "b-", time[peaks], data[:, peaks].tolist()[channel], "r*")
+                window_of_ds = range(peaks[0]-n_window_frames/2, peaks[0]+n_window_frames/2, 1)
+                ax.plot(time, data.tolist()[channel], "b-",
+                         time[peaks[1:]], data[:, peaks[1:]].tolist()[channel], "g*",
+                         time[window_of_ds], data[:, window_of_ds].tolist()[channel], "r")
             else:
                 ax.plot(time, data.tolist()[channel])
 

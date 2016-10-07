@@ -107,8 +107,16 @@ class DataProcessing(object):
         index_of_peaks.sort()
         return index_of_peaks
 
-    def normalizer(self, values):
-        min_value = min(values)
-        max_value = max(values)-min_value
+    def normalizer(self, values, min_value=None, max_value=None):
+        if min_value or max_value:
+            max_value = max_value - min_value
+        else:
+            min_value = min(values)
+            max_value = max(values) - min_value
         values_normalized = [(value - min_value)/max_value for value in values]
         return values_normalized
+
+    def get_min_max(self, values):
+        min_value = numpy.amin(numpy.absolute(numpy.array(values)))
+        max_value = numpy.amax(numpy.absolute(numpy.array(values)))
+        return min_value,max_value
