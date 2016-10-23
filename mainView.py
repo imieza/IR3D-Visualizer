@@ -37,6 +37,7 @@ class MainView(QtGui.QWidget):
 
         if fileName[0] != []:
             [self.audio, self.fs] = self.dataProcceser.load_wavefile(fileName[0][0])
+            self.time = self.generate_time(self.fs,self.audio)
             self.audio_filtered = self.dataProcceser.low_filtering(self.audio, self.fs)
             min_value,max_value =self.dataProcceser.get_min_max(self.audio_filtered)
             self.audio_filtered_norm = np.matrix([self.dataProcceser.normalizer(np.array(self.audio_filtered[channel, :])[0], min_value,max_value) for channel in range(4)])
@@ -47,7 +48,7 @@ class MainView(QtGui.QWidget):
             self.widMatplot.plot(self.audio, self.fs, "Audio")
 
     def _plotIR3D(self):
-        self.widMatplot.ploter3d(self.normalizado, self.az_el_windows[:, self.index_of_peaks])
+        self.widMatplot.ploter3d(self.normalizado, self.az_el_windows[:, self.index_of_peaks],self.time[self.index_of_peaks])
 
     def showSpectogram(self):
         self.widMatplot.plot_spectrogram(self.audio, self.fs)
@@ -71,6 +72,9 @@ class MainView(QtGui.QWidget):
         self.setLayout(QtGui.QGridLayout())
         self.layout().addLayout(hLayout, 0, 0, 1, 1)
         self.layout().addWidget(self.widMatplot, 1, 0, 1, 1)
+
+    def generate_time(self,fs,data):
+        return np.arange(0.0, float(len(data.tolist()[0])) / fs, 1.0 / fs)
 
 
 if __name__ == '__main__':

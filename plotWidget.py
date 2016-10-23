@@ -1,6 +1,11 @@
 import matplotlib
 import numpy as numpy
 from PySide import QtGui
+from mayavi import mlab
+from tvtk.api import tvtk
+
+from mayavi.sources.vtk_data_source import VTKDataSource
+
 
 matplotlib.use('Qt4Agg')
 matplotlib.rcParams['backend.qt4'] = 'PySide'
@@ -43,22 +48,46 @@ class PlotWidget(QtGui.QWidget):
         plt.subplots_adjust(hspace=1)
         self.canvas.draw()
 
-    def ploter3d(self, i_db, az_el_windows):
+    def ploter3d(self, i_db, az_el_windows,time,grilla = True):
         from mpl_toolkits.mplot3d import Axes3D
 
         self.figure.clear()
-        ax = self.figure.add_subplot(111, projection='3d')
-        self.figure._set_dpi(80)
+        mlab.figure(bgcolor=(0, 0, 0), fgcolor=(1, 1, 1))
 
+        # Lo cambio a coordenadas polares
         [x, y, z] = self.sph2cart(az_el_windows[0], az_el_windows[1], i_db)
-        colors_of_red = 20
-        color = iter(plt.cm.Spectral(numpy.linspace(0.2, 1, len(x) + colors_of_red)))
-        for i in range(1, len(x)):
-            c = next(color)
-            ax.plot([0, x[i]], [0, y[i]], [0, z[i]], marker="_", c=c, linewidth=1.5)
-        ax.plot([0, x[0]], [0, y[0]], [0, z[0]], marker="_", c='r', linewidth=5.0)
-        self.axisEqual3D(ax)
+
+        # Creo los valores del origen 0,0,0 para todos los vectores
+        u = v = w = numpy.zeros(len(x))
+
+        # Grilla
+        if grilla:
+            surf = mlab.pipeline.surface(self.image_data(), opacity=0)
+            mlab.pipeline.surface(mlab.pipeline.extract_edges(surf),
+                                  color=(.1, .1, .1), line_width=.001)
+
+        # Grafico los vectores
+        obj = mlab.quiver3d(u[0], v[0], w[0], x[0], y[0], z[0], scalars=time[0], scale_mode="vector", mode="2ddash",
+                            line_width=10)
+        obj = mlab.quiver3d(u[1:], v[1:], w[1:], x[1:], y[1:], z[1:], scalars=time[1:], scale_mode="vector", mode="2ddash",
+                            line_width=2)
+        obj.glyph.color_mode = 'color_by_scalar'
+        obj.module_manager.scalar_lut_manager.reverse_lut = True
+
+        # Agrego el colorbar, los ejes, y el cuadrado
+        mlab.colorbar(obj, orientation="vertical")
+        mlab.axes(obj)
+        mlab.outline(obj)
         self.canvas.draw()
+
+    def image_data(self):
+        data = numpy.random.random((5, 5, 5))
+        i = tvtk.ImageData(spacing=(.5, .5, .5), origin=(-1, -1, -1))
+        i.point_data.scalars = data.ravel()
+        i.point_data.scalars.name = 'scalars'
+        i.dimensions = data.shape
+
+        return i
 
     def axisEqual3D(self, ax):
         extents = numpy.array([getattr(ax, 'get_{}lim'.format(dim))() for dim in 'xyz'])
@@ -93,16 +122,17 @@ class PlotWidget(QtGui.QWidget):
         self.canvas.draw()
 
     def plotLowFilteredSignals(self, filterFrequency, filterAmplitudeResponse):
-        self.figure.clear()
-        self.figure.add_subplot(111)
+
+        plt.figure()
+        plt.subplot(111)
         plt.semilogx(filterFrequency, 20 * numpy.log10(abs(filterAmplitudeResponse)))
-        plt.title('Butterworth filter frequency response')
-        plt.xlabel('Frequency [radians / second]')
-        plt.ylabel('Amplitude [dB]')
+        plt.title('Respuesta en frecuencia de fitro pasa-bajos Butterworth')
+        plt.xlabel('Frecuencia [Radianes / segundo]')
+        plt.ylabel('Amplitud [dB]')
         plt.margins(0, 0.1)
         plt.grid(which='both', axis='both')
         plt.axvline(100, color='green')  # cutoff frequency
-
+        plt.show()
         self.canvas.draw()
 
     def sph2cart(self, azimuth, elevation, r):
