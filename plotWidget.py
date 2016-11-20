@@ -54,9 +54,7 @@ class PlotWidget(QtGui.QWidget):
         mlab.figure(bgcolor=(0, 0, 0), fgcolor=(1, 1, 1))
 
         # Lo cambio a coordenadas polares
-        print az_el_windows
-        print "========="
-        print i_db
+
         [x, y, z] = self.sph2cart(az_el_windows[0], az_el_windows[1], i_db)
 
         # Creo los valores del origen 0,0,0 para todos los vectores

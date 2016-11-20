@@ -20,8 +20,8 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_8">
+  <widget class="QWidget" name="widgetTabs">
+   <layout class="QGridLayout" name="layoutWidgetTabs">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="font">
@@ -35,7 +35,7 @@
        <string/>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>true</bool>
@@ -47,7 +47,7 @@
        <attribute name="title">
         <string>Pressure Level</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_6">
+       <layout class="QGridLayout" name="tabLayoutPressureLevel">
         <item row="0" column="0">
          <widget class="MatplotlibWidget" name="plotPressure"/>
         </item>
@@ -57,9 +57,29 @@
        <attribute name="title">
         <string>Intensity Level</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_7">
+       <layout class="QGridLayout" name="tabLayoutIntensityLevel">
         <item row="0" column="0">
          <widget class="MatplotlibWidget" name="plotIntensity"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabWindowLevel">
+       <attribute name="title">
+        <string>Window Level</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="MatplotlibWidget" name="plotWindowLevel"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabFilter">
+       <attribute name="title">
+        <string>Filtro</string>
+       </attribute>
+       <layout class="QGridLayout" name="tabLayoutFilter">
+        <item row="0" column="0">
+         <widget class="MatplotlibWidget" name="plotFilter"/>
         </item>
        </layout>
       </widget>
@@ -67,19 +87,9 @@
        <attribute name="title">
         <string>Spectrogram</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_5">
+       <layout class="QGridLayout" name="tabLayoutSpectrogram">
         <item row="0" column="0">
          <widget class="MatplotlibWidget" name="plotSpectrogram"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>IR 3D</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_9">
-        <item row="0" column="0">
-         <widget class="MatplotlibWidget" name="plotIR3D"/>
         </item>
        </layout>
       </widget>
@@ -137,11 +147,10 @@
    <addaction name="menuConfiguration"/>
    <addaction name="menuView"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QDockWidget" name="AudioDock">
+  <widget class="QDockWidget" name="dockAudio">
    <property name="minimumSize">
     <size>
-     <width>266</width>
+     <width>285</width>
      <height>333</height>
     </size>
    </property>
@@ -164,7 +173,7 @@
    <widget class="QWidget" name="dockWidgetContents">
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
-      <widget class="QGroupBox" name="groupBox">
+      <widget class="QGroupBox" name="boxAudioEditing">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -180,11 +189,11 @@
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QVBoxLayout" name="layoutAudioEditing">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <layout class="QHBoxLayout" name="layoutAudioCutter">
             <item>
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="labelAudioCutter">
               <property name="minimumSize">
                <size>
                 <width>83</width>
@@ -207,7 +216,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDoubleSpinBox" name="doubleSpinBox">
+             <widget class="QDoubleSpinBox" name="audioCutter">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -221,14 +230,20 @@
               <property name="suffix">
                <string> ms</string>
               </property>
+              <property name="decimals">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <double>99999.000000000000000</double>
+              </property>
              </widget>
             </item>
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <layout class="QHBoxLayout" name="layoutLowPassFiltering">
             <item>
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="lowPassFiltering_2">
               <property name="minimumSize">
                <size>
                 <width>115</width>
@@ -251,7 +266,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+             <widget class="QDoubleSpinBox" name="lowPassFiltering">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -260,16 +275,25 @@
                </font>
               </property>
               <property name="suffix">
-               <string> Khz</string>
+               <string> hz</string>
+              </property>
+              <property name="decimals">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="value">
+               <double>5000.000000000000000</double>
               </property>
              </widget>
             </item>
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <layout class="QHBoxLayout" name="layoutBandPassFiltering">
             <item>
-             <widget class="QLabel" name="label_3">
+             <widget class="QLabel" name="labelBandPassFiltering">
               <property name="minimumSize">
                <size>
                 <width>121</width>
@@ -292,7 +316,240 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox"/>
+             <widget class="QComboBox" name="bandPassFiltering">
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>Not applied</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 16Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 31.5Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 63Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 125Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 250Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 1000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 2000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 4000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 8000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 16000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 12.5Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 16Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 20Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 25Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 31.5Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 40Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 50Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 63Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 80Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 100Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 125Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 160Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 200Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 250Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 315Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 400Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 630Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 800Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 1000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 1250Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 1600Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 2000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 2500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 3150Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 4000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 5000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 6300Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 8000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 10000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 12500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 16000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 20000Hz</string>
+               </property>
+              </item>
+             </widget>
             </item>
            </layout>
           </item>
@@ -302,7 +559,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QGroupBox" name="groupBox_2">
+      <widget class="QGroupBox" name="boxWindowing">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -320,11 +577,11 @@
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QVBoxLayout" name="layoutWindowing">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <layout class="QHBoxLayout" name="layoutWindowSize">
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="labelWindowSize">
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -347,7 +604,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+             <widget class="QDoubleSpinBox" name="windowingWindowSize">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -358,14 +615,20 @@
               <property name="suffix">
                <string> ms</string>
               </property>
+              <property name="maximum">
+               <double>10000.000000000000000</double>
+              </property>
+              <property name="value">
+               <double>1.000000000000000</double>
+              </property>
              </widget>
             </item>
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <layout class="QHBoxLayout" name="layoutQuantity">
             <item>
-             <widget class="QLabel" name="label_5">
+             <widget class="QLabel" name="labelQuantity">
               <property name="minimumSize">
                <size>
                 <width>70</width>
@@ -388,7 +651,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSpinBox" name="spinBox">
+             <widget class="QSpinBox" name="windowingQuantity">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -397,14 +660,17 @@
               <property name="maximum">
                <number>9999</number>
               </property>
+              <property name="value">
+               <number>256</number>
+              </property>
              </widget>
             </item>
            </layout>
           </item>
           <item>
-           <layout class="QGridLayout" name="gridLayout">
+           <layout class="QGridLayout" name="layoutBoundedExtended">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_6">
+             <widget class="QLabel" name="labelBounded">
               <property name="minimumSize">
                <size>
                 <width>70</width>
@@ -427,7 +693,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLabel" name="label_7">
+             <widget class="QLabel" name="labelExtended">
               <property name="minimumSize">
                <size>
                 <width>70</width>
@@ -450,7 +716,7 @@
              </widget>
             </item>
             <item row="1" column="0" colspan="2">
-             <widget class="QSlider" name="horizontalSlider">
+             <widget class="QSlider" name="boundedExtended">
               <property name="toolTip">
                <string extracomment="sdsadas"/>
               </property>
@@ -475,10 +741,10 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="measurementDock">
+  <widget class="QDockWidget" name="dockMeasurement">
    <property name="minimumSize">
     <size>
-     <width>275</width>
+     <width>352</width>
      <height>173</height>
     </size>
    </property>
@@ -498,16 +764,16 @@
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents_6">
+   <widget class="QWidget" name="layoutHorizontalMeasurements">
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <widget class="QGroupBox" name="groupBox_3">
+      <widget class="QGroupBox" name="boxMeasurementBtn">
        <property name="title">
         <string/>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="btnSelect">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -522,32 +788,12 @@
            <enum>Qt::DefaultContextMenu</enum>
           </property>
           <property name="text">
-           <string>New </string>
+           <string>Select</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="contextMenuPolicy">
-           <enum>Qt::DefaultContextMenu</enum>
-          </property>
-          <property name="text">
-           <string>Edit name</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="btnDelete">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -566,16 +812,55 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="btnDeleteAll">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::DefaultContextMenu</enum>
+          </property>
+          <property name="text">
+           <string>Delete all</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </item>
      <item>
-      <widget class="QListView" name="listView"/>
+      <widget class="QTableWidget" name="listMeasurements">
+       <property name="dragDropOverwriteMode">
+        <bool>false</bool>
+       </property>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Source</string>
+        </property>
+       </column>
+      </widget>
      </item>
     </layout>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="dockWidget">
+  <widget class="QDockWidget" name="dockView">
    <property name="minimumSize">
     <size>
      <width>842</width>
@@ -588,10 +873,10 @@
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents_12">
+   <widget class="QWidget" name="layoutGridView">
     <layout class="QGridLayout" name="gridLayout_4">
      <item row="0" column="0">
-      <widget class="QProgressBar" name="progressBar_2">
+      <widget class="QProgressBar" name="progressBar">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -618,9 +903,9 @@
       </widget>
      </item>
      <item row="0" column="2">
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <layout class="QHBoxLayout" name="layoutXScale">
        <item>
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="labelXScale">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -640,7 +925,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_2">
+        <widget class="QComboBox" name="xScale">
          <property name="minimumSize">
           <size>
            <width>120</width>
@@ -652,9 +937,9 @@
       </layout>
      </item>
      <item row="0" column="3">
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <layout class="QHBoxLayout" name="layoutYScale">
        <item>
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="labelYScale">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -668,7 +953,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox_3">
+        <widget class="QComboBox" name="yScale">
          <property name="minimumSize">
           <size>
            <width>120</width>

@@ -1,84 +1,85 @@
 
-# First, and before importing any Enthought packages, set the ETS_TOOLKIT
-# environment variable to qt4, to tell Traits that we will use Qt.
-import os
-os.environ['ETS_TOOLKIT'] = 'qt4'
-# By default, the PySide binding will be used. If you want the PyQt bindings
-# to be used, you need to set the QT_API environment variable to 'pyqt'
-#os.environ['QT_API'] = 'pyqt'
+# Authors: Prabhu Ramachandran <prabhu [at] aero.iitb.ac.in>
+# Copyright (c) 2007, Enthought, Inc.
+# License: BSD Style.
 
-# To be able to use PySide or PyQt4 and not run in conflicts with traits,
-# we need to import QtGui and QtCore from pyface.qt
-from pyface.qt import QtGui, QtCore
-# Alternatively, you can bypass this line, but you need to make sure that
-# the following lines are executed before the import of PyQT:
-#   import sip
-#   sip.setapi('QString', 2)
+# Standard imports.
+from numpy import sqrt, sin, mgrid
 
-from traits.api import HasTraits, Instance, on_trait_change
-from traitsui.api import View, Item
-from mayavi.core.ui.api import MayaviScene, MlabSceneModel, \
-        SceneEditor
+# Enthought imports.
+from traits.api import HasTraits, Instance, Property, Enum
+from traitsui.api import View, Item, HSplit, VSplit, InstanceEditor
+from tvtk.pyface.scene_editor import SceneEditor
+from mayavi.core.ui.engine_view import EngineView
+from mayavi.tools.mlab_scene_model import MlabSceneModel
 
 
-################################################################################
-#The actual visualization
-class Visualization(HasTraits):
+######################################################################
+class Mayavi(HasTraits):
+
+    # The scene model.
     scene = Instance(MlabSceneModel, ())
 
-    @on_trait_change('scene.activated')
-    def update_plot(self):
-        # This function is called when the view is opened. We don't
-        # populate the scene when the view is not yet open, as some
-        # VTK features require a GLContext.
+    # The mayavi engine view.
+    engine_view = Instance(EngineView)
 
-        # We can do normal mlab calls on the embedded scene.
-        self.scene.mlab.test_points3d()
+    # The current selection in the engine tree view.
+    current_selection = Property
 
-    # the layout of the dialog screated
-    view = View(Item('scene', editor=SceneEditor(scene_class=MayaviScene),
-                     height=250, width=300, show_label=False),
-                resizable=True # We need this to resize with the parent widget
+
+    ######################
+    view = View(HSplit(VSplit(Item(name='engine_view',
+                                   style='custom',
+                                   resizable=True,
+                                   show_label=False
+                                   ),
+                              Item(name='current_selection',
+                                   editor=InstanceEditor(),
+                                   enabled_when='current_selection is not None',
+                                   style='custom',
+                                   springy=True,
+                                   show_label=False),
+                                   ),
+                               Item(name='scene',
+                                    editor=SceneEditor(),
+                                    show_label=False,
+                                    resizable=True,
+                                    height=500,
+                                    width=500),
+                        ),
+                resizable=True,
+                scrollable=True
                 )
 
-################################################################################
-# The QWidget containing the visualization, this is pure PyQt4 code.
-class MayaviQWidget(QtGui.QWidget):
-    def __init__(self, parent=None):
-        QtGui.QWidget.__init__(self, parent)
-        layout = QtGui.QVBoxLayout(self)
-        layout.setContentsMargins(0,0,0,0)
-        layout.setSpacing(0)
-        self.visualization = Visualization()
+    def __init__(self, **traits):
+        HasTraits.__init__(self, **traits)
+        self.engine_view = EngineView(engine=self.scene.engine)
 
-        # If you want to debug, beware that you need to remove the Qt
-        # input hook.
-        #QtCore.pyqtRemoveInputHook()
-        #import pdb ; pdb.set_trace()
-        #QtCore.pyqtRestoreInputHook()
+        # Hook up the current_selection to change when the one in the engine
+        # changes.  This is probably unnecessary in Traits3 since you can show
+        # the UI of a sub-object in T3.
+        self.scene.engine.on_trait_change(self._selection_change,
+                                          'current_selection')
 
-        # The edit_traits call will generate the widget to embed.
-        self.ui = self.visualization.edit_traits(parent=self,kind='subpanel').control
-        layout.addWidget(self.ui)
-        self.ui.setParent(self)
+        self.generate_data_mayavi()
+
+    def generate_data_mayavi(self):
+        """Shows how you can generate data using mayavi instead of mlab."""
+        from mayavi.sources.api import ParametricSurface
+        from mayavi.modules.api import Outline, Surface
+        e = self.scene.engine
+        s = ParametricSurface()
+        e.add_source(s)
+        e.add_module(Outline())
+        e.add_module(Surface())
+
+    def _selection_change(self, old, new):
+        self.trait_property_changed('current_selection', old, new)
+
+    def _get_current_selection(self):
+        return self.scene.engine.current_selection
 
 
-if __name__ == "__main__":
-    # Don't create a new QApplication, it would unhook the Events
-    # set by Traits on the existing QApplication. Simply use the
-    # '.instance()' method to retrieve the existing one.
-    app = QtGui.QApplication.instance()
-    container = QtGui.QWidget()
-    container.setWindowTitle("Embedding Mayavi in a PyQt4 Application")
-    # define a "complex" layout to test the behaviour
-    layout = QtGui.QGridLayout(container)
-    mayavi_widget = MayaviQWidget()
-    layout.addWidget(mayavi_widget, 1, 1)
-
-    container.show()
-    window = QtGui.QMainWindow()
-    window.setCentralWidget(container)
-    window.show()
-
-    # Start the main event loop.
-    app.exec_()
+if __name__ == '__main__':
+    m = Mayavi()
+    m.configure_traits()
