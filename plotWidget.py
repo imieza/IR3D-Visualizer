@@ -13,6 +13,7 @@ from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 
 
+
 class PlotWidget(QtGui.QWidget):
     '''Clase para plotear la data obtenida en la clase Data Processing'''
 
@@ -27,7 +28,7 @@ class PlotWidget(QtGui.QWidget):
         super(PlotWidget, self).__init__(parent)
         self.figure = plt.figure()
         self.canvas = FigureCanvas(self.figure)
-        layout = QtGui.QVBoxLayout()
+        layout = QtGui.QVBoxLayout(self)
         layout.addWidget(self.canvas)
         self.setLayout(layout)
 
@@ -49,12 +50,13 @@ class PlotWidget(QtGui.QWidget):
         self.canvas.draw()
 
     def ploter3d(self, i_db, az_el_windows,time,grilla = True):
-        from mpl_toolkits.mplot3d import Axes3D
 
-        self.figure.clear()
         mlab.figure(bgcolor=(0, 0, 0), fgcolor=(1, 1, 1))
 
         # Lo cambio a coordenadas polares
+        print az_el_windows
+        print "========="
+        print i_db
         [x, y, z] = self.sph2cart(az_el_windows[0], az_el_windows[1], i_db)
 
         # Creo los valores del origen 0,0,0 para todos los vectores
@@ -67,7 +69,7 @@ class PlotWidget(QtGui.QWidget):
                                   color=(.1, .1, .1), line_width=.001)
 
         # Grafico los vectores
-        obj = mlab.quiver3d(u[0], v[0], w[0], x[0], y[0], z[0], scalars=time[0], scale_mode="vector", mode="2ddash",
+        mlab.quiver3d(u[0], v[0], w[0], x[0], y[0], z[0], scalars=time[0], scale_mode="vector", mode="2ddash",
                             line_width=10)
         obj = mlab.quiver3d(u[1:], v[1:], w[1:], x[1:], y[1:], z[1:], scalars=time[1:], scale_mode="vector", mode="2ddash",
                             line_width=2)
@@ -78,7 +80,6 @@ class PlotWidget(QtGui.QWidget):
         mlab.colorbar(obj, orientation="vertical")
         mlab.axes(obj)
         mlab.outline(obj)
-        self.canvas.draw()
 
     def image_data(self):
         data = numpy.random.random((5, 5, 5))
