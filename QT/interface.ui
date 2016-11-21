@@ -67,7 +67,7 @@
        <attribute name="title">
         <string>Window Level</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout">
+       <layout class="QGridLayout" name="tabLayoutLevel">
         <item row="0" column="0">
          <widget class="MatplotlibWidget" name="plotWindowLevel"/>
         </item>

@@ -88,6 +88,7 @@ class MainView(QtGui.QMainWindow):
 
             self.addList()
 
+
 if __name__== "__main__":
     app = QtGui.QApplication(sys.argv)
     myapp = MainView()

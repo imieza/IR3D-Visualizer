@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'interface.ui'
 #
-# Created: Sun Nov 20 19:47:22 2016
+# Created: Sun Nov 20 21:48:55 2016
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -64,11 +64,11 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tabIntensityLevel, _fromUtf8(""))
         self.tabWindowLevel = QtGui.QWidget()
         self.tabWindowLevel.setObjectName(_fromUtf8("tabWindowLevel"))
-        self.gridLayout = QtGui.QGridLayout(self.tabWindowLevel)
-        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.tabLayoutLevel = QtGui.QGridLayout(self.tabWindowLevel)
+        self.tabLayoutLevel.setObjectName(_fromUtf8("tabLayoutLevel"))
         self.plotWindowLevel = MatplotlibWidget(self.tabWindowLevel)
         self.plotWindowLevel.setObjectName(_fromUtf8("plotWindowLevel"))
-        self.gridLayout.addWidget(self.plotWindowLevel, 0, 0, 1, 1)
+        self.tabLayoutLevel.addWidget(self.plotWindowLevel, 0, 0, 1, 1)
         self.tabWidget.addTab(self.tabWindowLevel, _fromUtf8(""))
         self.tabFilter = QtGui.QWidget()
         self.tabFilter.setObjectName(_fromUtf8("tabFilter"))

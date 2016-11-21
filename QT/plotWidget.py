@@ -6,6 +6,9 @@ import numpy as np
 from mayavi import mlab
 from tvtk.api import tvtk
 
+from matplotlib.backends.backend_qt4agg import (
+    FigureCanvasQTAgg as FigureCanvas,
+    NavigationToolbar2QT as NavigationToolbar)
 
 
 # Authors: Prabhu Ramachandran <prabhu [at] aero.iitb.ac.in>
@@ -137,7 +140,7 @@ class PlotWidget():
     trucate_value = None
 
 
-    def plot1D(self,Self,figureWidget,data,show_peaks=False):
+    def plot1D(self,Self,figureWidget,layoutWidget,data,show_peaks=False):
 
         fs = Self.calc["fs"]
 
@@ -165,6 +168,7 @@ class PlotWidget():
                 ax1f1.plot(time, data.tolist()[channel])
 
         figureWidget.draw()
+        self.addmpl(Self,figureWidget,layoutWidget)
 
     def plotSpectrogram(self, Self):
         data = Self.calc["data"]
@@ -191,6 +195,7 @@ class PlotWidget():
             Pxx, freqs, bins, im = ax.specgram(x, NFFT=NFFT, Fs=fs, noverlap=10)
 
         Self.ui.plotSpectrogram.draw()
+        self.addmpl(Self, Self.ui.plotSpectrogram,  Self.ui.tabLayoutSpectrogram)
 
     def plotFilter(self,Self):
 
@@ -207,20 +212,28 @@ class PlotWidget():
         plt.grid(which='both', axis='both')
         plt.axvline(100, color='green')  # cutoff frequency
         plt.draw()
+        self.addmpl(Self, Self.ui.plotFilter,  Self.ui.tabLayoutFilter)
+
 
     def plotIR3D(self,Self):
         m = Mayavi(Self)
 
     def ploter(self,Self):
-        self.plot1D(Self,Self.ui.plotPressure,Self.calc["data"],False)
+        self.plot1D(Self,Self.ui.plotPressure,Self.ui.tabLayoutPressureLevel,Self.calc["data"],False)
         Self.ui.progressBar.setValue(55)
-        self.plot1D(Self,Self.ui.plotWindowLevel,Self.calc["intensity_windows"],False)
+        self.plot1D(Self,Self.ui.plotWindowLevel,Self.ui.tabLayoutIntensityLevel,Self.calc["intensity_windows"],False)
         Self.ui.progressBar.setValue(60)
-        self.plot1D(Self,Self.ui.plotIntensity,Self.calc["intensity"],False)
+        self.plot1D(Self,Self.ui.plotIntensity,Self.ui.tabLayoutLevel,Self.calc["intensity"],False)
         Self.ui.progressBar.setValue(65)
         self.plotFilter(Self)
         Self.ui.progressBar.setValue(70)
         self.plotSpectrogram(Self)
         Self.ui.progressBar.setValue(100)
         self.plotIR3D(Self)
+
+    def addmpl(self, Self, figureWidget,layoutWidget):
+        Self.canvas = FigureCanvas(figureWidget.figure)
+        Self.toolbar = NavigationToolbar(Self.canvas,
+                                         figureWidget, coordinates=True)
+        layoutWidget.addWidget(Self.toolbar)
 
