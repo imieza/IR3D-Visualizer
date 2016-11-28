@@ -168,7 +168,6 @@ class PlotWidget():
                 ax1f1.plot(time, data.tolist()[channel])
 
         figureWidget.draw()
-        self.addmpl(Self,figureWidget,layoutWidget)
 
     def plotSpectrogram(self, Self):
         data = Self.calc["data"]
@@ -195,7 +194,6 @@ class PlotWidget():
             Pxx, freqs, bins, im = ax.specgram(x, NFFT=NFFT, Fs=fs, noverlap=10)
 
         Self.ui.plotSpectrogram.draw()
-        self.addmpl(Self, Self.ui.plotSpectrogram,  Self.ui.tabLayoutSpectrogram)
 
     def plotFilter(self,Self):
 
@@ -212,7 +210,6 @@ class PlotWidget():
         plt.grid(which='both', axis='both')
         plt.axvline(100, color='green')  # cutoff frequency
         plt.draw()
-        self.addmpl(Self, Self.ui.plotFilter,  Self.ui.tabLayoutFilter)
 
 
     def plotIR3D(self,Self):
@@ -231,9 +228,4 @@ class PlotWidget():
         Self.ui.progressBar.setValue(100)
         self.plotIR3D(Self)
 
-    def addmpl(self, Self, figureWidget,layoutWidget):
-        Self.canvas = FigureCanvas(figureWidget.figure)
-        Self.toolbar = NavigationToolbar(Self.canvas,
-                                         figureWidget, coordinates=True)
-        layoutWidget.addWidget(Self.toolbar)
 
