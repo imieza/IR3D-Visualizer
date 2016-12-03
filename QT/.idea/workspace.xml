@@ -2,6 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e47b7be-89b0-4753-9f1a-d326e682cd24" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/font/fontawesome-webfont-.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/font/fontawesome-webfont-v=3.2.1.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/font/fontawesome-webfont-v=3.2.1.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/font/fontawesome-webfont-v=3.2.1.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/font/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/IR3D.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/header-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/item-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/item-02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/item-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/portfolio-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/s1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/s2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/s3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/s4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/team01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/team02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/team03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/team04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/work1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/work2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/img/work3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/js/Chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/js/classie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../website/js/smoothscroll.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotWidget.py" afterPath="$PROJECT_DIR$/plotWidget.py" />
     </list>
@@ -40,7 +77,7 @@
           <file leaf-file-name="interface.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/interface.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
+                <state relative-caret-position="850">
                   <caret line="50" column="35" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="35" />
                   <folding />
                 </state>
@@ -50,7 +87,7 @@
           <file leaf-file-name="mainView.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mainView.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
+                <state relative-caret-position="204">
                   <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
@@ -62,12 +99,12 @@
           <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/plotWidget.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="293">
-                  <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+                <state relative-caret-position="119">
+                  <caret line="104" column="9" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
-                    <element signature="e#3941#4093#0" expanded="false" />
-                    <element signature="e#4129#4375#0" expanded="false" />
+                    <element signature="e#3945#4097#0" expanded="false" />
+                    <element signature="e#4133#4379#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -115,7 +152,7 @@
           <file leaf-file-name="mainView.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../mainView.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-234">
+                <state relative-caret-position="17">
                   <caret line="34" column="30" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="30" />
                   <folding>
                     <element signature="e#0#24#0" expanded="true" />
@@ -142,12 +179,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mayaviVisualization.py" />
-        <option value="$PROJECT_DIR$/../mainView.py" />
         <option value="$PROJECT_DIR$/../pruebaMayaviGui.py" />
         <option value="$PROJECT_DIR$/../plotWidget.py" />
         <option value="$PROJECT_DIR$/interface.py" />
         <option value="$PROJECT_DIR$/dataProcessing.py" />
         <option value="$PROJECT_DIR$/mainView.py" />
+        <option value="$PROJECT_DIR$/../mainView.py" />
+        <option value="$PROJECT_DIR$/transparency.py" />
         <option value="$PROJECT_DIR$/plotWidget.py" />
       </list>
     </option>
@@ -249,6 +287,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="QT" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../plotWidget.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="transparency" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="QT" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/transparency.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -404,19 +459,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.mainView" />
       <item index="1" class="java.lang.String" itemvalue="Python.mayaviVisualization" />
       <item index="2" class="java.lang.String" itemvalue="Python.mainView (1)" />
       <item index="3" class="java.lang.String" itemvalue="Python.pruebaMayaviGui" />
       <item index="4" class="java.lang.String" itemvalue="Python.plotWidget" />
+      <item index="5" class="java.lang.String" itemvalue="Python.transparency" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.pruebaMayaviGui" />
-        <item index="1" class="java.lang.String" itemvalue="Python.mainView (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.mayaviVisualization" />
-        <item index="3" class="java.lang.String" itemvalue="Python.plotWidget" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.transparency" />
+        <item index="1" class="java.lang.String" itemvalue="Python.pruebaMayaviGui" />
+        <item index="2" class="java.lang.String" itemvalue="Python.mainView (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.mayaviVisualization" />
+        <item index="4" class="java.lang.String" itemvalue="Python.plotWidget" />
       </list>
     </recent_temporary>
   </component>
@@ -447,7 +504,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1227608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -505,16 +562,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../dataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../plotWidget.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -570,8 +617,8 @@
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#3941#4093#0" expanded="false" />
-            <element signature="e#4129#4375#0" expanded="false" />
+            <element signature="e#3945#4097#0" expanded="false" />
+            <element signature="e#4133#4379#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -649,8 +696,8 @@
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#3941#4093#0" expanded="false" />
-            <element signature="e#4129#4375#0" expanded="false" />
+            <element signature="e#3945#4097#0" expanded="false" />
+            <element signature="e#4133#4379#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -746,8 +793,8 @@
           <caret line="116" column="25" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#3941#4093#0" expanded="false" />
-            <element signature="e#4129#4375#0" expanded="false" />
+            <element signature="e#3945#4097#0" expanded="false" />
+            <element signature="e#4133#4379#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -794,8 +841,8 @@
           <caret line="138" column="27" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#3941#4093#0" expanded="false" />
-            <element signature="e#4129#4375#0" expanded="false" />
+            <element signature="e#3945#4097#0" expanded="false" />
+            <element signature="e#4133#4379#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -841,8 +888,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#3941#4093#0" expanded="false" />
-            <element signature="e#4129#4375#0" expanded="false" />
+            <element signature="e#3945#4097#0" expanded="false" />
+            <element signature="e#4133#4379#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -935,7 +982,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../mainView.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
+        <state relative-caret-position="17">
           <caret line="34" column="30" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="30" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
@@ -945,7 +992,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="850">
           <caret line="50" column="35" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="35" />
           <folding />
         </state>
@@ -963,7 +1010,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mainView.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="204">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -971,14 +1018,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/transparency.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plotWidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="104" column="9" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#3941#4093#0" expanded="false" />
-            <element signature="e#4129#4375#0" expanded="false" />
+            <element signature="e#3945#4097#0" expanded="false" />
+            <element signature="e#4133#4379#0" expanded="false" />
           </folding>
         </state>
       </provider>

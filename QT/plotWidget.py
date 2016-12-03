@@ -72,7 +72,7 @@ class Mayavi(HasTraits):
         i_db = Self.calc["normalizado"]
         az_el_windows = Self.calc["az_el_windows"][:, Self.calc["peaks"]]
         time = Self.calc["time"][Self.calc["peaks"]]
-        grilla = True
+        grilla = False
 
 
         self.scene.mlab.figure(bgcolor=(0, 0, 0), fgcolor=(1, 1, 1),size=(700,700))
@@ -100,9 +100,13 @@ class Mayavi(HasTraits):
         obj.glyph.color_mode = 'color_by_scalar'
         obj.module_manager.vector_lut_manager.reverse_lut = True
         # Agrego el colorbar, los ejes, y el cuadrado
-        self.scene.mlab.colorbar(obj, orientation="vertical")
-        self.scene.mlab.axes(obj)
-        self.scene.mlab.outline(obj)
+        vista = mlab.view( azimuth=0, elevation=0)
+        imgmap = mlab.screenshot(mode='rgba', antialiased=False)
+        plt.imsave(arr=imgmap, fname="foo.png")
+
+        #self.scene.mlab.colorbar(obj, orientation="vertical")
+        #self.scene.mlab.axes(obj)
+        #self.scene.mlab.outline(obj)
         self.scene.mlab.show()
 
 
