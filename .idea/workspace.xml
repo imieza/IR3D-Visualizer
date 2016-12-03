@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9378fd56-0454-4a22-bd16-4b7437000b49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QT/mlab2matplot.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/QT/projectionExample.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/font/fontawesome-webfont-.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/font/fontawesome-webfont-v=3.2.1.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/font/fontawesome-webfont-v=3.2.1.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/font/fontawesome-webfont-v=3.2.1.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/font/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/IR3D.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/header-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/item-01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/item-02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/item-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/portfolio-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/s1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/s2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/s3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/s4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/team01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/team02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/team03.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/team04.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/work1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/work2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/work3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/js/Chart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/js/classie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/js/smoothscroll.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QT/.idea/workspace.xml" afterPath="$PROJECT_DIR$/QT/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QT/plotWidget.py" afterPath="$PROJECT_DIR$/QT/plotWidget.py" />
     </list>
     <ignored path="IR3D-Visualizer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -650,7 +606,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -658,7 +614,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.62425596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.49107143" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32258064" sideWeight="0.48511904" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32258064" sideWeight="0.51488096" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.51488096" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4910486" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.3578869" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5089514" order="2" side_tool="true" content_ui="tabs" />
