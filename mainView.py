@@ -1,84 +1,98 @@
-from PySide import QtGui
 import sys
+from interface import *
 import numpy as np
 from plotWidget import PlotWidget
 from dataProcessing import DataProcessing
+from datetime import datetime
 
-class MainView(QtGui.QWidget):
-    def __init__(self, function=None):
-        super(MainView, self).__init__()
-        self.setWindowTitle('Impulse response 3D')
-        self.setObjectName('MainWidget')
-        self.setStyleSheet('QWidget#MainWidget {background-color: rgb(191, 191, 191)}')
+class MainView(QtGui.QMainWindow):
+    def __init__(self):
+        QtGui.QMainWindow.__init__(self)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.plotWidget = PlotWidget()
+        self.measurements = []
+        self.get_parameters()
+        self.dataProcceser = DataProcessing(self)
+        self.ui.progressBar.setValue(0)
 
-        self.function = function
-        self.widMatplot = PlotWidget(self.function)
-        self.dataProcceser = DataProcessing()
+        self.ui.btnRecalculate.clicked.connect(self.calculate)
+        self.ui.btnSelect.clicked.connect(self.selectMeasurement)
+        self.ui.btnDelete.clicked.connect(self.delItem)
+        self.ui.btnDeleteAll.clicked.connect(self.delAllItems)
+        self.connect(self.ui.actionNew_project, QtCore.SIGNAL("triggered()"), self.openFile)
 
-        self._loadSignalsButton = QtGui.QPushButton('Open WAV B-Format File ')
-        self.filterFrequencyResponsePlotButton = QtGui.QPushButton('Low-Pass Filtering Response')
-        self.spectrogramPlotButton = QtGui.QPushButton('Spectogram')
-        self.filterFrequencyResponseWithStarsPlotButton = QtGui.QPushButton('Window Selection')
-        self.impulseResponse3DButton = QtGui.QPushButton('View IR3D Graph')
+    def openFile(self):
+        self.calc = {}
+        fileName = QtGui.QFileDialog.getOpenFileNames(None,("Open File"), "/home/", ("Wav Files (*.wav)"))
+        #self.fileName = "C:\Users\W\Documents\IR3D\IR3D-Visualizer\Audios de prueba\stpatricks_s2r2.wav"
+        self.fileName = fileName[0]
+        [self.calc["data"], self.calc["fs"]] = self.dataProcceser.load_wavefile(self.fileName)
+        self.calc["time"] = self.dataProcceser.generate_time(self.calc["fs"], self.calc["data"])
+        self.ui.audioCutter.setValue(self.calc["time"][len(self.calc["time"])-1]*1000)
+        self.calculate()
 
-        self._setLayout()
+    def get_parameters(self):
+        self.parameters = {}
+        self.parameters["value2truncate"] = self.ui.audioCutter.value()
+        self.parameters["cutoff_frequency"] = self.ui.lowPassFiltering.value()# 5000
+        self.parameters["bandPassFilter"] = None
+        self.parameters["timeWindow"] = self.ui.windowingWindowSize.value()
+        self.parameters["number_of_windows"] = self.ui.windowingQuantity.value()
+        self.parameters["boundedExtended"] = None
 
-        self.impulseResponse3DButton.clicked.connect(self._plotIR3D)
-        self._loadSignalsButton.clicked.connect(self._showLoadSignalsDialog)
-        self.spectrogramPlotButton.clicked.connect(self.showSpectogram)
-        self.filterFrequencyResponsePlotButton.clicked.connect(self.showLowPassFilteringResponse)
-        self.filterFrequencyResponseWithStarsPlotButton.clicked.connect(self.showSignalWithStarts)
-        self.show()
+    def addList(self):
+        rowPosition = self.ui.listMeasurements.rowCount()
+        self.ui.listMeasurements.insertRow(rowPosition)
+        self.ui.listMeasurements.setItem(rowPosition, 0, QtGui.QTableWidgetItem("Nameless"))
+        self.ui.listMeasurements.setItem(rowPosition, 1, QtGui.QTableWidgetItem(str(datetime.now())[:19 ]))
+        self.ui.listMeasurements.setItem(rowPosition, 2, QtGui.QTableWidgetItem(str(self.fileName)))
+        self.measurements.append(dict(self.calc))
 
-        self.audio = None
+    def delItem(self):
+        self.ui.listMeasurements.removeRow(self.ui.listMeasurements.currentRow())
 
-    def _showLoadSignalsDialog(self):
-        fileName = QtGui.QFileDialog.getOpenFileNames(self, ("Open File"), "/home/", ("Wav Files (*.wav)"))
+    def delAllItems(self):
+        self.ui.listMeasurements.clear();
+        self.ui.listMeasurements.setRowCount(0);
 
-        if fileName[0] != []:
-            [self.audio, self.fs] = self.dataProcceser.load_wavefile(fileName[0][0])
-            self.time = self.generate_time(self.fs,self.audio)
-            self.audio_filtered = self.dataProcceser.low_filtering(self.audio, self.fs)
-            min_value,max_value =self.dataProcceser.get_min_max(self.audio_filtered)
-            self.audio_filtered_norm = np.matrix([self.dataProcceser.normalizer(np.array(self.audio_filtered[channel, :])[0], min_value,max_value) for channel in range(4)])
-            self.intensity = self.dataProcceser.pressure_to_intensity(self.audio_filtered)
-            [self.intensity_windows, self.az_el_windows, self.i_db] = self.dataProcceser.temporal_windowing(self.intensity, self.fs)
-            self.index_of_peaks = self.dataProcceser.window_selector(self.i_db, self.fs)
-            self.normalizado = self.dataProcceser.normalizer(self.i_db[0, self.index_of_peaks])
-            self.widMatplot.plot(self.audio, self.fs, "Audio")
+    def selectMeasurement(self):
+        row = self.ui.listMeasurements.currentRow()
+        self.calc=self.measurements[row]
+        self.plotWidget.ploter(self)
 
-    def _plotIR3D(self):
-        self.widMatplot.ploter3d(self.normalizado, self.az_el_windows[:, self.index_of_peaks],self.time[self.index_of_peaks])
+    def calculate(self):
+        if self.fileName[0] != []:
+            self.get_parameters()
+            self.ui.progressBar.setValue(8)
+            self.calc["data"] = self.dataProcceser.truncate_value(self.calc["data"],self.calc["fs"])
+            self.ui.progressBar.setValue(10)
+            self.calc["audio_filtered"] = self.dataProcceser.low_filtering(self.calc["data"], self.calc["fs"])
+            min_value, max_value = self.dataProcceser.get_min_max(self.calc["audio_filtered"])
+            self.ui.progressBar.setValue(15)
+            self.calc["audio_filtered_norm"] = np.matrix([self.dataProcceser.normalizer(np.array(self.calc["audio_filtered"][channel, :])[0], min_value, max_value) for channel in range(4)])
+            self.ui.progressBar.setValue(20)
+            self.calc["intensity"] = self.dataProcceser.pressure_to_intensity(self.calc["audio_filtered"])
+            self.ui.progressBar.setValue(25)
+            [self.calc["intensity_windows"], self.calc["az_el_windows"], self.calc["i_db"]] = self.dataProcceser.temporal_windowing(self.calc["intensity"], self.calc["fs"])
+            self.ui.progressBar.setValue(40)
+            self.calc["peaks"] = self.dataProcceser.window_selector(self.calc["i_db"], self.calc["fs"])
+            self.ui.progressBar.setValue(45)
+            self.calc["normalizado"]= self.dataProcceser.normalizer(self.calc["i_db"][0, self.calc["peaks"]])
 
-    def showSpectogram(self):
-        self.widMatplot.plot_spectrogram(self.audio, self.fs)
+            """self.widMatplot.plot(self.audio, self.fs, "Audio")"""
+            self.ui.progressBar.setValue(50)
+            self.plotWidget.ploter(self)
 
-    def showLowPassFilteringResponse(self):
-        self.widMatplot.plotLowFilteredSignals(self.dataProcceser.filterFrequency, self.dataProcceser.filterAmplitudeResponse)
-
-    def showSignalWithStarts(self):
-        # audio_filtered = self.widMatplot.low_filtering(self.audio, False, self.fs)
-        self.widMatplot.plot(self.audio_filtered_norm, self.fs, "Audio with windows",self.index_of_peaks)
-
-    def _setLayout(self):
-        hLayout = QtGui.QHBoxLayout()
-
-        hLayout.addWidget(self._loadSignalsButton)
-        hLayout.addWidget(self.filterFrequencyResponsePlotButton)
-        hLayout.addWidget(self.spectrogramPlotButton)
-        hLayout.addWidget(self.filterFrequencyResponseWithStarsPlotButton)
-        hLayout.addWidget(self.impulseResponse3DButton)
-
-        self.setLayout(QtGui.QGridLayout())
-        self.layout().addLayout(hLayout, 0, 0, 1, 1)
-        self.layout().addWidget(self.widMatplot, 1, 0, 1, 1)
-
-    def generate_time(self,fs,data):
-        return np.arange(0.0, float(len(data.tolist()[0])) / fs, 1.0 / fs)
+            self.addList()
 
 
-if __name__ == '__main__':
+if __name__== "__main__":
     app = QtGui.QApplication(sys.argv)
-    main = MainView()
-    main.show()
+    myapp = MainView()
+    myapp.show()
     sys.exit(app.exec_())
+
+
+
+

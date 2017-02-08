@@ -8,16 +8,19 @@ from detect_peaks import detect_peaks
 
 class DataProcessing(object):
 
-    time_window = 1
-    number_of_windows = 256
-    cutoff_frequency = 5000
-    trucate_value = None
-
-    def __init__(self):
+    def __init__(self,Self):
         super(DataProcessing, self).__init__()
+        self.Self = Self
+        self.refresh_parameters()
 
+    def refresh_parameters(self):
+        self.time_window = self.Self .parameters["timeWindow"] #1
+        self.number_of_windows = self.Self .parameters["number_of_windows"] #256
+        self.cutoff_frequency = self.Self .parameters["cutoff_frequency"] #5000
+        self.value2truncate = self.Self.parameters["value2truncate"] #None
 
     def low_filtering(self, data, fs=44100):
+        self.refresh_parameters()
         cutoff = self.cutoff_frequency  # desired cutoff frequency of the filter, Hz
         cutoff_w = cutoff * (2 * math.pi)
         fs_w = fs * (2 * math.pi)
@@ -42,6 +45,7 @@ class DataProcessing(object):
          :param pressure: Matriz (4x4: w,x,y,z)
          :return intensidad: Matriz(4x4: I,Ix,Iy,Iz)
          """
+        self.refresh_parameters()
 
         Ix = numpy.array(pressure[0, :]) * numpy.array(pressure[1, :])
         Iy = numpy.array(pressure[0, :]) * numpy.array(pressure[2, :])
@@ -56,7 +60,9 @@ class DataProcessing(object):
             :return intensity_windows: 4 x cantidad_de_ventanas matrices con los valores de cada ventana
             :return az_el_windows: 2 x cantidad_de_ventanas matrices con los valores de cada ventana
         """
-        n_window_frames = self.time_window * fs / 1000
+        self.refresh_parameters()
+
+        n_window_frames = int(self.time_window * fs / 1000)
         window_numbers = range(n_window_frames / 2, len(data.tolist()[0]) - n_window_frames / 2)
         intensity_windows = numpy.zeros(shape=(4, len(data.tolist()[0])))
         az_el_windows = numpy.zeros(shape=(2, len(data.tolist()[0])))
@@ -76,16 +82,22 @@ class DataProcessing(object):
         :param file_name: ruta del archivo de audio
         :return audio,fs: matriz(4x4) de los canales de audio, frecuencia de sampleo
         """
+        self.refresh_parameters()
 
         fs, data = wavfile.read(file_name)
         audio = numpy.matrix(data)
-        if self.trucate_value:
-            trucate_value_samples = self.trucate_value * fs
-            audio = audio[:, trucate_value_samples]
+        self.truncate_value(audio,fs)
         audio = audio.astype(numpy.float64)
         maximum = float(audio.max())
         audio = audio.getT() / maximum
         return [audio, fs]
+
+    def truncate_value(self,audio,fs):
+        self.refresh_parameters()
+        if self.value2truncate:
+            trucate_value_samples = int(self.value2truncate * fs /1000)
+            audio = audio[:,:trucate_value_samples]
+        return audio
 
     def lin2db(self, array):
         value_dB = []
@@ -96,8 +108,11 @@ class DataProcessing(object):
             else:
                 value_dB.append(0)
         return value_dB
+        self.refresh_parameters()
 
     def window_selector(self, data, fs):
+        self.refresh_parameters()
+
         possible_direct = detect_peaks(data[0, :], mph=.9)
         direct = possible_direct[numpy.argmax(data[0,possible_direct])]  # max value of the all possible direct
         index_of_peaks = detect_peaks(data[0, direct:], mph=-300, mpd=self.time_window * fs / 2000) + direct - 1
@@ -108,6 +123,8 @@ class DataProcessing(object):
         return index_of_peaks
 
     def normalizer(self, values, min_value=None, max_value=None):
+        self.refresh_parameters()
+
         if min_value or max_value:
             max_value = max_value - min_value
         else:
@@ -117,6 +134,14 @@ class DataProcessing(object):
         return values_normalized
 
     def get_min_max(self, values):
+        self.refresh_parameters()
+
         min_value = numpy.amin(numpy.absolute(numpy.array(values)))
         max_value = numpy.amax(numpy.absolute(numpy.array(values)))
         return min_value,max_value
+
+
+    def generate_time(self, fs, data):
+        self.refresh_parameters()
+
+        return numpy.arange(0.0, float(len(data.tolist()[0])) / fs, 1.0 / fs)
