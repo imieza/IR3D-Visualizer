@@ -1,0 +1,143 @@
+import os
+os.environ['ETS_TOOLKIT'] = 'qt4'
+os.environ['QT_API'] = 'pyqt'
+
+import sip
+sip.setapi('QString', 2)
+
+import matplotlib.pyplot as plt
+import numpy as np
+from mayavi import mlab
+from tvtk.api import tvtk
+
+from traits.api import HasTraits, Instance, on_trait_change
+from mayavi.core.ui.api import MayaviScene, MlabSceneModel, \
+        SceneEditor
+from traitsui.api import View, Item, HSplit, VSplit, InstanceEditor
+
+from PyQt4 import QtCore, QtGui
+
+from traitsui.api import Handler
+
+# pipe vtk output errors to file
+import vtk
+errOut = vtk.vtkFileOutputWindow()
+errOut.SetFileName("VTK Error Out.txt")
+vtkStdErrOut = vtk.vtkOutputWindow()
+vtkStdErrOut.SetInstance(errOut)
+
+class Visualization(HasTraits):
+    scene = Instance(MlabSceneModel, ())
+
+    @on_trait_change('scene.activated')
+    def update_plot(self,Self):
+        # This function is called when the view is opened. We don't
+        # populate the scene when the view is not yet open, as some
+        # VTK features require a GLContext.
+        # We can do normal mlab calls on the embedded scene.
+        self.generate_data_mayavi(Self)
+
+    # the layout of the dialog screated
+    view = View(Item('scene', editor=SceneEditor(scene_class=MayaviScene),
+                     height=250, width=300, show_label=False),
+                resizable=True  # We need this to resize with the parent widget
+                )
+
+    def _selection_change(self, old, new):
+        self.trait_property_changed('current_selection', old, new)
+
+    def sph2cart(self, azimuth, elevation, r):
+        x = r * np.cos(elevation) * np.cos(azimuth)
+        y = r * np.cos(elevation) * np.sin(azimuth)
+        z = r * np.sin(elevation)
+        return x, y, z
+
+    def image_data(self):
+        data = np.random.random((5, 5, 5))
+        i = tvtk.ImageData(spacing=(.5, .5, .5), origin=(-1, -1, -1))
+        i.point_data.scalars = data.ravel()
+        i.point_data.scalars.name = 'scalars'
+        i.dimensions = data.shape
+
+        return i
+
+    def generate_data_mayavi(self,Self):
+
+        if type(Self) is bool:
+            return
+
+        self.scene.mlab.clf()
+
+        i_db = Self.calc["normalizado"]
+        az_el_windows = Self.calc["az_el_windows"][:, Self.calc["peaks"]]
+        time = Self.calc["time"][Self.calc["peaks"]]
+        grilla = False
+
+
+        # Lo cambio a coordenadas polares
+        x, y, z = self.sph2cart(az_el_windows[0], az_el_windows[1], i_db)
+
+        # Creo los valores del origen 0,0,0 para todos los vectores
+        u = v = w = np.zeros(len(x))
+
+
+        # Grilla
+        if grilla:
+            surf = self.scene.mlab.pipeline.surface(self.image_data(), opacity=0)
+            obj3 = self.scene.mlab.pipeline.surface(mlab.pipeline.extract_edges(surf),
+                                                    color=(.1, .1, .1), line_width=.001)
+
+        # Grafico los vectores
+
+
+        obj = self.scene.mlab.quiver3d(u[1:], v[1:], w[1:], x[1:], y[1:], z[1:], scalars=time[1:], scale_mode="vector",
+                            mode="2ddash",
+                            line_width=2)
+
+        obj2 = self.scene.mlab.quiver3d(u[0], v[0], w[0], x[0], y[0], z[0], scalars=time[0], scale_mode="vector", mode="2ddash",
+                                 line_width=10)
+
+
+        obj.module_manager.scalar_lut_manager.reverse_lut = True
+        obj2.module_manager.scalar_lut_manager.reverse_lut = True
+        self.scene.background = (0,0,0)
+        obj.glyph.color_mode = 'color_by_scalar'
+        obj2.glyph.color_mode = 'color_by_scalar'
+
+        obj.module_manager.scalar_lut_manager.show_scalar_bar = True
+        obj.module_manager.scalar_lut_manager.scalar_bar.orientation = 'vertical'
+        obj.module_manager.scalar_lut_manager.scalar_bar.label_text_property.color = (1,1,1)
+        obj.module_manager.scalar_lut_manager.scalar_bar.title_text_property.color = (0,0,0)
+        # Agrego el colorbar, los ejes, y el cuadrado
+        #vista = self.scene.mlab.view( azimuth=0, elevation=0)
+        #imgmap = self.scene.mlab.screenshot(mode='rgba', antialiased=True)
+        #plt.imsave(arr=imgmap, fname="foo.png")
+        vista = self.scene.mlab.view( azimuth=90, elevation=45)
+
+        self.scene.mlab.outline(obj)
+        self.scene.mlab.axes()
+
+
+class MayaviQWidget(QtGui.QWidget):
+    def __init__(self, parent=None):
+        QtGui.QWidget.__init__(self, parent)
+        layout = QtGui.QVBoxLayout(self)
+        layout.setContentsMargins(0,0,0,0)
+        layout.setSpacing(0)
+        self.visualization = Visualization()
+
+        # If you want to debug, beware that you need to remove the Qt
+        # input hook.
+        #QtCore.pyqtRemoveInputHook()
+        #import pdb ; pdb.set_trace()
+        #QtCore.pyqtRestoreInputHook()
+
+        # The edit_traits call will generate the widget to embed.
+        self.ui = self.visualization.edit_traits(parent=self,
+                                                 kind='subpanel').control
+
+        layout.addWidget(self.ui)
+        self.ui.setParent(self)
+
+    def update_plot(self,Self):
+        self.visualization.update_plot(Self)

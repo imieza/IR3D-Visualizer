@@ -1,4 +1,6 @@
 import sys
+from MayaviQWidget import MayaviQWidget
+
 from interface import *
 from PyQt4.QtGui import *
 import matplotlib.pyplot as plt
@@ -13,6 +15,13 @@ class MainView(QtGui.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.plotWidget = PlotWidget()
+
+        #Mayavi Widget
+        widget = self.ui.widget3d
+        layout = QtGui.QGridLayout(widget)
+        self.mayavi_widget = MayaviQWidget(self)
+        layout.addWidget(self.mayavi_widget, 1, 1)
+
         self.measurements = []
         self.get_parameters()
         self.dataProcceser = DataProcessing(self)
@@ -85,6 +94,7 @@ class MainView(QtGui.QMainWindow):
             """self.widMatplot.plot(self.audio, self.fs, "Audio")"""
             self.ui.progressBar.setValue(50)
             self.plotWidget.ploter(self)
+            self.mayavi_widget.update_plot(self)
 
             self.addList()
 
