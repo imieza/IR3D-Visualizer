@@ -3,11 +3,15 @@ from MayaviQWidget import MayaviQWidget
 
 from interface import *
 from PyQt4.QtGui import *
+from PyQt4.QtCore import SIGNAL
 import matplotlib.pyplot as plt
 import numpy as np
 from plotWidget import PlotWidget
 from dataProcessing import DataProcessing
 from datetime import datetime
+from pymouse import PyMouse
+from matplotlib.backends.backend_qt4 import NavigationToolbar2QT as NavigationToolbar
+
 
 class MainView(QtGui.QMainWindow):
     def __init__(self):
@@ -16,12 +20,17 @@ class MainView(QtGui.QMainWindow):
         self.ui.setupUi(self)
         self.plotWidget = PlotWidget()
 
-        #Mayavi Widget
+        # Adding toolbar
+        self.add1DToolBars()
+
+        # Adding Mayavi Widget
         widget = self.ui.widget3d
         layout = QtGui.QGridLayout(widget)
         self.mayavi_widget = MayaviQWidget(self)
         layout.addWidget(self.mayavi_widget, 1, 1)
 
+        # Initial values
+        self.numberMeasurement = 0 #Number of measurement calculated
         self.measurements = []
         self.get_parameters()
         self.dataProcceser = DataProcessing(self)
@@ -31,7 +40,30 @@ class MainView(QtGui.QMainWindow):
         self.ui.btnSelect.clicked.connect(self.selectMeasurement)
         self.ui.btnDelete.clicked.connect(self.delItem)
         self.ui.btnDeleteAll.clicked.connect(self.delAllItems)
+        self.ui.btnLocate.clicked.connect(self.locate)
+
         self.connect(self.ui.actionNew_project, QtCore.SIGNAL("triggered()"), self.openFile)
+        self.connect(self.ui.actionImport_Floorplan, QtCore.SIGNAL("triggered()"), self.openFileFloorplan)
+
+    def add1DToolBars(self):
+
+        navi_toolbarPressure = NavigationToolbar(self.ui.plotPressure, self.ui.tabPressureLevel)
+        self.ui.tabLayoutPressureLevel.addWidget(navi_toolbarPressure)
+
+        navi_toolbarIntensity = NavigationToolbar(self.ui.plotIntensity, self.ui.tabIntensityLevel)
+        self.ui.tabLayoutIntensityLevel.addWidget(navi_toolbarIntensity)
+
+        navi_toolbarWindow = NavigationToolbar(self.ui.plotWindowLevel, self.ui.tabWindowLevel)
+        self.ui.tabLayoutLevel.addWidget(navi_toolbarWindow)
+
+        navi_toolbarFilter = NavigationToolbar(self.ui.plotFilter, self.ui.tabFilter)
+        self.ui.tabLayoutFilter.addWidget(navi_toolbarFilter)
+
+        navi_toolbarSpectrogram = NavigationToolbar(self.ui.plotSpectrogram, self.ui.tabSpectrogram)
+        self.ui.tabLayoutSpectrogram.addWidget(navi_toolbarSpectrogram)
+
+        navi_toolbarFloorplan = NavigationToolbar(self.ui.plotFloorplan, self.ui.tabFloorplan)
+        self.ui.tabLayoutFloorplan.addWidget(navi_toolbarFloorplan)
 
     def openFile(self):
         self.calc = {}
@@ -41,7 +73,15 @@ class MainView(QtGui.QMainWindow):
         [self.calc["data"], self.calc["fs"]] = self.dataProcceser.load_wavefile(self.fileName)
         self.calc["time"] = self.dataProcceser.generate_time(self.calc["fs"], self.calc["data"])
         self.ui.audioCutter.setValue(self.calc["time"][len(self.calc["time"])-1]*1000)
+        self.numberMeasurement = self.numberMeasurement+1
+        self.calc["name"] = "IR_" + str(self.numberMeasurement)
         self.calculate()
+        self.addList()
+
+    def openFileFloorplan(self):
+        fileName = QtGui.QFileDialog.getOpenFileNames(None,("Open Image File"), "/home/", ("Image Files (*.png)"))
+        self.floorplanFile = fileName[0]
+        self.plotWidget.plotFloorplan(self)
 
     def get_parameters(self):
         self.parameters = {}
@@ -55,7 +95,7 @@ class MainView(QtGui.QMainWindow):
     def addList(self):
         rowPosition = self.ui.listMeasurements.rowCount()
         self.ui.listMeasurements.insertRow(rowPosition)
-        self.ui.listMeasurements.setItem(rowPosition, 0, QtGui.QTableWidgetItem("Nameless"))
+        self.ui.listMeasurements.setItem(rowPosition, 0, QtGui.QTableWidgetItem(self.calc["name"]))
         self.ui.listMeasurements.setItem(rowPosition, 1, QtGui.QTableWidgetItem(str(datetime.now())[:19 ]))
         self.ui.listMeasurements.setItem(rowPosition, 2, QtGui.QTableWidgetItem(str(self.fileName)))
         self.measurements.append(dict(self.calc))
@@ -94,10 +134,21 @@ class MainView(QtGui.QMainWindow):
             """self.widMatplot.plot(self.audio, self.fs, "Audio")"""
             self.ui.progressBar.setValue(50)
             self.plotWidget.ploter(self)
-            self.mayavi_widget.update_plot(self)
 
-            self.addList()
+    def locate(self):
+        #QApplication.OverrideCursor()
+        self.eventClickLocate = self.ui.plotFloorplan.figure.canvas.mpl_connect('button_press_event', self.clickLocate)
 
+    def clickLocate(self, event):
+
+        if event.inaxes is not None:
+            positionLocate = event.xdata, event.ydata
+
+            row = self.ui.listMeasurements.currentRow()
+            self.measurements[row]["location"]=positionLocate
+
+        self.ui.plotFloorplan.figure.canvas.mpl_disconnect(self.eventClickLocate)
+        self.plotWidget.plotFloorplan(self)
 
 if __name__== "__main__":
     app = QtGui.QApplication(sys.argv)

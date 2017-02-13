@@ -112,6 +112,7 @@ class Visualization(HasTraits):
         #vista = self.scene.mlab.view( azimuth=0, elevation=0)
         #imgmap = self.scene.mlab.screenshot(mode='rgba', antialiased=True)
         #plt.imsave(arr=imgmap, fname="foo.png")
+        vista = self.scene.mlab.view( azimuth=90, elevation=45)
 
         self.scene.mlab.outline(obj)
         self.scene.mlab.axes()

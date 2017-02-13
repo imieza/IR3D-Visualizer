@@ -2,7 +2,10 @@ import sys
 from interface import *
 from PyQt4 import QtGui
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
+from PIL import Image
+
 from mayavi import mlab
 from tvtk.api import tvtk
 
@@ -70,8 +73,8 @@ class PlotWidget():
     def plotSpectrogram(self, Self):
         data = Self.calc["data"]
         fs = Self.calc["fs"]
-
-        Self.ui.plotSpectrogram.figure.clear()
+        figureWidget = Self.ui.plotSpectrogram
+        figureWidget.figure.clear()
 
         title = ["W Spectrogram", "X Spectrogram", "Y Spectrogram", "Z Spectrogram"]
         NFFT = 2048
@@ -86,32 +89,54 @@ class PlotWidget():
                 else:
                     x[index] = (x[index])
 
-            ax = Self.ui.plotSpectrogram.figure.add_subplot(411 + channel)
+            ax = figureWidget.figure.add_subplot(411 + channel)
             plt.title(title[channel])
             plt.subplots_adjust(hspace=1)
             Pxx, freqs, bins, im = ax.specgram(x, NFFT=NFFT, Fs=fs, noverlap=10)
 
-        Self.ui.plotSpectrogram.draw()
+        figureWidget.draw()
 
     def plotFilter(self,Self):
 
         filterFrequency = Self.dataProcceser.filterFrequency
         filterAmplitudeResponse=Self.dataProcceser.filterAmplitudeResponse
 
-        Self.ui.plotFilter.figure = plt.figure()
-        Self.ui.plotFilter.figure.add_subplot(111)
-        plt.semilogx(filterFrequency, 20 * np.log10(abs(filterAmplitudeResponse)))
+        figureWidget = Self.ui.plotFilter
+        figureWidget.figure.clear()
+        ax = figureWidget.figure.add_subplot(111)
+        ax.semilogx(filterFrequency, 20 * np.log10(abs(filterAmplitudeResponse)))
         plt.title('Respuesta en frecuencia de fitro pasa-bajos Butterworth')
         plt.xlabel('Frecuencia [Radianes / segundo]')
         plt.ylabel('Amplitud [dB]')
         plt.margins(0, 0.1)
         plt.grid(which='both', axis='both')
         plt.axvline(100, color='green')  # cutoff frequency
-        plt.draw()
+        figureWidget.draw()
 
+    def plotFloorplan(self,Self):
+        figureWidget = Self.ui.plotFloorplan
+        figureWidget.figure.clear()
+        ax = figureWidget.figure.add_subplot(111)
 
-    def plotIR3D(self,Self):
-        m = Mayavi(Self)
+        FloorplanImage = plt.imread(Self.floorplanFile)
+        ax.imshow(FloorplanImage)
+        xmin, xmax = ax.get_xlim()
+        ymin, ymax = ax.get_ylim()
+
+        for num in range(Self.ui.listMeasurements.rowCount()):
+            try:
+                Self.measurements[num]["location"]
+                [xcenter,ycenter] = Self.measurements[num]["location"]
+                size = 100
+                extent = xcenter-size, xcenter+size, ycenter-size, ycenter+size
+                ir3dImage = plt.imread("images/floorplan_"+Self.measurements[num]["name"]+".png")
+                ax.imshow(ir3dImage,extent=extent)
+            except:
+                pass
+        ax.set_xlim([xmin,xmax])
+        ax.set_ylim([ymin,ymax])
+
+        figureWidget.draw()
 
     def ploter(self,Self):
         self.plot1D(Self,Self.ui.plotPressure,Self.ui.tabLayoutPressureLevel,Self.calc["data"],False)
@@ -123,6 +148,10 @@ class PlotWidget():
         self.plotFilter(Self)
         Self.ui.progressBar.setValue(70)
         self.plotSpectrogram(Self)
+        Self.ui.progressBar.setValue(80)
+        Self.mayavi_widget.update_plot(Self)
         Self.ui.progressBar.setValue(100)
+
+
 
 

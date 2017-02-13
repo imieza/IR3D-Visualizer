@@ -47,7 +47,7 @@
        <string/>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>3</number>
       </property>
       <property name="documentMode">
        <bool>true</bool>
@@ -59,8 +59,8 @@
        <attribute name="title">
         <string>Pressure Level</string>
        </attribute>
-       <layout class="QGridLayout" name="tabLayoutPressureLevel">
-        <item row="0" column="0">
+       <layout class="QVBoxLayout" name="tabLayoutPressureLevel">
+        <item>
          <widget class="MatplotlibWidget" name="plotPressure"/>
         </item>
        </layout>
@@ -95,7 +95,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabSpectogram">
+      <widget class="QWidget" name="tabSpectrogram">
        <attribute name="title">
         <string>Spectrogram</string>
        </attribute>
@@ -109,7 +109,7 @@
        <attribute name="title">
         <string>Floorplan</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_3">
+       <layout class="QGridLayout" name="tabLayoutFloorplan">
         <item row="0" column="0">
          <widget class="MatplotlibWidget" name="plotFloorplan"/>
         </item>
@@ -134,6 +134,7 @@
     </property>
     <addaction name="actionNew_project"/>
     <addaction name="actionImport_Measurement"/>
+    <addaction name="actionImport_Floorplan"/>
    </widget>
    <widget class="QMenu" name="menuProcessing">
     <property name="title">
@@ -1236,6 +1237,11 @@
      <weight>50</weight>
      <bold>false</bold>
     </font>
+   </property>
+  </action>
+  <action name="actionImport_Floorplan">
+   <property name="text">
+    <string>Import Floorplan</string>
    </property>
   </action>
  </widget>
