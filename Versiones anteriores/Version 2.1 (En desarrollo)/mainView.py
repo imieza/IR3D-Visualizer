@@ -130,8 +130,9 @@ class MainView(QtGui.QMainWindow):
             self.calc["peaks"] = self.dataProcceser.window_selector(self.calc["i_db"], self.calc["fs"])
             self.ui.progressBar.setValue(45)
             self.calc["normalizado"]= self.dataProcceser.normalizer(self.calc["i_db"][0, self.calc["peaks"]])
+            self.calc["center"] = self.dataProcceser.get_center(self.calc["normalizado"])
 
-            """self.widMatplot.plot(self.audio, self.fs, "Audio")"""
+            #self.widMatplot.plot(self.audio, self.fs, "Audio")
             self.ui.progressBar.setValue(50)
             self.plotWidget.ploter(self)
 

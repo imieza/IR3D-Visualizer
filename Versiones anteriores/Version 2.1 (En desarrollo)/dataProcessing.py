@@ -124,7 +124,6 @@ class DataProcessing(object):
 
     def normalizer(self, values, min_value=None, max_value=None):
         self.refresh_parameters()
-
         if min_value or max_value:
             max_value = max_value - min_value
         else:
@@ -135,10 +134,13 @@ class DataProcessing(object):
 
     def get_min_max(self, values):
         self.refresh_parameters()
-
         min_value = numpy.amin(numpy.absolute(numpy.array(values)))
         max_value = numpy.amax(numpy.absolute(numpy.array(values)))
         return min_value,max_value
+
+    def get_center(self,values_normalized):
+
+        pass
 
 
     def generate_time(self, fs, data):
