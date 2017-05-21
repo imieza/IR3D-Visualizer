@@ -47,11 +47,6 @@ class Visualization(HasTraits):
     def _selection_change(self, old, new):
         self.trait_property_changed('current_selection', old, new)
 
-    def sph2cart(self, azimuth, elevation, r):
-        x = r * np.cos(elevation) * np.cos(azimuth)
-        y = r * np.cos(elevation) * np.sin(azimuth)
-        z = r * np.sin(elevation)
-        return x, y, z
 
     def image_data(self):
         data = np.random.random((5, 5, 5))
@@ -69,14 +64,10 @@ class Visualization(HasTraits):
 
         self.scene.mlab.clf()
 
-        i_db = Self.calc["normalizado"]
-        az_el_windows = Self.calc["az_el_windows"][:, Self.calc["peaks"]]
         time = Self.calc["time"][Self.calc["peaks"]]
         grilla = False
+        x,y,z=Self.calc['xyz']
 
-
-        # Lo cambio a coordenadas polares
-        x, y, z = self.sph2cart(az_el_windows[0], az_el_windows[1], i_db)
 
         # Creo los valores del origen 0,0,0 para todos los vectores
         u = v = w = np.zeros(len(x))
@@ -91,6 +82,7 @@ class Visualization(HasTraits):
 
 
         obj = self.scene.mlab.quiver3d(u[1:], v[1:], w[1:], x[1:], y[1:], z[1:], scalars=time[1:], scale_mode="vector",
+
                             mode="2ddash",
                             line_width=2)
 
@@ -112,25 +104,27 @@ class Visualization(HasTraits):
         obj.module_manager.scalar_lut_manager.scalar_bar.title_text_property.color = (0,0,0)
         # Agrego el colorbar, los ejes, y el cuadrado
 
-        vista = self.scene.mlab.view( azimuth=90, elevation=45)
+        vista = self.scene.mlab.view( azimuth=0, elevation=180)
 
         self.scene.mlab.outline(obj)
         self.scene.mlab.axes()
 
     def snapshotFloorplan(self,Self):
+        if True:
+            surf = self.scene.mlab.points3d([1,0,-1,0],[0,1,0,-1],[0,0,0,0],scale_factor=.000000000001)
 
+
+        self.scene.mlab.view( azimuth=0, elevation=180)
         mlab.show()
-        vista = self.scene.mlab.view( azimuth=0, elevation=0)
-
 
         imgmap = mlab.screenshot(mode='rgba',antialiased=False)
+
         newpath = os.getcwd() + '/images'
         if not os.path.exists(newpath):
             os.makedirs(newpath)
 
         i = Self.calc["name"]
-        plt.imsave(arr=imgmap, fname="images/floorplan_"+i+".png")
-
+        plt.imsave(arr=imgmap, fname="images/floorplan_" + i + ".png")
 
 class MayaviQWidget(QtGui.QWidget):
     def __init__(self, parent=None):

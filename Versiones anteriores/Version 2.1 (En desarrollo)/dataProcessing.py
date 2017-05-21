@@ -14,13 +14,19 @@ class DataProcessing(object):
         self.refresh_parameters()
 
     def refresh_parameters(self):
-        self.time_window = self.Self .parameters["timeWindow"] #1
-        self.number_of_windows = self.Self .parameters["number_of_windows"] #256
-        self.cutoff_frequency = self.Self .parameters["cutoff_frequency"] #5000
+        self.time_window = self.Self.parameters["timeWindow"] #1
+        self.number_of_windows = self.Self.parameters["number_of_windows"] #256
+        self.cutoff_frequency = self.Self.parameters["cutoff_frequency"] #5000
         self.value2truncate = self.Self.parameters["value2truncate"] #None
+        self.filterFrequency = self.Self.parameters["filterFrequency"] #None
+        self.filterAmplitudeResponse = self.Self.parameters["filterAmplitudeResponse"] #None
+
+
 
     def low_filtering(self, data, fs=44100):
+
         self.refresh_parameters()
+
         cutoff = self.cutoff_frequency  # desired cutoff frequency of the filter, Hz
         cutoff_w = cutoff * (2 * math.pi)
         fs_w = fs * (2 * math.pi)
@@ -32,6 +38,7 @@ class DataProcessing(object):
         a = 1
 
         self.filterFrequency, self.filterAmplitudeResponse = signal.freqz(b)
+
 
         filtered_data_w = signal.filtfilt(b, a, data[0].tolist())[0]
         filtered_data_x = signal.filtfilt(b, a, data[1].tolist())[0]
@@ -76,7 +83,6 @@ class DataProcessing(object):
         i_db[0, :] = self.lin2db(intensity_windows[0, :])
         i_db = i_db / i_db.max()
         return intensity_windows, az_el_windows, i_db
-
     def load_wavefile(self, file_name):
         """Function that returns an array of each channel, requiered: from scipy.io import wavfile
         :param file_name: ruta del archivo de audio
@@ -138,12 +144,19 @@ class DataProcessing(object):
         max_value = numpy.amax(numpy.absolute(numpy.array(values)))
         return min_value,max_value
 
-    def get_center(self,values_normalized):
+    def sph2cart(self, az_el_windows, peaks, r):
+        [elevation,azimuth] = az_el_windows[:, peaks]
+        x = r * numpy.cos(elevation) * numpy.cos(azimuth)
+        y = r * numpy.cos(elevation) * numpy.sin(azimuth)
+        z = r * numpy.sin(elevation)
+        return x, y, z
 
-        pass
+    def get_center(self,xyz):
+        x,y,z=xyz
+
+        return [x.max()/(x.max()- x.min()), y.max()/(y.max()- y.min())]
 
 
     def generate_time(self, fs, data):
         self.refresh_parameters()
-
         return numpy.arange(0.0, float(len(data.tolist()[0])) / fs, 1.0 / fs)

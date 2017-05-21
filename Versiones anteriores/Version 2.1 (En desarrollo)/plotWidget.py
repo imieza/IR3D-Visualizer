@@ -4,6 +4,10 @@ from PyQt4 import QtGui
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
+from scipy import ndimage
+import scipy
+
+
 from PIL import Image
 
 from mayavi import mlab
@@ -31,7 +35,6 @@ from traitsui.api import View, Item, ModelView
 from tvtk.pyface.scene_editor import SceneEditor
 from mayavi.tools.mlab_scene_model import MlabSceneModel
 from mayavi.core.ui.mayavi_scene import MayaviScene
-
 # ========================================================
 
 class PlotWidget():
@@ -120,21 +123,28 @@ class PlotWidget():
 
         FloorplanImage = plt.imread(Self.floorplanFile)
         ax.imshow(FloorplanImage)
-        xmin, xmax = ax.get_xlim()
-        ymin, ymax = ax.get_ylim()
+        ax.set_xlim(ax.get_xlim())
+        ax.set_ylim(ax.get_ylim())
 
         for num in range(Self.ui.listMeasurements.rowCount()):
-            try:
-                Self.measurements[num]["location"]
-                [xcenter,ycenter] = Self.measurements[num]["location"]
-                size = 100
-                extent = xcenter-size, xcenter+size, ycenter-size, ycenter+size
-                ir3dImage = plt.imread("images/floorplan_"+Self.measurements[num]["name"]+".png")
-                ax.imshow(ir3dImage,extent=extent)
-            except:
-                pass
-        ax.set_xlim([xmin,xmax])
-        ax.set_ylim([ymin,ymax])
+            if 'location' in Self.measurements[num]:
+               try:
+
+                   ir3dImage = plt.imread("images/floorplan_"+Self.measurements[num]["name"]+".png")
+                   ir3dImage_rotated = scipy.ndimage.rotate(ir3dImage, Self.ui.rotationAngle.value())
+                   heighImage,widthImage,bpp = np.shape(ir3dImage_rotated)
+                   heighImage=heighImage/5
+                   widthImage=widthImage/5
+
+                   locationX = Self.measurements[num]["location"][0]
+                   locationY = Self.measurements[num]["location"][1]
+
+                   extent = locationX-widthImage, locationX+widthImage, locationY-heighImage, locationY+heighImage
+
+
+                   ax.imshow(ir3dImage_rotated,extent=extent)
+               except (RuntimeError, TypeError, NameError) as err:
+                   print err
 
         figureWidget.draw()
 

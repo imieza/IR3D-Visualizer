@@ -47,7 +47,7 @@
        <string/>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <property name="documentMode">
        <bool>true</bool>
@@ -133,41 +133,23 @@
      <string>FIle</string>
     </property>
     <addaction name="actionNew_project"/>
-    <addaction name="actionImport_Measurement"/>
-    <addaction name="actionImport_Floorplan"/>
-   </widget>
-   <widget class="QMenu" name="menuProcessing">
-    <property name="title">
-     <string>Processing</string>
-    </property>
-    <addaction name="actionA_to_B_convertion"/>
-   </widget>
-   <widget class="QMenu" name="menuConfiguration">
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="title">
-     <string>Configuration</string>
-    </property>
+    <addaction name="actionSave_Project"/>
+    <addaction name="actionOpen_project"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
      <string>View</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuMeasurement">
+   <widget class="QMenu" name="menuImport">
     <property name="title">
-     <string>Measurement</string>
+     <string>Import</string>
     </property>
+    <addaction name="actionImport_Floorplan"/>
+    <addaction name="actionImport_Measurement"/>
    </widget>
    <addaction name="menuFIle"/>
-   <addaction name="menuMeasurement"/>
-   <addaction name="menuProcessing"/>
-   <addaction name="menuConfiguration"/>
+   <addaction name="menuImport"/>
    <addaction name="menuView"/>
   </widget>
   <widget class="QDockWidget" name="dockAudio">
@@ -179,7 +161,7 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>874</width>
+     <width>1042</width>
      <height>338</height>
     </size>
    </property>
@@ -206,672 +188,726 @@
     <number>1</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents">
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <layout class="QVBoxLayout" name="verticalLayout_5">
      <item>
-      <widget class="QGroupBox" name="boxWindowing">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-         <strikeout>false</strikeout>
-         <kerning>true</kerning>
-        </font>
-       </property>
-       <property name="title">
-        <string>Windowing</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="Layout_measurementValues">
+       <item>
+        <widget class="QGroupBox" name="boxWindowing">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <strikeout>false</strikeout>
+           <kerning>true</kerning>
+          </font>
+         </property>
+         <property name="title">
+          <string>Windowing</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QLabel" name="labelWindowSize">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>282</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Window size</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="labelWindowSize">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>282</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Window size</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="windowingWindowSize">
+              <property name="minimumSize">
+               <size>
+                <width>170</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="suffix">
+               <string> ms</string>
+              </property>
+              <property name="maximum">
+               <double>10000.000000000000000</double>
+              </property>
+              <property name="value">
+               <double>1.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="windowingWindowSize">
-            <property name="minimumSize">
-             <size>
-              <width>170</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="suffix">
-             <string> ms</string>
-            </property>
-            <property name="maximum">
-             <double>10000.000000000000000</double>
-            </property>
-            <property name="value">
-             <double>1.000000000000000</double>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="labelQuantity">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Quantity</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="labelQuantity">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Quantity</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="windowingQuantity">
+              <property name="minimumSize">
+               <size>
+                <width>170</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="maximum">
+               <number>9999</number>
+              </property>
+              <property name="value">
+               <number>256</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QSpinBox" name="windowingQuantity">
-            <property name="minimumSize">
-             <size>
-              <width>170</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="maximum">
-             <number>9999</number>
-            </property>
-            <property name="value">
-             <number>256</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLabel" name="labelBounded">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Bounded</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelExtended">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Extended</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QSlider" name="boundedExtended">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string extracomment="sdsadas"/>
-          </property>
-          <property name="statusTip">
-           <string/>
-          </property>
-          <property name="maximum">
-           <number>1</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="boxAudioEditing">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="title">
-        <string>Audio Editing</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
-           <widget class="QLabel" name="labelAudioCutter">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Audio Cutter</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="labelBounded">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Bounded</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelExtended">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Extended</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QDoubleSpinBox" name="audioCutter">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>220</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="mouseTracking">
-             <bool>true</bool>
-            </property>
-            <property name="suffix">
-             <string> ms</string>
-            </property>
-            <property name="decimals">
-             <number>0</number>
-            </property>
-            <property name="maximum">
-             <double>99999.000000000000000</double>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="QLabel" name="lowPassFiltering_2">
+           <widget class="QSlider" name="boundedExtended">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
+            <property name="toolTip">
+             <string extracomment="sdsadas"/>
             </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Low Pass Filtering</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QDoubleSpinBox" name="lowPassFiltering">
-            <property name="minimumSize">
-             <size>
-              <width>220</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="suffix">
-             <string> hz</string>
-            </property>
-            <property name="decimals">
-             <number>0</number>
+            <property name="statusTip">
+             <string/>
             </property>
             <property name="maximum">
-             <double>100000.000000000000000</double>
+             <number>1</number>
             </property>
-            <property name="value">
-             <double>5000.000000000000000</double>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
          </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="boxAudioEditing">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Audio Editing</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QLabel" name="labelBandPassFiltering">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Band Pass Filtering</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="labelAudioCutter">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Audio Cutter</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="audioCutter">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>220</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="mouseTracking">
+               <bool>true</bool>
+              </property>
+              <property name="suffix">
+               <string> ms</string>
+              </property>
+              <property name="decimals">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <double>99999.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QComboBox" name="bandPassFiltering">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>220</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
-             <property name="text">
-              <string>Not applied</string>
-             </property>
+             <widget class="QLabel" name="lowPassFiltering_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Low Pass Filtering</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
             </item>
             <item>
-             <property name="text">
-              <string>Octave Band: 16Hz</string>
-             </property>
+             <widget class="QDoubleSpinBox" name="lowPassFiltering">
+              <property name="minimumSize">
+               <size>
+                <width>220</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="suffix">
+               <string> hz</string>
+              </property>
+              <property name="decimals">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="value">
+               <double>5000.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="labelBandPassFiltering">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Band Pass Filtering</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
             </item>
             <item>
-             <property name="text">
-              <string>Octave Band: 31.5Hz</string>
-             </property>
+             <widget class="QComboBox" name="bandPassFiltering">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>220</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>Not applied</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 16Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 31.5Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 63Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 125Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 250Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 1000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 2000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 4000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 8000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Octave Band: 16000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 12.5Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 16Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 20Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 25Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 31.5Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 40Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 50Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 63Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 80Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 100Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 125Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 160Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 200Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 250Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 315Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 400Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 630Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 800Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 1000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 1250Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 1600Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 2000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 2500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 3150Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 4000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 5000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 6300Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 8000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 10000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 12500Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 16000Hz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1/3 Octave Band: 20000Hz</string>
+               </property>
+              </item>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 63Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 125Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 250Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 500Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 1000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 2000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 4000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 8000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Octave Band: 16000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 12.5Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 16Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 20Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 25Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 31.5Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 40Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 50Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 63Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 80Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 100Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 125Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 160Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 200Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 250Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 315Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 400Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 500Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 630Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 800Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 1000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 1250Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 1600Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 2000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 2500Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 3150Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 4000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 5000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 6300Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 8000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 10000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 12500Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 16000Hz</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3 Octave Band: 20000Hz</string>
-             </property>
-            </item>
-           </widget>
+           </layout>
           </item>
          </layout>
-        </item>
-       </layout>
-      </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="recalculateAndProgressBar">
+       <item>
+        <widget class="QPushButton" name="btnRecalculate">
+         <property name="minimumSize">
+          <size>
+           <width>160</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::DefaultContextMenu</enum>
+         </property>
+         <property name="text">
+          <string>RECALCULATE</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressBar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="value">
+          <number>24</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
@@ -886,7 +922,7 @@
    <property name="minimumSize">
     <size>
      <width>876</width>
-     <height>340</height>
+     <height>652</height>
     </size>
    </property>
    <property name="font">
@@ -907,100 +943,7 @@
    </attribute>
    <widget class="QWidget" name="layoutHorizontalMeasurements">
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
-      <widget class="QGroupBox" name="boxMeasurementBtn">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>840</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="title">
-        <string/>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_7">
-        <item>
-         <widget class="QPushButton" name="btnSelect">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="contextMenuPolicy">
-           <enum>Qt::DefaultContextMenu</enum>
-          </property>
-          <property name="text">
-           <string>Select</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btnLocate">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Locate</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btnDelete">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="contextMenuPolicy">
-           <enum>Qt::DefaultContextMenu</enum>
-          </property>
-          <property name="text">
-           <string>Delete</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="btnDeleteAll">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="contextMenuPolicy">
-           <enum>Qt::DefaultContextMenu</enum>
-          </property>
-          <property name="text">
-           <string>Delete all</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item row="1" column="0">
+     <item row="3" column="0">
       <widget class="QTableWidget" name="listMeasurements">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -1034,152 +977,241 @@
        </column>
       </widget>
      </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="dockView">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>1204</width>
-     <height>131</height>
-    </size>
-   </property>
-   <property name="floating">
-    <bool>false</bool>
-   </property>
-   <property name="windowTitle">
-    <string>2D Visualization</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>8</number>
-   </attribute>
-   <widget class="QWidget" name="layoutGridView">
-    <layout class="QGridLayout" name="gridLayout_4">
-     <item row="0" column="0">
-      <widget class="QProgressBar" name="progressBar">
+     <item row="2" column="0">
+      <widget class="QGroupBox" name="boxMeasurementBtn">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>0</width>
-         <height>25</height>
+         <width>840</width>
+         <height>0</height>
         </size>
        </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
+       <property name="title">
+        <string/>
        </property>
-       <property name="value">
-        <number>24</number>
-       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="group_measurementManager">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QPushButton" name="btnDelete">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
+             <property name="text">
+              <string>Delete</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnDeleteAll">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
+             <property name="text">
+              <string>Delete all</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="group_locate">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QPushButton" name="btnSelect">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::DefaultContextMenu</enum>
+             </property>
+             <property name="text">
+              <string>Select</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnLocate">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Locate</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="group_angle">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>150</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <layout class="QGridLayout" name="layout_dial">
+             <item row="0" column="0">
+              <widget class="QDial" name="dialAngle">
+               <property name="minimumSize">
+                <size>
+                 <width>120</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>120</width>
+                 <height>120</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>OpenHandCursor</cursorShape>
+               </property>
+               <property name="maximum">
+                <number>359</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
+               </property>
+               <property name="value">
+                <number>0</number>
+               </property>
+               <property name="sliderPosition">
+                <number>0</number>
+               </property>
+               <property name="tracking">
+                <bool>true</bool>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="invertedAppearance">
+                <bool>false</bool>
+               </property>
+               <property name="invertedControls">
+                <bool>false</bool>
+               </property>
+               <property name="wrapping">
+                <bool>true</bool>
+               </property>
+               <property name="notchTarget">
+                <double>10.000000000000000</double>
+               </property>
+               <property name="notchesVisible">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="rotationAngle">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>120</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>120</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>120</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="maximum">
+              <number>360</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
-     </item>
-     <item row="0" column="4">
-      <widget class="QPushButton" name="btnRecalculate">
-       <property name="minimumSize">
-        <size>
-         <width>160</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::DefaultContextMenu</enum>
-       </property>
-       <property name="text">
-        <string>RECALCULATE</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <layout class="QHBoxLayout" name="layoutXScale">
-       <item>
-        <widget class="QLabel" name="labelXScale">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>X Scale</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="xScale">
-         <property name="minimumSize">
-          <size>
-           <width>120</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="1">
-      <widget class="QCheckBox" name="showDetection">
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Show detections</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <layout class="QHBoxLayout" name="layoutYScale">
-       <item>
-        <widget class="QLabel" name="labelYScale">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Y Scale</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="yScale">
-         <property name="minimumSize">
-          <size>
-           <width>120</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-      </layout>
      </item>
     </layout>
    </widget>
@@ -1211,7 +1243,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>9</pointsize>
      <weight>50</weight>
      <bold>false</bold>
     </font>
@@ -1223,7 +1255,9 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>9</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
   </action>
@@ -1244,6 +1278,21 @@
     <string>Import Floorplan</string>
    </property>
   </action>
+  <action name="actionOpen_project">
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionSave_Project">
+   <property name="text">
+    <string>Save Project</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -1254,4 +1303,7 @@
  </customwidgets>
  <resources/>
  <connections/>
+ <slots>
+  <slot>value()</slot>
+ </slots>
 </ui>

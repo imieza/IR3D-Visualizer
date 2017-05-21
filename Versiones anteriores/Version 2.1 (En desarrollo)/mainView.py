@@ -1,5 +1,8 @@
 import sys
 from MayaviQWidget import MayaviQWidget
+import sqlite3
+import math
+from scipy import signal
 
 from interface import *
 from PyQt4.QtGui import *
@@ -29,12 +32,7 @@ class MainView(QtGui.QMainWindow):
         self.mayavi_widget = MayaviQWidget(self)
         layout.addWidget(self.mayavi_widget, 1, 1)
 
-        # Initial values
-        self.numberMeasurement = 0 #Number of measurement calculated
-        self.measurements = []
-        self.get_parameters()
-        self.dataProcceser = DataProcessing(self)
-        self.ui.progressBar.setValue(0)
+        self.set_initial_values()
 
         self.ui.btnRecalculate.clicked.connect(self.calculate)
         self.ui.btnSelect.clicked.connect(self.selectMeasurement)
@@ -42,8 +40,42 @@ class MainView(QtGui.QMainWindow):
         self.ui.btnDeleteAll.clicked.connect(self.delAllItems)
         self.ui.btnLocate.clicked.connect(self.locate)
 
-        self.connect(self.ui.actionNew_project, QtCore.SIGNAL("triggered()"), self.openFile)
+        self.connect(self.ui.actionNew_project, QtCore.SIGNAL("triggered()"), self.new_project)
+        self.connect(self.ui.actionSave_Project, QtCore.SIGNAL("triggered()"), self.save_project)
+        self.connect(self.ui.actionOpen_project, QtCore.SIGNAL("triggered()"), self.open_project)
+        self.connect(self.ui.actionImport_Measurement, QtCore.SIGNAL("triggered()"), self.openFile)
         self.connect(self.ui.actionImport_Floorplan, QtCore.SIGNAL("triggered()"), self.openFileFloorplan)
+
+        # manually connect qdial with qbox (this is because is not possible to set 0 in horizontal-left side)
+        self.connect(self.ui.dialAngle,QtCore.SIGNAL("valueChanged(int)"),self.setValue_Qdial)
+        self.connect(self.ui.rotationAngle,QtCore.SIGNAL("valueChanged(int)"),self.setValue_QBox_from_Qdial)
+        self.rotationAngle_in0()
+
+    def rotationAngle_in0(self):
+        self.ui.dialAngle.setValue(90)
+
+    def setValue_Qdial(self):
+        value_fromQdial = self.ui.dialAngle.value()
+        value = value_fromQdial + 270 if value_fromQdial < 90 else value_fromQdial - 90
+        self.ui.rotationAngle.setValue(value)
+        try:
+            self.plotWidget.plotFloorplan(self)
+        except:
+            print 'You must add a floorplan and calculate'
+
+    def setValue_QBox_from_Qdial(self):
+        value_fromQBox = self.ui.rotationAngle.value()
+        value = value_fromQBox - 270 if value_fromQBox >= 270 else value_fromQBox + 90
+        self.ui.dialAngle.setValue(value)
+
+    def set_initial_values(self):
+        # Initial values
+        self.numberMeasurement = 0  # Number of measurement calculated
+        self.measurements = []
+        self.get_parameters()
+        self.floorplanFile = None
+        self.dataProcceser = DataProcessing(self)
+        self.ui.progressBar.setValue(0)
 
     def add1DToolBars(self):
 
@@ -70,20 +102,24 @@ class MainView(QtGui.QMainWindow):
         fileName = QtGui.QFileDialog.getOpenFileNames(None,("Open File"), "/home/", ("Wav Files (*.wav)"))
         #self.fileName = "C:\Users\W\Documents\IR3D\IR3D-Visualizer\Audios de prueba\stpatricks_s2r2.wav"
         self.fileName = fileName[0]
+        self.calc['filename'] = self.fileName
         [self.calc["data"], self.calc["fs"]] = self.dataProcceser.load_wavefile(self.fileName)
         self.calc["time"] = self.dataProcceser.generate_time(self.calc["fs"], self.calc["data"])
         self.ui.audioCutter.setValue(self.calc["time"][len(self.calc["time"])-1]*1000)
         self.numberMeasurement = self.numberMeasurement+1
         self.calc["name"] = "IR_" + str(self.numberMeasurement)
+        self.calc["parameters"] = self.parameters
         self.calculate()
-        self.addList()
+        self.calc['datetime'] = str(datetime.now())
+        self.addList(self.calc)
+        self.measurements.append(dict(self.calc))
 
     def openFileFloorplan(self):
         fileName = QtGui.QFileDialog.getOpenFileNames(None,("Open Image File"), "/home/", ("Image Files (*.png)"))
         self.floorplanFile = fileName[0]
         self.plotWidget.plotFloorplan(self)
 
-    def get_parameters(self):
+    def get_parameters(self, fs = 44100):
         self.parameters = {}
         self.parameters["value2truncate"] = self.ui.audioCutter.value()
         self.parameters["cutoff_frequency"] = self.ui.lowPassFiltering.value()# 5000
@@ -91,14 +127,53 @@ class MainView(QtGui.QMainWindow):
         self.parameters["timeWindow"] = self.ui.windowingWindowSize.value()
         self.parameters["number_of_windows"] = self.ui.windowingQuantity.value()
         self.parameters["boundedExtended"] = None
+        self.parameters["filterFrequency"],self.parameters["filterAmplitudeResponse"] = self.get_filterData(fs)
 
-    def addList(self):
+    def get_filterData(self, fs=44100):
+
+        cutoff = self.parameters["cutoff_frequency"]  # desired cutoff frequency of the filter, Hz
+        cutoff_w = cutoff * (2 * math.pi)
+        fs_w = fs * (2 * math.pi)
+        nyq = 0.5 * fs_w
+        normal_cutoff = cutoff_w / nyq
+
+        n = 400
+        b = signal.firwin(n, cutoff=normal_cutoff, window="hamming")
+        a = 1
+
+        filterFrequency, filterAmplitudeResponse = signal.freqz(b)
+        return filterFrequency, filterAmplitudeResponse
+
+    def new_project(self):
+        import subprocess
+        np.save('utlimo_proyecto.npy', self.measurements)
+        subprocess.Popen("python" + " mainView.py", shell=True)
+
+    def save_project(self):
+        filename = QtGui.QFileDialog.getSaveFileName(self, "Save file", "", ".npy")
+        np.save(filename, [self.measurements, self.floorplanFile])
+
+    def open_project(self):
+        filename = QtGui.QFileDialog.getOpenFileNames(None, ("Open Project"), "/home/", ("npy Files (*.npy)"))
+        [measurements,floorplanFile] = np.load(filename[0])
+        self.measurements = measurements
+        self.floorplanFile = floorplanFile
+        self.calc = self.measurements[0]
+        self.parameters = self.calc["parameters"]
+        self.plotWidget.ploter(self)
+
+        for measurement in self.measurements:
+            self.addList(measurement)
+
+        if floorplanFile:
+            self.plotWidget.plotFloorplan(self)
+
+    def addList(self,measurement):
         rowPosition = self.ui.listMeasurements.rowCount()
         self.ui.listMeasurements.insertRow(rowPosition)
-        self.ui.listMeasurements.setItem(rowPosition, 0, QtGui.QTableWidgetItem(self.calc["name"]))
-        self.ui.listMeasurements.setItem(rowPosition, 1, QtGui.QTableWidgetItem(str(datetime.now())[:19 ]))
-        self.ui.listMeasurements.setItem(rowPosition, 2, QtGui.QTableWidgetItem(str(self.fileName)))
-        self.measurements.append(dict(self.calc))
+        self.ui.listMeasurements.setItem(rowPosition, 0, QtGui.QTableWidgetItem(measurement["name"]))
+        self.ui.listMeasurements.setItem(rowPosition, 1, QtGui.QTableWidgetItem(str(measurement["datetime"])[:19 ]))
+        self.ui.listMeasurements.setItem(rowPosition, 2, QtGui.QTableWidgetItem(str(measurement["filename"])))
 
     def delItem(self):
         self.ui.listMeasurements.removeRow(self.ui.listMeasurements.currentRow())
@@ -110,11 +185,12 @@ class MainView(QtGui.QMainWindow):
     def selectMeasurement(self):
         row = self.ui.listMeasurements.currentRow()
         self.calc=self.measurements[row]
+        self.parameters = self.calc["parameters"]
         self.plotWidget.ploter(self)
 
     def calculate(self):
         if self.fileName[0] != []:
-            self.get_parameters()
+            self.get_parameters(self.calc["fs"])
             self.ui.progressBar.setValue(8)
             self.calc["data"] = self.dataProcceser.truncate_value(self.calc["data"],self.calc["fs"])
             self.ui.progressBar.setValue(10)
@@ -130,7 +206,8 @@ class MainView(QtGui.QMainWindow):
             self.calc["peaks"] = self.dataProcceser.window_selector(self.calc["i_db"], self.calc["fs"])
             self.ui.progressBar.setValue(45)
             self.calc["normalizado"]= self.dataProcceser.normalizer(self.calc["i_db"][0, self.calc["peaks"]])
-            self.calc["center"] = self.dataProcceser.get_center(self.calc["normalizado"])
+            self.calc['xyz']=self.dataProcceser.sph2cart(self.calc["az_el_windows"],self.calc["peaks"],self.calc["normalizado"])
+            self.calc["center"] = self.dataProcceser.get_center(self.calc["xyz"])
 
             #self.widMatplot.plot(self.audio, self.fs, "Audio")
             self.ui.progressBar.setValue(50)
@@ -146,7 +223,7 @@ class MainView(QtGui.QMainWindow):
             positionLocate = event.xdata, event.ydata
 
             row = self.ui.listMeasurements.currentRow()
-            self.measurements[row]["location"]=positionLocate
+            self.measurements[row]["location"]=list(positionLocate)
 
         self.ui.plotFloorplan.figure.canvas.mpl_disconnect(self.eventClickLocate)
         self.plotWidget.plotFloorplan(self)
