@@ -1,0 +1,4 @@
+ERROR: In C:\u\VTK\Common\Core\vtkLookupTable.cxx, line 144
+vtkLookupTable (18E18A10): Bad table range: [1e+299, -1e+299]
+
+
