@@ -69,22 +69,23 @@ class Visualization(HasTraits):
         # Grafico los vectores
 
         if len(x)>1:
-            obj = self.scene.mlab.quiver3d(u[1:], v[1:], w[1:], x[1:], y[1:],z[1:],
-                                           scalars=time[1:],
+            obj = self.scene.mlab.quiver3d(u, v, w, x, y,z,
+                                           scalars=time,
                                            scale_mode="vector",
                                            mode="2ddash",
                                            line_width=2)
             obj.module_manager.scalar_lut_manager.reverse_lut = True
             obj.glyph.color_mode = 'color_by_scalar'
 
-        obj2 = self.scene.mlab.quiver3d(u[0], v[0], w[0], x[0], y[0], z[0],
-                                        scalars=[0],
-                                        scale_mode="vector",
-                                        mode="2ddash",
-                                        line_width=10)
-
-        obj2.module_manager.scalar_lut_manager.reverse_lut = True
-        obj2.glyph.color_mode = 'color_by_scalar'
+        # obj2 = self.scene.mlab.quiver3d(u[0], v[0], w[0], x[0], y[0], z[0],
+        #                                 scalars=time[0],
+        #                                 scale_mode="vector",
+        #                                 scale_factor=1,
+        #                                 mode="2ddash",
+        #                                 line_width=10)
+        # print "x[0]", x[0]
+        # obj2.module_manager.scalar_lut_manager.reverse_lut = True
+        # obj2.glyph.color_mode = 'color_by_scalar'
 
         self.snapshotFloorplan(Self)
 

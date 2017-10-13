@@ -17,7 +17,7 @@ class PrintInPlotLy(object):
         time = calc["time"][calc["peaks"]]
         x, y, z, c = [], [], [], []
 
-        for index in range(len(X)-2):
+        for index in range(len(X)):
             x += [0,X[index], None]
             y += [0,Y[index], None]
             z += [0,Z[index], None]

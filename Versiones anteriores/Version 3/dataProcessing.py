@@ -4,7 +4,7 @@ import numpy
 from scipy import signal
 from scipy.io import wavfile
 from detect_peaks import detect_peaks
-
+import sys
 
 class DataProcessing(object):
 
@@ -16,29 +16,37 @@ class DataProcessing(object):
     def refresh_parameters(self):
         self.time_window = self.Self.parameters["timeWindow"] #1
         self.number_of_windows = self.Self.parameters["number_of_windows"] #256
-        self.cutoff_frequency = self.Self.parameters["cutoff_frequency"] #5000
+        self.cutoff_frequency_lowpass = self.Self.parameters["cutoff_frequency_lowpass"] #5000
+        self.cutoff_frequency_hipass = self.Self.parameters["cutoff_frequency_hipass"] #5000
         self.value2truncate = self.Self.parameters["value2truncate"] #None
-        self.filterFrequency = self.Self.parameters["filterFrequency"] #None
-        self.filterAmplitudeResponse = self.Self.parameters["filterAmplitudeResponse"] #None
         self.threshold = self.Self.parameters["threshold"]
 
-    def low_filtering(self, data, fs=44100):
-
-        self.refresh_parameters()
-
-        cutoff = self.cutoff_frequency  # desired cutoff frequency of the filter, Hz
-        cutoff_w = cutoff * (2 * math.pi)
+    def filtering(self, data, fs=44100):
         fs_w = fs * (2 * math.pi)
         nyq = 0.5 * fs_w
-        normal_cutoff = cutoff_w / nyq
+        def convertion(cutoff):
+            cutoff_w = cutoff * (2 * math.pi) # desired cutoff frequency of the filter, Hz
+            return cutoff_w / nyq
+
+        self.refresh_parameters()
+        low_pass_active = self.Self.ui.low_pass_active.isChecked()
+        hi_pass_active = self.Self.ui.hi_pass_active.isChecked()
+        low_pass_cutoff = convertion(self.cutoff_frequency_lowpass*1000)
+        hi_pass_cutoff = convertion(1000)
 
         n = 400
-        b = signal.firwin(n, cutoff=normal_cutoff, window="hamming")
-        a = 1
+        if not low_pass_active and not hi_pass_active:
+            return data
+        elif low_pass_active and not hi_pass_active:
+            b = signal.firwin(n, low_pass_cutoff, window="hamming")
+        elif not low_pass_active and hi_pass_active:
+            b = signal.firwin(n+1, hi_pass_cutoff, window="hamming", pass_zero=False)
+        elif low_pass_active and hi_pass_active:
+            b = signal.firwin(n, [hi_pass_cutoff,low_pass_cutoff], window="hamming", pass_zero=False)
 
         self.filterFrequency, self.filterAmplitudeResponse = signal.freqz(b)
 
-
+        a = 1
         filtered_data_w = signal.filtfilt(b, a, data[0].tolist())[0]
         filtered_data_x = signal.filtfilt(b, a, data[1].tolist())[0]
         filtered_data_y = signal.filtfilt(b, a, data[2].tolist())[0]
@@ -72,12 +80,12 @@ class DataProcessing(object):
             sum_z = sum(iz)
             sum_i = (sum_x ** 2 + sum_y ** 2 + sum_z ** 2) ** .5
 
-            intensity_windows[0,from_index] = sum_i
-            intensity_windows[1,from_index] = sum_x
-            intensity_windows[2,from_index] = sum_y
-            intensity_windows[3,from_index] = sum_z
+            intensity_windows[0,window] = sum_i
+            intensity_windows[1,window] = sum_x
+            intensity_windows[2,window] = sum_y
+            intensity_windows[3,window] = sum_z
 
-            az_el_windows[0, from_index], az_el_windows[1, from_index] = self.cart2sph(sum_i, sum_x, sum_y, sum_z)
+            az_el_windows[0, window], az_el_windows[1, window] = self.cart2sph(sum_i, sum_x, sum_y, sum_z)
         i_db = numpy.array(self.lin2db(numpy.array(intensity_windows[0, :])))
         return intensity_windows, intensity_windows, az_el_windows, i_db
 
@@ -111,14 +119,14 @@ class DataProcessing(object):
             from_index = int(window - n_window_frames / 2)
             to_index = int(window + n_window_frames / 2)
             for channel in range(4):
-                intensity_windows[channel, from_index] = data[channel, from_index:to_index].sum()
+                intensity_windows[channel, window] = data[channel, from_index:to_index].sum()
 
-            az_el_windows[0, from_index], \
-            az_el_windows[1, from_index] = self.cart2sph(
-                intensity_windows[0,from_index],
-                intensity_windows[1,from_index],
-                intensity_windows[2,from_index],
-                intensity_windows[3,from_index]
+            az_el_windows[0, window], \
+            az_el_windows[1, window] = self.cart2sph(
+                intensity_windows[0,window],
+                intensity_windows[1,window],
+                intensity_windows[2,window],
+                intensity_windows[3,window]
             )
         i_db = numpy.array(self.lin2db(numpy.array(intensity_windows[0, :])))
         return intensity_windows, az_el_windows, i_db
@@ -129,10 +137,26 @@ class DataProcessing(object):
         :return audio,fs: matriz(4x4) de los canales de audio, frecuencia de sampleo
         """
         self.refresh_parameters()
-
-        fs, data = wavfile.read(file_name, mmap=True)
-        audio = numpy.matrix(data)
-        self.truncate_value(audio,fs)
+        audio = []
+        if len(file_name)==4:
+            audio = [[w, x, y, z] for [w, x, y, z] in zip(
+                wavfile.read(file_name[0], mmap=True)[1],
+                wavfile.read(file_name[1], mmap=True)[1],
+                wavfile.read(file_name[2], mmap=True)[1],
+                wavfile.read(file_name[3], mmap=True)[1],
+            )]
+            fs = wavfile.read(file_name[0], mmap=True)[0]
+            audio = numpy.matrix(audio)
+        elif len(file_name)!=1:
+            sys.stderr.write(
+                'Error: You are selected ' +
+                str(len(file_name)) +
+                'audio files. Please select one multichannel or four mono')
+            return
+        else:
+            fs, data = wavfile.read(file_name[0], mmap=True)
+            audio = numpy.matrix(data)
+        self.truncate_value(audio, fs)
         audio = audio.astype(numpy.float64)
         maximum = float(audio.max())
         audio = audio.getT() / maximum
@@ -145,7 +169,6 @@ class DataProcessing(object):
         if self.value2truncate:
             trucate_value_samples = int(self.value2truncate * fs /1000)
             audio = audio[:,:trucate_value_samples]
-
         return audio
 
     def lin2db(self, array):
@@ -155,31 +178,34 @@ class DataProcessing(object):
         for value in array:
             if value > 0:
                 calc = 96 + 20 * math.log10(value / max_val)
-                values_dB.append(calc) if calc > threshold else values_dB.append(0)
+                values_dB.append(calc) if calc > threshold else values_dB.append(threshold)
             else:
-                values_dB.append(0)
+                values_dB.append(threshold)
         return values_dB
 
     def direct_sound_selector(self, i_db, index_of_peaks, fs):
-        index_of_peaks_7 = numpy.argsort(i_db[index_of_peaks])[::-1][0:7]  # Select the 7 most representative
+        index_of_peaks_7 = numpy.argsort(i_db[index_of_peaks])[::-1][0:(15 if self.Self.parameters["overlapping"] == "Half overlapped" else 100)]  # Select the 25 most representative
         index_of_peaks_7.sort()  # Ordered again
+        index_of_peaks_7 = [index for index in index_of_peaks_7 if i_db[index_of_peaks[index]]>0]
         index_of_direct_peaks = index_of_peaks[index_of_peaks_7[0]:index_of_peaks_7[-1]] if len(index_of_peaks_7)>1 else index_of_peaks_7 # Take all peaks between
         self.Self.calc['directSoundSelection_peaks'] = index_of_direct_peaks
         return index_of_direct_peaks
 
     def window_selector(self, i_db, fs):
         self.refresh_parameters()
-        peaks_positions_4direct = detect_peaks(i_db, mpd=(self.time_window * fs / 2000)) - 1
+        peaks_positions_4direct = detect_peaks(i_db, mpd=(self.time_window * fs / 2000))
         if self.Self.parameters["overlapping"] == "Half overlapped":
             peaks_positions = peaks_positions_4direct
         elif self.Self.parameters["overlapping"] == "Full overlapped":
             peaks_positions = detect_peaks(i_db)
         else:
             peaks_positions = numpy.arange(len(i_db.tolist()))
-        direct_peak_position = self.direct_sound_selector(i_db, peaks_positions_4direct, fs)[self.Self.parameters['directSoundSelection']]
+
+        peaks_4direct = [peak for peak in peaks_positions if peaks_positions_4direct[0] <= peak <= peaks_positions_4direct[-1]]
+        direct_peak_position = self.direct_sound_selector(i_db, peaks_4direct, fs)[self.Self.parameters['directSoundSelection']]
         after_direct_peaks = peaks_positions[peaks_positions>= direct_peak_position]
         # Get the N number_of_windows of highest level
-        output_peaks = after_direct_peaks[numpy.argsort(i_db[after_direct_peaks])][::-1][0:self.number_of_windows - 1]
+        output_peaks = after_direct_peaks[numpy.argsort(i_db[after_direct_peaks])][::-1][0:self.number_of_windows]
         output_peaks.sort()
         #index_of_peaks = numpy.insert(index_of_peaks, 0, index_of_peaks_direct)
         return output_peaks
@@ -187,7 +213,8 @@ class DataProcessing(object):
     def normalizer(self, values):
         min_value = min(values)
         max_value = max(values) - min_value
-        return [(value - min_value)/max_value for value in values] if len(values)>1 else values
+        new_values = [(value - min_value)/max_value for value in values] if len(values)>1 else values
+        return new_values
 
     def get_min_max(self, values):
         self.refresh_parameters()
@@ -196,21 +223,20 @@ class DataProcessing(object):
         return min_value,max_value
 
     def cart2sph(self,r,x,y,z):
-        el = math.atan2(y, x)
-        az = math.atan2(z , math.sqrt(x*x + y*y)) if math.sqrt(x*x + y*y) != 0.0 else math.pi / 2
+        az = math.atan2(y, x)
+        el = math.atan2(z, math.sqrt(x*x + y*y)) if math.sqrt(x*x + y*y) != 0.0 else math.pi / 2
         return az, el
 
     def sph2cart(self, az_el_windows, peaks, r):
         [azimuth, elevation] = az_el_windows[:, peaks]
         x = r * numpy.cos(elevation) * numpy.cos(azimuth)
-        z = r * numpy.cos(elevation) * numpy.sin(azimuth)
-        y = r * numpy.sin(elevation)
+        y = r * numpy.cos(elevation) * numpy.sin(azimuth)
+        z = r * numpy.sin(elevation)
         return x, y, z
 
     def get_center(self,xyz):
         x,y,z=xyz
         return [x.max()/(x.max()- x.min()), y.max()/(y.max()- y.min())]
-
 
     def generate_time(self, fs, data):
         self.refresh_parameters()

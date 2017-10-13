@@ -128,8 +128,8 @@ class PlotWidget():
         figureWidget = self.mainSelf.ui.directSoundSelection
         figureWidget.figure.clear()
         ax = figureWidget.figure.add_subplot(111, axisbg='black', position=[0.16, 0.22, 0.82, .75])
-        length_window = int(self.mainSelf.parameters["timeWindow"] * self.mainSelf.calc["fs"] / 1000)
-        peaks = [range(peak - length_window, peak + length_window) for peak in
+        half_window_length = int(self.mainSelf.parameters["timeWindow"] * self.mainSelf.calc["fs"] / 2000)
+        peaks = [range(peak - half_window_length, peak + half_window_length) for peak in
                  self.mainSelf.calc['directSoundSelection_peaks']]  # Make several intervals of DS
 
         global lines
@@ -138,11 +138,13 @@ class PlotWidget():
         audio = np.array(self.mainSelf.calc['intensity'].tolist()[0])
         time = np.array(self.mainSelf.calc['time'].tolist())
         ax.plot(time, audio, 'w')
-        for peaks_set in peaks:
-            line, = ax.plot(time[peaks_set], audio[peaks_set], 'y', picker=7)
+        ax.plot(time[peaks[selected]], audio[peaks[selected]], 'r')
+        for peak in self.mainSelf.calc['directSoundSelection_peaks']:
+            line, = ax.plot(time[peak], audio[peak], '*b', picker=3)
             lines.append(line)
-        ax.plot(time[peaks[selected]], audio[peaks[selected]], 'r', linewidth=3.0)
-        ax.set_xlim(time[peaks[0][0]] - .02, time[peaks[-1][-1]] + .02)
+        ax.plot(time[self.mainSelf.calc['directSoundSelection_peaks'][selected]],
+                audio[self.mainSelf.calc['directSoundSelection_peaks'][selected]], '*r', linewidth=3)
+        ax.set_xlim(time[peaks[0][0]] - .001, time[peaks[-1][-1]] + .001)
         ax.set_xlabel('Level')
         ax.set_ylabel('Time')
         #subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
