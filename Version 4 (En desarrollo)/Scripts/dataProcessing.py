@@ -1,5 +1,7 @@
 from __future__ import division
 import math
+
+import itertools
 import numpy
 from scipy import signal
 from scipy.io import wavfile
@@ -247,12 +249,12 @@ class DataProcessing(object):
         [audio, fs] = self.load_wavefile(file_name)
         audio = self.truncate_value(audio, fs)
         audio = audio.astype(numpy.float64)
-        if a_format:
-            audio = self.a2b_converter(audio,fs)
-        return audio.getT() / float(audio.max()), fs
+
+        if a_format:audio = self.a2b_converter(audio, fs)
+        else: audio = audio.getT()
+        return audio, fs
 
     def a2b_converter(self, data, fs):
-
         if fs != 44100:
             number_of_samples = (data.size/fs)*44100
             FLU = signal.resample(data[:,0], number_of_samples)
@@ -261,28 +263,26 @@ class DataProcessing(object):
             BRU = signal.resample(data[:,3], number_of_samples)
 
         else:
-            FLU = numpy.asarray(data[:, 0])
-            FRD = numpy.asarray(data[:, 1])
-            BLD = numpy.asarray(data[:, 2])
-            BRU = numpy.asarray(data[:, 3])
+            FLU = numpy.squeeze(numpy.asarray(data[:, 0]))
+            FRD = numpy.squeeze(numpy.asarray(data[:, 1]))
+            BLD = numpy.squeeze(numpy.asarray(data[:, 2]))
+            BRU = numpy.squeeze(numpy.asarray(data[:, 3]))
 
-        data = [FLU + FRD + BLD + BRU,
+        data_b = [FLU + FRD + BLD + BRU,
                 FLU + FRD - BLD - BRU,
                 FLU - FRD + BLD - BRU,
                 FLU + FRD + BLD - BRU]
 
-        size_audio = FLU.size
-        audio = [[w, x, y, z] for [w, x, y, z] in zip(
-            wavfile.read('FiltroW.wav', mmap=True)[1],
-            wavfile.read('FiltroX.wav', mmap=True)[1],
-            wavfile.read('FiltroW.wav', mmap=True)[1],
-            wavfile.read('FiltroY.wav', mmap=True)[1],
-        )]
-        convolve = signal.fftconvolve(audio,data)
+        filters = [
+            numpy.array(wavfile.read('FiltroW.wav', mmap=True)[1]),
+            numpy.array(wavfile.read('FiltroX.wav', mmap=True)[1]),
+            numpy.array(wavfile.read('FiltroW.wav', mmap=True)[1]),
+            numpy.array(wavfile.read('FiltroY.wav', mmap=True)[1]),
+        ]
+        filters_filled = numpy.pad(filters, ((0, 0), (0, int(FLU.size - filters[0].size))),
+                                   mode='constant', constant_values=0)
 
-        # w_b = numpy.real(numpy.fft.ifft(numpy.fft.fft(w, size_audio )*numpy.fft.fft(fw, size_audio)))
-        # x_b = numpy.real(numpy.fft.ifft(numpy.fft.fft(x, size_audio)*numpy.fft.fft(fx, size_audio)))
-        # y_b = numpy.real(numpy.fft.ifft(numpy.fft.fft(y,size_audio)*numpy.fft.fft(fy, size_audio)))
-        # z_b = numpy.real(numpy.fft.ifft(numpy.fft.fft(z, size_audio)*numpy.fft.fft(fz, size_audio)))
-        audio = numpy.asmatrix(numpy.vstack((w_b, x_b, y_b, z_b)))
-        return convolve
+        signal_convolved = [signal.fftconvolve(audio_ch, data_ch)
+                            for audio_ch,data_ch in itertools.izip(filters_filled,data_b)]
+
+        return numpy.asmatrix(numpy.vstack((signal_convolved)))
