@@ -1,0 +1,7 @@
+
+*.xls
+*.pyc
+.idea/vcs.xml
+Audios/
+Proyects/
+Results/

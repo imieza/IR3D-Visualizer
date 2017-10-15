@@ -245,7 +245,7 @@ class DataProcessing(object):
         self.Self.calc['time'] = self.Self.calc['time'] - self.Self.calc['time'][self.Self.calc['peaks'][0]]
 
     def get_audio_bformat(self, file_name):
-        a_format = True
+        a_format = False
         [audio, fs] = self.load_wavefile(file_name)
         audio = self.truncate_value(audio, fs)
         audio = audio.astype(numpy.float64)

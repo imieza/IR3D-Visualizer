@@ -1,4 +1,5 @@
 import sys
+import os
 import warnings
 
 from Plotly import PrintInPlotLy
@@ -27,7 +28,7 @@ class MainView(QtGui.QMainWindow):
         self.plotly = PrintInPlotLy()
         # Adding toolbar
         self.add1DToolBars()
-
+        self.dir_path = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
         # Adding Mayavi Widget
         widget = self.ui.widget3d
         layout = QtGui.QGridLayout(widget)
@@ -123,7 +124,7 @@ class MainView(QtGui.QMainWindow):
 
     def openFile(self):
         self.calc = {}
-        fileName = QtGui.QFileDialog.getOpenFileNames(None, ("Open File"), "../Audios de prueba/Odeon", ("Wav Files (*.wav)"))
+        fileName = QtGui.QFileDialog.getOpenFileNames(None, "Open File", self.dir_path + "/Audios/", ("Wav Files B (*.wav)"))
         self.fileName = fileName
         self.calc['filename'] = self.fileName
         self.parameters["directSoundSelection"] = 0
@@ -143,7 +144,7 @@ class MainView(QtGui.QMainWindow):
         self.measurements.append(dict(self.calc))
 
     def openFileFloorplan(self):
-        fileName = QtGui.QFileDialog.getOpenFileNames(None, ("Open Image File"), "/home/", ("Image Files (*.png)"))
+        fileName = QtGui.QFileDialog.getOpenFileNames(None, ("Open Image File"), "../Audios/", "Image Files (*.png)")
         self.floorplanFile = fileName[0]
         self.plotWidget.plotFloorplan(self)
 
@@ -159,18 +160,18 @@ class MainView(QtGui.QMainWindow):
 
     def new_project(self):
         import subprocess
-        np.save('utlimo_proyecto.npy', self.measurements)
+        np.save(self.dir_path+'/Proyects/last_proyect.npy', self.measurements)
         subprocess.Popen("python" + " IRV360.py", shell=True)
 
     def save_project(self):
-        filename = QtGui.QFileDialog.getSaveFileName(self, "Save file", "", ".npy")
+        filename = QtGui.QFileDialog.getSaveFileName(self, "Save file", self.dir_path+"/Proyects/", ".npy")
         np.save(filename, [self.measurements, self.floorplanFile])
 
     def export_to_plotly(self):
         self.plotly.plot(self.calc)
 
     def open_project(self):
-        filename = QtGui.QFileDialog.getOpenFileNames(None, ("Open Project"), "/home/", ("npy Files (*.npy)"))
+        filename = QtGui.QFileDialog.getOpenFileNames(None, ("Open Project"), self.dir_path+"/Proyects/", ("npy Files (*.npy)"))
         [measurements, floorplanFile] = np.load(filename[0])
         self.measurements = measurements
         self.floorplanFile = floorplanFile
