@@ -34,9 +34,9 @@ class DataProcessing(object):
         low_pass_active = self.Self.ui.low_pass_active.isChecked()
         hi_pass_active = self.Self.ui.hi_pass_active.isChecked()
         low_pass_cutoff = convertion(self.cutoff_frequency_lowpass*1000)
-        hi_pass_cutoff = convertion(1000)
+        hi_pass_cutoff = convertion(self.cutoff_frequency_hipass*1000)
 
-        n = 400
+        n = 800
         if not low_pass_active and not hi_pass_active:
             return data
         elif low_pass_active and not hi_pass_active:

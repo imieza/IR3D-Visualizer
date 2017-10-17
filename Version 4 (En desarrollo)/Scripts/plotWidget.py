@@ -43,7 +43,7 @@ class PlotWidget():
         figureWidget.draw()
 
     def plotSpectrogram(self, Self):
-        data = Self.calc["data"]
+        data = Self.calc["audio_filtered"]
         fs = Self.calc["fs"]
         figureWidget = Self.plotSpectrogram
         figureWidget.figure.clear()
@@ -70,18 +70,19 @@ class PlotWidget():
         figureWidget.draw()
 
     def plotFilter(self, Self):
-        filterFrequency = Self.dataProcceser.filterFrequency
-        filterAmplitudeResponse = Self.dataProcceser.filterAmplitudeResponse
-        figureWidget = Self.plotFilter
-        figureWidget.figure.clear()
-        ax = figureWidget.figure.add_subplot(111,  axisbg='black')
-        ax.semilogx(filterFrequency, 20 * np.log10(abs(filterAmplitudeResponse)), 'w')
-        ax.grid(color='#737373', linestyle='-', linewidth=0.5)
-        ax.set_xlabel("Frequency [Radians/ seconds]")
-        ax.set_ylabel("Level [dB]")
-        plt.margins(0, 0.1)
-        plt.axvline(100, color='green')  # cutoff frequency
-        figureWidget.draw()
+        if Self.ui.low_pass_active.isChecked() or Self.ui.hi_pass_active.isChecked():
+            filterFrequency = Self.dataProcceser.filterFrequency
+            filterAmplitudeResponse = Self.dataProcceser.filterAmplitudeResponse
+            figureWidget = Self.plotFilter
+            figureWidget.figure.clear()
+            ax = figureWidget.figure.add_subplot(111,  axisbg='black')
+            ax.semilogx(filterFrequency, 20 * np.log10(abs(filterAmplitudeResponse)), 'w')
+            ax.grid(color='#737373', linestyle='-', linewidth=0.5)
+            ax.set_xlabel("Frequency [Radians/ seconds]")
+            ax.set_ylabel("Level [dB]")
+            plt.margins(0, 0.1)
+            plt.axvline(100, color='green')  # cutoff frequency
+            figureWidget.draw()
 
     def plotFloorplan(self, Self):
         figureWidget = Self.plotFloorplan
