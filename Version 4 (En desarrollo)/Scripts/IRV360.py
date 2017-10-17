@@ -16,6 +16,7 @@ from datetime import datetime
 from matplotlib.backends.backend_qt4 import NavigationToolbar2QT as NavigationToolbar
 import darkorange
 from matplotlibwidget import MatplotlibWidget
+from PyQt4.QtGui import QSizePolicy
 
 class MainView(QtGui.QMainWindow):
     parameters = {}
@@ -119,8 +120,10 @@ class MainView(QtGui.QMainWindow):
         self.ui.tabLayoutFloorplan.addWidget(navi_toolbarFloorplan)
 
         self.directSoundSelection = MatplotlibWidget(self.ui.directSoundWidget)
-        self.directSoundSelection.setGeometry(QtCore.QRect(0, 0, 380, 210))
+        self.directSoundSelection.setGeometry(QtCore.QRect(0, 0, self.ui.directSoundWidget.width()+70, self.ui.directSoundWidget.height()-40))
         self.directSoundSelection.setObjectName("plotDirectSoundWidget")
+        navi_directSoundSelection = NavigationToolbar(self.directSoundSelection, self.ui.directSoundWidget)
+        self.ui.gridLayout_3.addWidget(navi_directSoundSelection)
 
     def openFile(self):
         self.calc = {}

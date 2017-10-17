@@ -112,29 +112,17 @@ class PlotWidget():
 
         figureWidget.draw()
 
-    def lin2db(self, array):
-        values_dB = []
-        min_val = min(array[np.nonzero(array)])
-        for value in array:
-            if value > 0:
-                calc = 20 * math.log10(value / 1)
-                values_dB.append(calc) if calc > threshold else values_dB.append(threshold)
-            else:
-                values_dB.append(self.mainSelf.parameters["threshold"])
-        return values_dB
-
     def fill_data_table(self, Self):
         time = Self.calc["time"][Self.calc["peaks"]]
         [azimuth, elevation] = Self.calc["az_el_windows"][:, Self.calc["peaks"]]
-        magnitude = Self.calc["normalizado"]
+        magnitude = Self.calc["i_db"][Self.calc["peaks"]]
         Self.ui.tableData.clearContents()
         for index in range(len(time)):
             Self.ui.tableData.insertRow(index)
             Self.ui.tableData.setItem(index, 0, QtGui.QTableWidgetItem(str(time[index])))
-            Self.ui.tableData.setItem(index, 1, QtGui.QTableWidgetItem(str(magnitude[index])))
+            Self.ui.tableData.setItem(index, 1, QtGui.QTableWidgetItem(str(magnitude[index]-96)))
             Self.ui.tableData.setItem(index, 2, QtGui.QTableWidgetItem(str(np.math.degrees(azimuth[index]))))
             Self.ui.tableData.setItem(index, 3, QtGui.QTableWidgetItem(str(np.math.degrees(elevation[index]))))
-
 
     def export2excel(self, Self):
         def output(filename, time, magnitude, az, el):
@@ -182,8 +170,7 @@ class PlotWidget():
         ax.plot(time[self.mainSelf.calc['directSoundSelection_peaks'][selected]],
                 audio[self.mainSelf.calc['directSoundSelection_peaks'][selected]], '*r', linewidth=3)
         ax.set_xlim(time[peaks[0][0]] - .001, time[peaks[-1][-1]] + .001)
-        ax.set_xlabel('Level')
-        ax.set_ylabel('Time')
+        ax.set_ylabel('Level')
         #subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
         figureWidget.draw()
 
@@ -191,13 +178,13 @@ class PlotWidget():
         thisline = event.artist
         if isinstance(thisline, Line2D):
             selected = [str(line) for line in lines].index(str(thisline))
-            self.plotDirectSoundSelection()
             self.mainSelf.parameters['directSoundSelection'] = selected
+            self.plotDirectSoundSelection()
 
 
     def ploter(self, Self):
         self.mainSelf = Self
-        self.plot1D(Self, Self.plotPressure, Self.ui.tabLayoutPressureLevel, Self.calc["data"], Self.calc['time'],
+        self.plot1D(Self, Self.plotPressure, Self.ui.tabLayoutPressureLevel, Self.calc["audio_filtered"], Self.calc['time'],
                     False)
         Self.ui.progressBar.setValue(55)
         self.plot1D(Self, Self.plotWindowLevel, Self.ui.tabLayoutIntensityLevel, Self.calc["intensity_windows"],

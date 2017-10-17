@@ -54,7 +54,8 @@ class DataProcessing(object):
         filtered_data_y = signal.filtfilt(b, a, data[2].tolist())[0]
         filtered_data_z = signal.filtfilt(b, a, data[3].tolist())[0]
 
-        return numpy.matrix([filtered_data_w, filtered_data_x, filtered_data_y, filtered_data_z])
+        output = numpy.matrix([filtered_data_w, filtered_data_x, filtered_data_y, filtered_data_z])
+        return output / output.max()
 
     def pressure_to_intensity_fft(self, fs, data):
         self.refresh_parameters()
@@ -89,6 +90,7 @@ class DataProcessing(object):
 
             az_el_windows[0, window], az_el_windows[1, window] = self.cart2sph(sum_i, sum_x, sum_y, sum_z)
         i_db = numpy.array(self.lin2db(numpy.array(intensity_windows[0, :])))
+        intensity_windows /= intensity_windows.max()
         return intensity_windows, intensity_windows, az_el_windows, i_db
 
     def pressure_to_intensity(self, pressure):
@@ -131,6 +133,7 @@ class DataProcessing(object):
                 intensity_windows[3,window]
             )
         i_db = numpy.array(self.lin2db(numpy.array(intensity_windows[0, :])))
+        intensity_windows /= intensity_windows.max()
         return intensity_windows, az_el_windows, i_db
 
     def load_wavefile(self, file_name):
@@ -249,6 +252,7 @@ class DataProcessing(object):
         [audio, fs] = self.load_wavefile(file_name)
         audio = self.truncate_value(audio, fs)
         audio = audio.astype(numpy.float64)
+        audio = audio /audio.max()
 
         if a_format:audio = self.a2b_converter(audio, fs)
         else: audio = audio.getT()

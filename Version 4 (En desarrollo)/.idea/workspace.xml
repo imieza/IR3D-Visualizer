@@ -2,58 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d81665e9-6fff-45f6-a3ca-9a6ae343f8a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/2 angulos 2ms 50db.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/2 angulos 2ms.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/2 angulos.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/3 angulos 3 db.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/3 angulos =dB 2simultaneos 1a2ms.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/3 angulos =dB 2simultaneos(.3ms) 1a2ms.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/3 angulos.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Current Odeon.lnk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Directo.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Jerash.BFormat21.Wav - Acceso directo.lnk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Odeon Rooms - Acceso directo.lnk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Refleccion piso + techo + trasera + lateral (TR en 1seg).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Refleccion piso + techo + trasera + lateral.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Refleccion piso + techo + trasera.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Refleccion piso + techo.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Refleccion piso source.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Refleccion superior + todas las paredes.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Solo derecha.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/Solo superior.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/a 45.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/odeon reflecciones.npy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/solo arriba.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/validacion 2 (1er +1db az+1).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/validacion 2 (1er +1db).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/validacion 2 (=db, 1ms-delay).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/validacion 2 (az+1).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/Odeon/validacion 2(=db, .3ms-delay).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/b-format EASE.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/planta-BN.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/planta.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/odeon/Example.BFormat01 (1).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/odeon/Example.BFormat01 (2).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/odeon/Example.BFormat01 (3).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/odeon/Example.BFormat01 (4).Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/odeon/Example.BFormat01_original.Wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/stpatricks_s2r2 (0).wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/stpatricks_s2r2 (2).wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/stpatricks_s2r2 (3).wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/resampleadas/stpatricks_s2r2 (4).wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/stpatricks_s1r1.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/stpatricks_s2r2.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Audios de prueba/stpatricks_s3r3.wav" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/images/floorplan_IR_1.png" afterPath="$PROJECT_DIR$/Scripts/images/floorplan_IR_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/images/floorplan_IR_2.png" afterPath="$PROJECT_DIR$/Scripts/images/floorplan_IR_2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/original_data.npy" afterPath="$PROJECT_DIR$/Scripts/original_data.npy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Version 4 (En desarrollo).iml" afterPath="$PROJECT_DIR$/.idea/Version 4 (En desarrollo).iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/IRV360.py" afterPath="$PROJECT_DIR$/Scripts/IRV360.py" />
@@ -68,19 +19,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Version_4__En_desarrollo_$IRV360.coverage" NAME="IRV360 Coverage Results" MODIFIED="1507923651724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
+    <SUITE FILE_PATH="coverage/Version_4__En_desarrollo_$IRV360.coverage" NAME="IRV360 Coverage Results" MODIFIED="1508270611172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/IRV360.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="403">
+              <caret line="131" column="45" lean-forward="true" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -88,23 +38,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="interface.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/interface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="259">
+              <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/plotWidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2385">
-              <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+            <state relative-caret-position="223">
+              <caret line="172" column="28" lean-forward="false" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="matplotlibwidget.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/matplotlibwidget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,7 +75,7 @@
       <file leaf-file-name="MayaviQWidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/MayaviQWidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
+            <state relative-caret-position="503">
               <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -125,8 +87,8 @@
       <file leaf-file-name="dataProcessing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/dataProcessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3300">
-              <caret line="228" column="54" lean-forward="false" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="54" />
+            <state relative-caret-position="324">
+              <caret line="135" column="52" lean-forward="false" selection-start-line="135" selection-start-column="52" selection-end-line="135" selection-end-column="52" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -144,6 +106,16 @@
       <find>save</find>
       <find>output</find>
       <find>calc</find>
+      <find>fill</find>
+      <find>directSoundSelection</find>
+      <find>audios</find>
+      <find>filter</find>
+      <find>intensity_windows</find>
+      <find>LAYOUTDIRE</find>
+      <find>exp</find>
+      <find>direct</find>
+      <find>expanding</find>
+      <find>qsize</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,10 +124,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Scripts/dataProcessing.py" />
-        <option value="$PROJECT_DIR$/Scripts/plotWidget.py" />
-        <option value="$PROJECT_DIR$/Scripts/IRV360.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Scripts/dataProcessing.py" />
+        <option value="$PROJECT_DIR$/Scripts/IRV360.py" />
+        <option value="$PROJECT_DIR$/Scripts/plotWidget.py" />
       </list>
     </option>
   </component>
@@ -165,11 +137,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
-    <option name="y" value="-300" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="-28" />
     <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="height" value="1108" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -206,43 +177,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Version 4 (En desarrollo)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Version 4 (En desarrollo)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Version 4 (En desarrollo)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Version 4 (En desarrollo)" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="Version 4 (En desarrollo)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Version 4 (En desarrollo)" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Version 4 (En desarrollo)" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Version 4 (En desarrollo)" type="462c0819:PsiDirectoryNode" />
+              <item name="Scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$USER_HOME$/.local/share/canopy/edm/envs/User/bin/python2.7" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -265,7 +223,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.IRV360">
-    <configuration default="false" name="IRV360" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="IRV360" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -281,7 +239,7 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/IRV360.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
+      <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -417,9 +375,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Python.IRV360" />
-    </list>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Python.IRV360" />
@@ -440,28 +395,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-300" width="1920" height="1200" extended-state="0" />
-    <editor active="false" />
+    <frame x="60" y="-11" width="1861" height="1092" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14270669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14726973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39911506" sideWeight="0.5019305" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280318" sideWeight="0.5064034" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790223" sideWeight="0.49359658" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3989796" sideWeight="0.4980695" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39916405" sideWeight="0.4980695" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,11 +429,137 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="11" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Scripts/IRV360.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4068">
+          <caret line="230" column="118" lean-forward="true" selection-start-line="230" selection-start-column="80" selection-end-line="230" selection-end-column="118" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/MayaviQWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/dataProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3636">
+          <caret line="202" column="28" lean-forward="false" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/plotWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2286">
+          <caret line="127" column="94" lean-forward="false" selection-start-line="127" selection-start-column="94" selection-end-line="127" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/IRV360.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/dataProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4230">
+          <caret line="243" column="34" lean-forward="false" selection-start-line="243" selection-start-column="34" selection-end-line="243" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/plotWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2358">
+          <caret line="132" column="89" lean-forward="true" selection-start-line="132" selection-start-column="89" selection-end-line="132" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/IRV360.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/plotWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2862">
+          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/MayaviQWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/dataProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3960">
+          <caret line="228" column="54" lean-forward="false" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/IRV360.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -718,19 +798,17 @@
     </entry>
     <entry file="file://$USER_HOME$/.local/share/canopy/edm/envs/User/lib/python2.7/site-packages/scipy/signal/signaltools.py" />
     <entry file="file://$USER_HOME$/.local/share/canopy/edm/envs/User/lib/python2.7/site-packages/numpy/lib/arraypad.py" />
-    <entry file="file://$PROJECT_DIR$/Scripts/dataProcessing.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3300">
-          <caret line="228" column="54" lean-forward="false" selection-start-line="228" selection-start-column="8" selection-end-line="228" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/MayaviQWidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
+        <state relative-caret-position="503">
           <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -738,31 +816,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/plotWidget.py">
+    <entry file="file://$PROJECT_DIR$/Scripts/dataProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2385">
-          <caret line="160" column="0" lean-forward="false" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="135" column="52" lean-forward="false" selection-start-line="135" selection-start-column="52" selection-end-line="135" selection-end-column="52" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.local/share/canopy/edm/envs/User/lib/python2.7/site-packages/matplotlib/backends/qt_compat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="198" column="21" lean-forward="false" selection-start-line="198" selection-start-column="16" selection-end-line="198" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/canopy/edm/envs/User/lib/python2.7/site-packages/matplotlib/backends/backend_qt5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="607" column="44" lean-forward="false" selection-start-line="607" selection-start-column="44" selection-end-line="607" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/1018732719/PyQt4/QtGui/QWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="833" column="16" lean-forward="false" selection-start-line="833" selection-start-column="13" selection-end-line="833" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/canopy/edm/envs/User/lib/python2.7/site-packages/pyface/qt/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/matplotlibwidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/IRV360.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="403">
+          <caret line="131" column="45" lean-forward="true" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/Scripts/plotWidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="223">
+          <caret line="172" column="28" lean-forward="false" selection-start-line="172" selection-start-column="28" selection-end-line="172" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
