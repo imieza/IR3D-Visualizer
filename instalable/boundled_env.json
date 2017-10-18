@@ -1,0 +1,340 @@
+{
+    "mark": [
+        {
+            "name": "cartopy",
+            "state": "manual"
+        },
+        {
+            "name": "casuarius",
+            "state": "manual"
+        },
+        {
+            "name": "catalyst",
+            "state": "manual"
+        },
+        {
+            "name": "chaco",
+            "state": "manual"
+        },
+        {
+            "name": "codetools",
+            "state": "manual"
+        },
+        {
+            "name": "cython",
+            "state": "manual"
+        },
+        {
+            "name": "docutils",
+            "state": "manual"
+        },
+        {
+            "name": "flake8",
+            "state": "manual"
+        },
+        {
+            "name": "ipython",
+            "state": "manual"
+        },
+        {
+            "name": "kernmagic",
+            "state": "manual"
+        },
+        {
+            "name": "libgfortran",
+            "state": "manual"
+        },
+        {
+            "name": "line_profiler",
+            "state": "manual"
+        },
+        {
+            "name": "mayavi",
+            "state": "manual"
+        },
+        {
+            "name": "mdp",
+            "state": "manual"
+        },
+        {
+            "name": "memory_profiler",
+            "state": "manual"
+        },
+        {
+            "name": "mkl_service",
+            "state": "manual"
+        },
+        {
+            "name": "networkx",
+            "state": "auto"
+        },
+        {
+            "name": "nltk",
+            "state": "manual"
+        },
+        {
+            "name": "nose",
+            "state": "manual"
+        },
+        {
+            "name": "openpyxl",
+            "state": "manual"
+        },
+        {
+            "name": "pandas_datareader",
+            "state": "manual"
+        },
+        {
+            "name": "pip",
+            "state": "manual"
+        },
+        {
+            "name": "plotly",
+            "state": "manual"
+        },
+        {
+            "name": "pyaudio",
+            "state": "manual"
+        },
+        {
+            "name": "pyqt",
+            "state": "manual"
+        },
+        {
+            "name": "pyside",
+            "state": "manual"
+        },
+        {
+            "name": "pytables",
+            "state": "manual"
+        },
+        {
+            "name": "pywavelets",
+            "state": "auto"
+        },
+        {
+            "name": "scikit_learn",
+            "state": "manual"
+        },
+        {
+            "name": "scikits.image",
+            "state": "manual"
+        },
+        {
+            "name": "scipy",
+            "state": "manual"
+        },
+        {
+            "name": "seaborn",
+            "state": "manual"
+        },
+        {
+            "name": "setuptools",
+            "state": "manual"
+        },
+        {
+            "name": "sip",
+            "state": "auto"
+        },
+        {
+            "name": "sqlalchemy",
+            "state": "manual"
+        },
+        {
+            "name": "statsmodels",
+            "state": "manual"
+        },
+        {
+            "name": "sympy",
+            "state": "manual"
+        },
+        {
+            "name": "traits_enaml",
+            "state": "manual"
+        },
+        {
+            "name": "wxpython",
+            "state": "manual"
+        },
+        {
+            "name": "xlrd",
+            "state": "manual"
+        },
+        {
+            "name": "xlwt",
+            "state": "manual"
+        }
+    ],
+    "metadata_version": "1.0",
+    "modifiers": {
+        "allow_any": [],
+        "allow_newer": [],
+        "allow_older": []
+    },
+    "repositories": {
+        "packages": [
+            "enthought/free"
+        ],
+        "runtimes": [
+            "enthought/free"
+        ]
+    },
+    "requirements": [
+        "appdirs-1.4.3-1",
+        "apptools-4.4.0-6",
+        "atom-0.3.10-2",
+        "backports.abc-0.5-1",
+        "backports.shutil_get_terminal_size-1.0.0-1",
+        "backports_abc_remove-0.4-2",
+        "beautifulsoup4-4.6.0-1",
+        "bleach-1.5.0-1",
+        "cartopy-0.14.2-5",
+        "casuarius-1.1-8",
+        "catalyst-1.0.9-14",
+        "certifi-2016.9.26-1",
+        "chaco-4.6.1-1",
+        "chardet-2.3.0-1",
+        "codetools-4.2.0-3",
+        "configobj-5.0.6-2",
+        "configparser-3.5.0-1",
+        "cycler-0.10.0-1",
+        "cython-0.25.2-1",
+        "decorator-4.0.9-1",
+        "distribute_remove-1.0.0-4",
+        "docutils-0.13.1-1",
+        "enable-4.6.0-8",
+        "enaml-0.9.8-6",
+        "enclosure-0.6.1-1",
+        "encore-0.7.0-4",
+        "entrypoints-0.2.2-1",
+        "enum34-1.1.6-1",
+        "envisage-4.6.0-1",
+        "faulthandler-2.4-3",
+        "flake8-3.3.0-2",
+        "freetype-2.5.3-7",
+        "functools32-3.2.3.2-1",
+        "future-0.16.0-1",
+        "futures-3.0.3-1",
+        "geos-3.5.0-3",
+        "hdf5-1.8.16-4",
+        "html5lib-0.999-2",
+        "humanize-0.5.1-1",
+        "ipykernel-4.5.2-4",
+        "ipython-4.0.0-9",
+        "ipython4-5.3.0-3",
+        "ipython_genutils-0.1.0-1",
+        "ipywidgets-6.0.0-1",
+        "jdcal-1.2-1",
+        "jinja2-2.9.6-1",
+        "jsonschema-2.5.1-3",
+        "jupyter-1.0.0-21",
+        "jupyter_client-5.0.0-3",
+        "jupyter_console-5.1.0-2",
+        "jupyter_core-4.3.0-2",
+        "kernmagic-0.3.0-2",
+        "kiwisolver-0.1.3-3",
+        "libgfortran-3.0.0-4",
+        "libjpeg-7.0-5",
+        "libopenjpeg-2.1.0-4",
+        "libpng-1.6.12-6",
+        "libproj-4.9.3-1",
+        "libxml2-2.9.2-4",
+        "libxslt-1.1.28-6",
+        "libyaml-0.1.7-1",
+        "line_profiler-2.0-3",
+        "lxml-3.7.3-1",
+        "markupsafe-0.23-2",
+        "matplotlib-2.0.0-3",
+        "mayavi-4.5.0-3",
+        "mccabe-0.6.1-1",
+        "mdp-3.5-5",
+        "memory_profiler-0.43-1",
+        "mistune-0.7.4-1",
+        "mkl-2017.0.3-1",
+        "mkl_service-1.0-6",
+        "mpmath-0.19-1",
+        "nbconvert-5.1.1-3",
+        "nbformat-4.3.0-1",
+        "networkx-1.11-5",
+        "nltk-3.2.2-2",
+        "nose-1.3.7-3",
+        "notebook-4.4.1-3",
+        "numexpr-2.6.2-2",
+        "numpy-1.11.3-3",
+        "openpyxl-2.4.1-2",
+        "owslib-0.13.0-4",
+        "packaging-16.8-2",
+        "pandas-0.19.2-4",
+        "pandas_datareader-0.2.1-9",
+        "pandocfilters-1.4.1-1",
+        "path.py-8.1.1-3",
+        "pathlib2-2.1.0-1",
+        "patsy-0.4.1-3",
+        "pexpect-3.3-2",
+        "pickleshare-0.7.4-1",
+        "pil_remove-1.0.0-3",
+        "pillow-4.0.0-1",
+        "pip-9.0.1-1",
+        "plotly-1.12.10-3",
+        "ply-3.8-1",
+        "prompt_toolkit-1.0.13-1",
+        "psutil-3.3.0-2",
+        "ptyprocess-0.4-1",
+        "pyaudio-0.2.4-5",
+        "pycodestyle-2.3.1-1",
+        "pycrypto-2.6.1-4",
+        "pyface-5.1.0-5",
+        "pyflakes-1.5.0-1",
+        "pygments-2.1.3-1",
+        "pyparsing-2.2.0-1",
+        "pyproj-1.9.4-2",
+        "pyqt-4.12-1",
+        "pyshp-1.2.0-1",
+        "pyside-1.2.2-14",
+        "pytables-3.3.0-3",
+        "python_dateutil-2.6.0-1",
+        "pytz-2016.3-1",
+        "pywavelets-0.5.2-1",
+        "pyyaml-3.12-1",
+        "pyzmq-16.0.0-4",
+        "qt-4.8.7-7",
+        "qtconsole-4.2.1-8",
+        "requests-2.13.0-1",
+        "requests_file-1.4.1-1",
+        "scikit_learn-0.18.1-5",
+        "scikits.image-0.13.0-2",
+        "scipy-0.19.0-2",
+        "seaborn-0.7.1-4",
+        "setuptools-23.1.0-2",
+        "shapely-1.5.17.post1-2",
+        "shiboken-1.2.2-12",
+        "simplegeneric-0.8.1-1",
+        "singledispatch-3.4.0.3-1",
+        "sip-4.19.2-2",
+        "six-1.10.0-1",
+        "sqlalchemy-1.1.6-1",
+        "ssl_match_hostname-3.4.0.2-1",
+        "statsmodels-0.8.0-2",
+        "sympy-1.0-2",
+        "terminado-0.5-5",
+        "testpath-0.3-1",
+        "tornado-4.4.2-1",
+        "traitlets-4.3.2-1",
+        "traits-4.6.0-1",
+        "traits_enaml-0.2.1-20",
+        "traitsui-5.1.0-2",
+        "vtk-7.0.0-1",
+        "wcwidth-0.1.7-1",
+        "widgetsnbextension-2.0.0-1",
+        "wxpython-3.0.2.0-5",
+        "xlrd-1.0.0-1",
+        "xlwt-1.2.0-1",
+        "zeromq-4.1.5-1"
+    ],
+    "runtime": {
+        "implementation": "cpython",
+        "platform": "rh6_x86_64",
+        "platform_abi": "gnu",
+        "version": "2.7.13+3"
+    }
+}

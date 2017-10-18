@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+# Get the directory where this script is. This will also resolve
+# any symlinks in the directory/script, so it will be the fully
+# resolved path.
+CURDIR="$(pwd)"
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  cd "$(dirname "$SOURCE")"
+  SOURCE="$(readlink "$SOURCE")"
+done
+DIR="$(cd -P "$( dirname "$SOURCE" )" && pwd)"
+cd "$CURDIR"
+
+# Useful variables
+LIBEXEC_DIR="${DIR}/../libexec"
+EDM_EXECUTABLE="${LIBEXEC_DIR}/edm"
+
+exec "${EDM_EXECUTABLE}" "$@"

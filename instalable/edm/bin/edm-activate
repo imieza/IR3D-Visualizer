@@ -1,0 +1,55 @@
+# This needs to be sourced, cannot be run directly.
+if [ "$0" = "$BASH_SOURCE" ] || [ "$ZSH_EVAL_CONTEXT" = 'toplevel' ]; then
+	echo "You need to source this script. Run 'source edm-activate' instead of 'edm-activate'"
+	exit 1
+fi
+
+if [[ -n $BASH_VERSION ]]; then
+	_SOURCE="${BASH_SOURCE[0]}"
+elif [[ -n $ZSH_VERSION ]]; then
+	_SOURCE="${(%):-%N}"
+else
+	echo "Only bash and zsh are supported"
+	return 1
+fi
+
+readlink_f() {
+	# Emulate readlink -f (at least OS X readlink doesn't have it)
+	real_path="$1"
+
+	while [ -h "$real_path" ]; do
+	    cd "$(dirname "$real_path")"
+	    real_path="$(readlink "$real_path")"
+	done
+
+	echo "$real_path"
+
+}
+
+script_directory() {
+	# Get the directory where this script is. This will also resolve
+	# any symlinks in the directory/script, so it will be the fully
+	# resolved path.
+	CURDIR="$(pwd)"
+
+	real_path="$(readlink_f "$_SOURCE")"
+
+	DIR="$(cd -P "$( dirname "$_SOURCE" )" && pwd)"
+	cd "$CURDIR"
+
+	echo ${DIR}
+}
+
+activation_script_path() {
+    THIS_DIR="$(script_directory)";
+
+    if test -z "$1"; then
+        ACTIVATE_SCRIPT=$("${THIS_DIR}/edm" machine-cli-environment-info)
+    else
+        ACTIVATE_SCRIPT=$("${THIS_DIR}/edm" machine-cli-environment-info -e $1)
+    fi;
+
+    echo "${ACTIVATE_SCRIPT}"
+}
+
+source "$(activation_script_path $1)";
