@@ -1,0 +1,10 @@
+
+*.xls
+*.png
+*.pyc
+*.xml
+Audios/
+Proyects/
+Results/
+/Scripts/images/
+/Scripts/original_data.npy
