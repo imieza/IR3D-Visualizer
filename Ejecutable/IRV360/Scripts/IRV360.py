@@ -1,5 +1,13 @@
 import sys
 import os
+
+print "====== SYS PATH ====="
+print(sys.path)
+print "==================="
+print "====== SYS CWD====="
+print(os.getcwd())
+print "==================="
+
 import warnings
 
 from Plotly import PrintInPlotLy
@@ -47,9 +55,11 @@ class MainView(QtGui.QMainWindow):
         self.connect(self.ui.new_project, QtCore.SIGNAL("triggered()"), self.new_project)
         self.connect(self.ui.save_Project, QtCore.SIGNAL("triggered()"), self.save_project)
         self.connect(self.ui.open_project, QtCore.SIGNAL("triggered()"), self.open_project)
-        self.connect(self.ui.import_Measurement, QtCore.SIGNAL("triggered()"), self.openFile)
+        self.connect(self.ui.import_aformat, QtCore.SIGNAL("triggered()"), self.openAformat)
+        self.connect(self.ui.import_bformat, QtCore.SIGNAL("triggered()"), self.openBformat)
         self.connect(self.ui.import_Floorplan, QtCore.SIGNAL("triggered()"), self.openFileFloorplan)
-        self.connect(self.ui.export_to_Plotly, QtCore.SIGNAL("triggered()"), self.export_to_plotly)
+        self.connect(self.ui.export_to_Plotly_2, QtCore.SIGNAL("triggered()"), self.export_to_plotly)
+        self.connect(self.ui.export_excel, QtCore.SIGNAL("triggered()"), self.plotWidget.export2excel)
 
         # manually connect qdial with qbox (this is because is not possible to set 0 in horizontal-left side)
         self.connect(self.ui.dialAngle, QtCore.SIGNAL("valueChanged(int)"), self.setValue_Qdial)
@@ -125,14 +135,20 @@ class MainView(QtGui.QMainWindow):
         navi_directSoundSelection = NavigationToolbar(self.directSoundSelection, self.ui.directSoundWidget)
         self.ui.gridLayout_3.addWidget(navi_directSoundSelection)
 
-    def openFile(self):
+    def openAformat(self):
+        self.openFile(False)
+
+    def openBformat(self):
+        self.openFile(True)
+
+    def openFile(self, bformat):
         self.calc = {}
-        fileName = QtGui.QFileDialog.getOpenFileNames(None, "Open File", self.dir_path + "/Audios/", ("Wav Files B (*.wav)"))
+        fileName = QtGui.QFileDialog.getOpenFileNames(None, "Open File", self.dir_path + "/Audios/", ("Wav Files (*.wav)"))
         self.fileName = fileName
         self.calc['filename'] = self.fileName
         self.parameters["directSoundSelection"] = 0
 
-        [self.calc["data"], self.calc["fs"]] = self.dataProcceser.get_audio_bformat(self.fileName)
+        [self.calc["data"], self.calc["fs"]] = self.dataProcceser.get_audio_bformat(self.fileName, bformat)
 
         self.calc["time"] = self.dataProcceser.generate_time(self.calc["fs"], self.calc["data"])
         self.ui.audioCutter.setValue(self.calc["time"][len(self.calc["time"]) - 1] * 1000)

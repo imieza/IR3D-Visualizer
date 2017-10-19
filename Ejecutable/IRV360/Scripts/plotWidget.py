@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import ndimage
 import scipy
-import xlwt
+
 
 class PlotWidget():
     mainSelf = None
@@ -124,8 +124,9 @@ class PlotWidget():
             Self.ui.tableData.setItem(index, 2, QtGui.QTableWidgetItem(str(np.math.degrees(azimuth[index]))))
             Self.ui.tableData.setItem(index, 3, QtGui.QTableWidgetItem(str(np.math.degrees(elevation[index]))))
 
-    def export2excel(self, Self):
+    def export2excel(self):
         def output(filename, time, magnitude, az, el):
+            import xlwt
             book = xlwt.Workbook()
             sh = book.add_sheet('Results')
 
@@ -141,12 +142,12 @@ class PlotWidget():
                 sh.write(n, 3, np.math.degrees(e))
 
             book.save(filename)
-
-        [azimuth, elevation] = Self.calc["az_el_windows"][:,  Self.calc["peaks"]]
-        output(filename=Self.dir_path+'/Results/'+Self.calc["name"]+'.xls',
-               time=Self.calc["time"][Self.calc["peaks"]],
-               magnitude=Self.calc["normalizado"],
-               az=azimuth.tolist(), el=elevation.tolist())
+        if self.mainSelf:
+            [azimuth, elevation] = self.mainSelf.calc["az_el_windows"][:,  self.mainSelf.calc["peaks"]]
+            output(filename=self.mainSelf.dir_path+'/Results/'+self.mainSelf.calc["name"]+'.xls',
+                   time=self.mainSelf.calc["time"][self.mainSelf.calc["peaks"]],
+                   magnitude=self.mainSelf.calc["normalizado"],
+                   az=azimuth.tolist(), el=elevation.tolist())
 
 
     def plotDirectSoundSelection(self):
@@ -201,5 +202,4 @@ class PlotWidget():
         self.mainSelf.directSoundSelection.figure.canvas.mpl_connect('pick_event', self.onpick1)
         self.plotDirectSoundSelection()
         Self.mayavi_widget.update_plot(Self)
-        self.export2excel(Self)
         Self.ui.progressBar.setValue(100)

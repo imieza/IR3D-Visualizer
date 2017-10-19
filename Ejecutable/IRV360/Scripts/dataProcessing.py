@@ -247,14 +247,13 @@ class DataProcessing(object):
         # Make time beginnings in direct sound
         self.Self.calc['time'] = self.Self.calc['time'] - self.Self.calc['time'][self.Self.calc['peaks'][0]]
 
-    def get_audio_bformat(self, file_name):
-        a_format = False
+    def get_audio_bformat(self, file_name, bformat):
         [audio, fs] = self.load_wavefile(file_name)
         audio = self.truncate_value(audio, fs)
         audio = audio.astype(numpy.float64)
         audio = audio /audio.max()
 
-        if a_format:audio = self.a2b_converter(audio, fs)
+        if not bformat: audio = self.a2b_converter(audio, fs)
         else: audio = audio.getT()
         return audio, fs
 
