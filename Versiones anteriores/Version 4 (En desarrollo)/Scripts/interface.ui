@@ -74,22 +74,48 @@
        <bool>true</bool>
       </property>
       <widget class="QWidget" name="tabPressureLevel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Pressure Level</string>
        </attribute>
        <layout class="QVBoxLayout" name="tabLayoutPressureLevel">
         <item>
-         <widget class="QWidget" name="pressureWidget" native="true"/>
+         <widget class="QWidget" name="pressureWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tabIntensityLevel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <attribute name="title">
         <string>Intensity Level</string>
        </attribute>
        <layout class="QGridLayout" name="tabLayoutIntensityLevel">
         <item row="0" column="0">
-         <widget class="QWidget" name="intensityWidget" native="true"/>
+         <widget class="QWidget" name="intensityWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -174,7 +200,7 @@
      <x>0</x>
      <y>0</y>
      <width>1169</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFIle">
@@ -184,17 +210,25 @@
     <addaction name="new_project"/>
     <addaction name="save_Project"/>
     <addaction name="open_project"/>
-    <addaction name="export_to_Plotly"/>
    </widget>
    <widget class="QMenu" name="menuImport">
     <property name="title">
      <string>Import</string>
     </property>
     <addaction name="import_Floorplan"/>
-    <addaction name="import_Measurement"/>
+    <addaction name="import_bformat"/>
+    <addaction name="import_aformat"/>
+   </widget>
+   <widget class="QMenu" name="menuExport">
+    <property name="title">
+     <string>Export</string>
+    </property>
+    <addaction name="export_to_Plotly_2"/>
+    <addaction name="export_excel"/>
    </widget>
    <addaction name="menuFIle"/>
    <addaction name="menuImport"/>
+   <addaction name="menuExport"/>
   </widget>
   <widget class="QDockWidget" name="dockAudio">
    <property name="sizePolicy">
@@ -311,8 +345,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>325</width>
-          <height>230</height>
+          <width>329</width>
+          <height>231</height>
          </rect>
         </property>
         <property name="cursor">
@@ -1010,7 +1044,7 @@
           <x>0</x>
           <y>0</y>
           <width>342</width>
-          <height>215</height>
+          <height>225</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1369,7 +1403,7 @@
           <x>0</x>
           <y>0</y>
           <width>342</width>
-          <height>215</height>
+          <height>225</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1419,9 +1453,9 @@
     </font>
    </property>
   </action>
-  <action name="import_Measurement">
+  <action name="import_bformat">
    <property name="text">
-    <string>Import Measurement</string>
+    <string>Import B-Format</string>
    </property>
    <property name="font">
     <font>
@@ -1482,6 +1516,42 @@
   <action name="export_to_Plotly">
    <property name="text">
     <string>Export to Website</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="import_aformat">
+   <property name="text">
+    <string>Import A-Format</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="export_to_Plotly_2">
+   <property name="text">
+    <string>Plotly (Website)</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="export_excel">
+   <property name="text">
+    <string>Excel (.xls)</string>
    </property>
    <property name="font">
     <font>

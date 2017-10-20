@@ -2,7 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9378fd56-0454-4a22-bd16-4b7437000b49" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/Plotly.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360 (MAC).sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360.sh.x.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/.idea/Version 4 (En desarrollo).iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/.idea/Scripts.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroW.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroX.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroY.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroZ.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/IR3D - Visualizer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/IRV360.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/MayaviQWidget.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/Plotly.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/darkorange.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/darkorange.qrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/darkorange.qss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/dataBase.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/dataProcessing.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/detect_peaks.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/interface.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/interface.ui" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/matplotlibwidget.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/mayaviVisualization.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/output.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/plotWidget.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/binary" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/boundled_env.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/bin/edm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/bin/edm-activate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/cacert.pem" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/edm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/schemas/draft3.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/schemas/draft4.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm_installer.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/IRV360_install.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/Install UBUNTU.sh" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/Plotly.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/Plotly.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/dataProcessing.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/dataProcessing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.ui" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/plotWidget.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/plotWidget.py" />
     </list>
     <ignored path="IR3D-Visualizer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,182 +68,80 @@
     <favorites_list name="IR3D-Visualizer" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.60678643">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/plotWidget.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="82" column="3" selection-start-line="82" selection-start-column="3" selection-end-line="89" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#17#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dataProcessing.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dataProcessing.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1615">
-                  <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#11#0" expanded="true" />
-                    <element signature="e#285#323#0" expanded="false" />
-                    <element signature="e#1206#1365#1" expanded="false" />
-                    <element signature="e#3179#3787#0" expanded="false" />
-                    <element signature="e#3826#4102#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mainView.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mainView.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
-                  <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#24#0" expanded="true" />
-                    <element signature="e#3288#3779#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mainView.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/QT/mainView.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mlab2matplot.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/QT/mlab2matplot.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="18" column="21" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#18#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/QT/plotWidget.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="102" column="48" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
-                  <folding>
-                    <element signature="e#0#10#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="checker" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/checker">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#1949#2279#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="get-pip.py" pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python27/get-pip.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="probandoMayavi" pinned="false" current-in-tab="true">
-            <entry file="file://C:/Python27/probandoMayavi">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="45" />
-                  <folding>
-                    <element signature="e#0#18#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="prueba2.py" pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python27/prueba2.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#125#194#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="prueba.py" pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python27/prueba.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1870">
-                  <caret line="112" column="34" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="48" />
-                  <folding>
-                    <element signature="e#0#18#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
-            <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15368">
-                  <caret line="939" column="0" selection-start-line="939" selection-start-column="0" selection-end-line="939" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="abrir_archivo.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
-                  <folding>
-                    <element signature="e#357#898#0" expanded="false" />
-                    <element signature="e#944#1493#0" expanded="false" />
-                    <element signature="e#2190#2492#0" expanded="false" />
-                    <element signature="e#2519#2664#0" expanded="false" />
-                    <element signature="e#2705#2845#0" expanded="false" />
-                    <element signature="e#2888#3304#0" expanded="false" />
-                    <element signature="e#3343#4583#0" expanded="false" />
-                    <element signature="e#4617#5006#0" expanded="false" />
-                    <element signature="e#5050#5167#0" expanded="false" />
-                    <element signature="e#5192#5435#0" expanded="false" />
-                    <element signature="e#5498#6552#0" expanded="false" />
-                    <element signature="e#6590#7176#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/IRV360.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plotly.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/Plotly.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="137" column="92" lean-forward="false" selection-start-line="137" selection-start-column="92" selection-end-line="137" selection-end-column="92" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Plotly.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/Plotly.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="112" column="50" lean-forward="false" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -204,6 +149,12 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Results</find>
+      <find>plotly</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -224,14 +175,17 @@
         <option value="$PROJECT_DIR$/QT/projectionExample.py" />
         <option value="$PROJECT_DIR$/QT/mlab2matplot.py" />
         <option value="$PROJECT_DIR$/QT/plotWidget.py" />
+        <option value="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py" />
+        <option value="$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py" />
+        <option value="$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/IRV360.py" />
+        <option value="$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/Plotly.py" />
+        <option value="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -252,15 +206,8 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -278,7 +225,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,12 +232,6 @@
               <option name="myItemId" value="IR3D-Visualizer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IR3D-Visualizer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="IR3D-Visualizer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -307,18 +247,212 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="QT" />
+              <option name="myItemId" value="Versiones anteriores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Versiones anteriores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Version 4 (En desarrollo)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Versiones anteriores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Version 4 (En desarrollo)" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ejecutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ejecutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UBUNTU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ejecutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UBUNTU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRV360" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ejecutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UBUNTU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRV360" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ejecutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MAC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ejecutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MAC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRV360" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IR3D-Visualizer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ejecutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MAC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IRV360" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python/Qt con Lucas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts" />
+      <recent name="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)" />
+      <recent name="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.mainView (1)">
     <configuration default="false" name="mainView" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -606,26 +740,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17688513" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.4940476" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.62425596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.49107143" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32258064" sideWeight="0.48511904" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.51488096" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32168674" sideWeight="0.48511904" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4910486" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.3578869" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5089514" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37173578" sideWeight="0.48809522" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.51488096" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37173578" sideWeight="0.48809522" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -679,485 +813,163 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mainView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="122" selection-start-line="43" selection-start-column="113" selection-end-line="43" selection-end-column="122" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#3288#3779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1949#2279#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#357#898#0" expanded="false" />
-            <element signature="e#944#1493#0" expanded="false" />
-            <element signature="e#2190#2492#0" expanded="false" />
-            <element signature="e#2519#2664#0" expanded="false" />
-            <element signature="e#2705#2845#0" expanded="false" />
-            <element signature="e#2888#3304#0" expanded="false" />
-            <element signature="e#3343#4583#0" expanded="false" />
-            <element signature="e#4617#5006#0" expanded="false" />
-            <element signature="e#5050#5167#0" expanded="false" />
-            <element signature="e#5192#5435#0" expanded="false" />
-            <element signature="e#5498#6552#0" expanded="false" />
-            <element signature="e#6590#7176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="105" column="17" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#285#323#0" expanded="false" />
-            <element signature="e#1206#1365#1" expanded="false" />
-            <element signature="e#3179#3787#0" expanded="false" />
-            <element signature="e#3826#4102#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detect_peaks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="122" selection-start-line="43" selection-start-column="113" selection-end-line="43" selection-end-column="122" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#3288#3779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1949#2279#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#357#898#0" expanded="false" />
-            <element signature="e#944#1493#0" expanded="false" />
-            <element signature="e#2190#2492#0" expanded="false" />
-            <element signature="e#2519#2664#0" expanded="false" />
-            <element signature="e#2705#2845#0" expanded="false" />
-            <element signature="e#2888#3304#0" expanded="false" />
-            <element signature="e#3343#4583#0" expanded="false" />
-            <element signature="e#4617#5006#0" expanded="false" />
-            <element signature="e#5050#5167#0" expanded="false" />
-            <element signature="e#5192#5435#0" expanded="false" />
-            <element signature="e#5498#6552#0" expanded="false" />
-            <element signature="e#6590#7176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#285#323#0" expanded="false" />
-            <element signature="e#1206#1365#1" expanded="false" />
-            <element signature="e#3179#3787#0" expanded="false" />
-            <element signature="e#3826#4102#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/detect_peaks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="77" column="33" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="122" selection-start-line="43" selection-start-column="113" selection-end-line="43" selection-end-column="122" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#3288#3779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/checker">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1949#2279#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#357#898#0" expanded="false" />
-            <element signature="e#944#1493#0" expanded="false" />
-            <element signature="e#2190#2492#0" expanded="false" />
-            <element signature="e#2519#2664#0" expanded="false" />
-            <element signature="e#2705#2845#0" expanded="false" />
-            <element signature="e#2888#3304#0" expanded="false" />
-            <element signature="e#3343#4583#0" expanded="false" />
-            <element signature="e#4617#5006#0" expanded="false" />
-            <element signature="e#5050#5167#0" expanded="false" />
-            <element signature="e#5192#5435#0" expanded="false" />
-            <element signature="e#5498#6552#0" expanded="false" />
-            <element signature="e#6590#7176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113883">
-          <caret line="6699" column="17" selection-start-line="6699" selection-start-column="17" selection-end-line="6699" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/lines3d_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="111" column="47" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#285#323#0" expanded="false" />
-            <element signature="e#1206#1365#1" expanded="false" />
-            <element signature="e#3179#3787#0" expanded="false" />
-            <element signature="e#3826#4102#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#3288#3779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/checker" />
+    <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py" />
+    <entry file="file://$PROJECT_DIR$/plotWidget.py" />
+    <entry file="file://C:/Python27/Lib/site-packages/matplotlib/axes/_axes.py" />
+    <entry file="file://$USER_HOME$/Downloads/lines3d_demo.py" />
+    <entry file="file://$PROJECT_DIR$/dataProcessing.py" />
+    <entry file="file://$PROJECT_DIR$/mainView.py" />
+    <entry file="file://$PROJECT_DIR$/plotWidget.py" />
+    <entry file="file://$PROJECT_DIR$/plotWidget.py" />
     <entry file="file://$PROJECT_DIR$/nuevo_prueba.py" />
     <entry file="file://$PROJECT_DIR$/jflsdñ.py" />
     <entry file="file://$PROJECT_DIR$/fsdada.py" />
-    <entry file="file://$USER_HOME$/Downloads/lines3d_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/scipy/io/wavfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/matplotlib/axes/_axes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6699" column="17" selection-start-line="6699" selection-start-column="17" selection-end-line="6699" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/lines3d_demo.py" />
+    <entry file="file://C:/Python27/Lib/site-packages/scipy/io/wavfile.py" />
+    <entry file="file://C:/Python27/Lib/site-packages/matplotlib/axes/_axes.py" />
+    <entry file="file://$PROJECT_DIR$/git" />
     <entry file="file://$PROJECT_DIR$/prueba_import" />
-    <entry file="file://C:/Python27/Lib/site-packages/mayavi/tests/test_mayavi_traits.py">
+    <entry file="file://C:/Python27/Lib/site-packages/mayavi/tests/test_mayavi_traits.py" />
+    <entry file="file://$PROJECT_DIR$/checker" />
+    <entry file="file://$PROJECT_DIR$/detect_peaks.py" />
+    <entry file="file://C:/Python27/get-pip.py" />
+    <entry file="file://C:/Python27/prueba.py" />
+    <entry file="file://C:/Python27/prueba2.py" />
+    <entry file="file://$PROJECT_DIR$/../../Python/Qt con Lucas/aplicacion.py" />
+    <entry file="file://$PROJECT_DIR$/QT/interface.py" />
+    <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py" />
+    <entry file="file://$PROJECT_DIR$/dataProcessing.py" />
+    <entry file="file://$PROJECT_DIR$/plotWidget.py" />
+    <entry file="file://$PROJECT_DIR$/mainView.py" />
+    <entry file="file://$PROJECT_DIR$/QT/example.png" />
+    <entry file="file://$USER_HOME$/Downloads/mlab_3D_to_2D.py" />
+    <entry file="file://$PROJECT_DIR$/QT/projectionExample.py" />
+    <entry file="file://$PROJECT_DIR$/QT/mainView.py" />
+    <entry file="file://$PROJECT_DIR$/QT/mlab2matplot.py" />
+    <entry file="file://C:/Python27/probandoMayavi" />
+    <entry file="file://$PROJECT_DIR$/QT/foo.png" />
+    <entry file="file://$PROJECT_DIR$/QT/plotWidget.py" />
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/dataBase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-60">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/checker">
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/output.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/MayaviQWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1949#2279#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/mayaviVisualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/dataProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15368">
-          <caret line="939" column="0" selection-start-line="939" selection-start-column="0" selection-end-line="939" selection-end-column="0" />
+        <state relative-caret-position="505">
+          <caret line="939" column="0" lean-forward="false" selection-start-line="939" selection-start-column="0" selection-end-line="939" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detect_peaks.py">
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/get-pip.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/prueba.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="112" column="34" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="48" />
+        <state relative-caret-position="160">
+          <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="19" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/prueba2.py">
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/Plotly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        <state relative-caret-position="418">
+          <caret line="112" column="50" lean-forward="false" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
           <folding>
-            <element signature="e#125#194#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Python/Qt con Lucas/aplicacion.py">
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/IRV360.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/IRV360.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QT/interface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#357#898#0" expanded="false" />
-            <element signature="e#944#1493#0" expanded="false" />
-            <element signature="e#2190#2492#0" expanded="false" />
-            <element signature="e#2519#2664#0" expanded="false" />
-            <element signature="e#2705#2845#0" expanded="false" />
-            <element signature="e#2888#3304#0" expanded="false" />
-            <element signature="e#3343#4583#0" expanded="false" />
-            <element signature="e#4617#5006#0" expanded="false" />
-            <element signature="e#5050#5167#0" expanded="false" />
-            <element signature="e#5192#5435#0" expanded="false" />
-            <element signature="e#5498#6552#0" expanded="false" />
-            <element signature="e#6590#7176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#285#323#0" expanded="false" />
-            <element signature="e#1206#1365#1" expanded="false" />
-            <element signature="e#3179#3787#0" expanded="false" />
-            <element signature="e#3826#4102#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="82" column="3" selection-start-line="82" selection-start-column="3" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#3288#3779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QT/example.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/mlab_3D_to_2D.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QT/projectionExample.py">
+    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#111#148#0" expanded="false" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QT/mainView.py">
+    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/Plotly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QT/mlab2matplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/probandoMayavi">
+    <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QT/foo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QT/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="102" column="48" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
+        <state relative-caret-position="160">
+          <caret line="137" column="92" lean-forward="false" selection-start-line="137" selection-start-column="92" selection-end-line="137" selection-end-column="92" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

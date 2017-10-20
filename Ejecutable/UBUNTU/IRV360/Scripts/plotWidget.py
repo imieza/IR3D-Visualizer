@@ -144,7 +144,7 @@ class PlotWidget():
             book.save(filename)
         if self.mainSelf:
             [azimuth, elevation] = self.mainSelf.calc["az_el_windows"][:,  self.mainSelf.calc["peaks"]]
-            output(filename=self.mainSelf.dir_path+'/Results/'+self.mainSelf.calc["name"]+'.xls',
+            output(filename=self.mainSelf.dir_path+'/Exported/'+self.mainSelf.calc["name"]+'.xls',
                    time=self.mainSelf.calc["time"][self.mainSelf.calc["peaks"]],
                    magnitude=self.mainSelf.calc["normalizado"],
                    az=azimuth.tolist(), el=elevation.tolist())

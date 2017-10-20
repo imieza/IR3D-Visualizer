@@ -1,13 +1,5 @@
 import sys
 import os
-
-print "====== SYS PATH ====="
-print(sys.path)
-print "==================="
-print "====== SYS CWD====="
-print(os.getcwd())
-print "==================="
-
 import warnings
 
 from Plotly import PrintInPlotLy
