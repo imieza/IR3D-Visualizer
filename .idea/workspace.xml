@@ -2,54 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9378fd56-0454-4a22-bd16-4b7437000b49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/Plotly.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360 (MAC).sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360.sh.x.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/.idea/Version 4 (En desarrollo).iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/.idea/Scripts.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroW.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroX.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroY.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/FiltroZ.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/IR3D - Visualizer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/IRV360.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/MayaviQWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/Plotly.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/darkorange.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/darkorange.qrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/darkorange/darkorange.qss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/dataBase.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/dataProcessing.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/detect_peaks.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/interface.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/interface.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/matplotlibwidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/mayaviVisualization.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/output.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/IRV360/Scripts/plotWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ejecutable/binary" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/boundled_env.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/bin/edm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/bin/edm-activate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/cacert.pem" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/edm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/schemas/draft3.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm/libexec/schemas/draft4.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/.edm/edm_installer.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/IRV360_install.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Instalable/Install UBUNTU.sh" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/IR3D-Visualizer.iml" afterPath="$PROJECT_DIR$/.idea/IR3D-Visualizer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/Plotly.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/Plotly.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/dataProcessing.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/dataProcessing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.ui" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/interface.ui" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/plotWidget.py" afterPath="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/plotWidget.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py" afterPath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py" />
     </list>
     <ignored path="IR3D-Visualizer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,34 +28,10 @@
       <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="15">
               <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="19" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/IRV360.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,13 +49,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="137" column="92" lean-forward="false" selection-start-line="137" selection-start-column="92" selection-end-line="137" selection-end-column="92" />
+            <state relative-caret-position="790">
+              <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataProcessing.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#3382#3656#0" expanded="false" />
+                <element signature="e#4368#4898#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -132,7 +78,7 @@
       <file leaf-file-name="Plotly.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/Plotly.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="1665">
               <caret line="112" column="50" lean-forward="false" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -180,6 +126,7 @@
         <option value="$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/IRV360.py" />
         <option value="$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/Plotly.py" />
         <option value="$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py" />
+        <option value="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py" />
       </list>
     </option>
   </component>
@@ -224,7 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -440,12 +386,13 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -479,12 +426,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/QT" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IR3D-Visualizer" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/QT/mainView.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -741,25 +688,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17688513" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13178295" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.4940476" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.62425596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.49107143" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32168674" sideWeight="0.48511904" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26385543" sideWeight="0.4820296" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26385543" sideWeight="0.5179704" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4910486" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.3578869" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5089514" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37108433" sideWeight="0.48809522" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32258064" sideWeight="0.51488096" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37173578" sideWeight="0.48809522" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -808,12 +755,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/checker" />
     <entry file="file://$PROJECT_DIR$/../Python/abrir_archivo.py" />
     <entry file="file://$PROJECT_DIR$/plotWidget.py" />
     <entry file="file://C:/Python27/Lib/site-packages/matplotlib/axes/_axes.py" />
@@ -850,53 +796,21 @@
     <entry file="file://C:/Python27/probandoMayavi" />
     <entry file="file://$PROJECT_DIR$/QT/foo.png" />
     <entry file="file://$PROJECT_DIR$/QT/plotWidget.py" />
-    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/dataBase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/output.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/dataBase.py" />
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/output.py" />
     <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/MayaviQWidget.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/mayaviVisualization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataBase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/mayaviVisualization.py" />
+    <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataBase.py" />
     <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/dataProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,19 +822,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/Plotly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="1665">
           <caret line="112" column="50" lean-forward="false" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -928,34 +832,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/IRV360.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/IRV360.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/IRV360.py" />
     <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/Plotly.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -966,12 +843,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/IRV360.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Versiones anteriores/Version 4 (En desarrollo)/Scripts/IRV360.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="137" column="92" lean-forward="false" selection-start-line="137" selection-start-column="92" selection-end-line="137" selection-end-column="92" />
+        <state relative-caret-position="790">
+          <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#3382#3656#0" expanded="false" />
+            <element signature="e#4368#4898#0" expanded="false" />
           </folding>
         </state>
       </provider>

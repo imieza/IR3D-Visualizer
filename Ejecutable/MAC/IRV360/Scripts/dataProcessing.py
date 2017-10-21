@@ -58,19 +58,22 @@ class DataProcessing(object):
         return output / output.max()
 
     def pressure_to_intensity_fft(self, fs, data):
+        data = numpy.array(data)
         self.refresh_parameters()
         raiz2_sobre_z = math.sqrt(2) / 414
         n_window_frames = int(self.time_window * fs / 1000)
-        window_numbers = range(n_window_frames // 2, len(numpy.array(data)[0]) - n_window_frames // 2)
-        intensity_windows = numpy.zeros(shape=(4, len(data.tolist()[0])))
-        az_el_windows = numpy.zeros(shape=(2, len(numpy.array(data)[0])))
+        window_numbers = range(n_window_frames // 2, len(data[0]) - n_window_frames // 2)
+        intensity_windows = numpy.zeros(shape=(4, len(data[0])))
+        az_el_windows = numpy.zeros(shape=(2, len(data[0])))
+        hamming_window = numpy.hamming(n_window_frames)
 
         for window in window_numbers:
             fft_window = []
             from_index = int(window - n_window_frames / 2)
             to_index = int(window + n_window_frames / 2)
             for channel in range(4):
-                fft_window.append(numpy.fft.fft(numpy.array(data)[channel][from_index:to_index]))
+                values = hamming_window * data[channel][from_index:to_index]
+                fft_window.append(numpy.fft.fft(values))
             ix, iy, iz = [], [], []
 
             for freq in range(len(fft_window[0])):
@@ -114,16 +117,19 @@ class DataProcessing(object):
             :return az_el_windows: 2 x cantidad_de_ventanas matrices con los valores de cada ventana
         """
         self.refresh_parameters()
-
+        data = numpy.array(data)
         n_window_frames = int(self.time_window * fs / 1000)
-        window_numbers = range(n_window_frames // 2, len(data.tolist()[0]) - n_window_frames // 2)
-        intensity_windows = numpy.zeros(shape=(4, len(data.tolist()[0])))
-        az_el_windows = numpy.zeros(shape=(2, len(data.tolist()[0])))
+        window_numbers = range(n_window_frames // 2, len(data[0]) - n_window_frames // 2)
+        intensity_windows = numpy.zeros(shape=(4, len(data[0])))
+        az_el_windows = numpy.zeros(shape=(2, len(data[0])))
+        hamming_window = numpy.hamming(n_window_frames)
         for window in window_numbers:
             from_index = int(window - n_window_frames / 2)
             to_index = int(window + n_window_frames / 2)
             for channel in range(4):
-                intensity_windows[channel, window] = data[channel, from_index:to_index].sum()
+                values = hamming_window * data[channel, from_index:to_index]
+
+                intensity_windows[channel, window] = values.sum()
 
             az_el_windows[0, window], \
             az_el_windows[1, window] = self.cart2sph(
