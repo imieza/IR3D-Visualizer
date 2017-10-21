@@ -65,12 +65,12 @@ class DataProcessing(object):
         window_numbers = range(n_window_frames // 2, len(data[0]) - n_window_frames // 2)
         intensity_windows = numpy.zeros(shape=(4, len(data[0])))
         az_el_windows = numpy.zeros(shape=(2, len(data[0])))
-        hamming_window = numpy.hamming(n_window_frames)
-
         for window in window_numbers:
             fft_window = []
             from_index = int(window - n_window_frames / 2)
             to_index = int(window + n_window_frames / 2)
+            hamming_window = numpy.hamming(to_index-from_index)
+
             for channel in range(4):
                 values = hamming_window * data[channel][from_index:to_index]
                 fft_window.append(numpy.fft.fft(values))
@@ -122,10 +122,10 @@ class DataProcessing(object):
         window_numbers = range(n_window_frames // 2, len(data[0]) - n_window_frames // 2)
         intensity_windows = numpy.zeros(shape=(4, len(data[0])))
         az_el_windows = numpy.zeros(shape=(2, len(data[0])))
-        hamming_window = numpy.hamming(n_window_frames)
         for window in window_numbers:
             from_index = int(window - n_window_frames / 2)
             to_index = int(window + n_window_frames / 2)
+            hamming_window = numpy.hamming(to_index-from_index)
             for channel in range(4):
                 values = hamming_window * data[channel, from_index:to_index]
 

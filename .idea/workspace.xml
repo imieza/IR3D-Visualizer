@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9378fd56-0454-4a22-bd16-4b7437000b49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/IR3D-Visualizer.iml" afterPath="$PROJECT_DIR$/.idea/IR3D-Visualizer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py" afterPath="$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py" />
     </list>
@@ -28,7 +26,7 @@
       <file leaf-file-name="plotWidget.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="765">
               <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="19" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -52,7 +50,7 @@
       <file leaf-file-name="IRV360.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
+            <state relative-caret-position="2175">
               <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -64,12 +62,12 @@
       <file leaf-file-name="dataProcessing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+            <state relative-caret-position="443">
+              <caret line="127" column="63" lean-forward="false" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#3382#3656#0" expanded="false" />
-                <element signature="e#4368#4898#0" expanded="false" />
+                <element signature="e#3390#3664#0" expanded="false" />
+                <element signature="e#4376#4906#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -673,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477187903605</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added hamming windowing">
+      <created>1508606596248</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1508606596248</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -690,23 +695,23 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13178295" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13178295" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.4940476" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.62425596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.49107143" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26385543" sideWeight="0.4820296" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26385543" sideWeight="0.5179704" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4910486" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.3578869" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5089514" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37108433" sideWeight="0.48809522" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26385543" sideWeight="0.5179704" order="2" side_tool="true" content_ui="tabs" x="11" y="277" width="1344" height="214" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37108433" sideWeight="0.48809522" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -741,7 +746,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="aclaración de la clase plotWidget" />
     <MESSAGE value="Cambio a Libreria Mayavi para grafircar 3D" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio a Libreria Mayavi para grafircar 3D" />
+    <MESSAGE value="Added hamming windowing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hamming windowing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -818,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
           <caret line="939" column="0" lean-forward="false" selection-start-line="939" selection-start-column="0" selection-end-line="939" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,9 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,15 +859,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ejecutable/UBUNTU/IRV360/Scripts/plotWidget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="765">
           <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="19" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -875,7 +874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/IRV360.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
+        <state relative-caret-position="2175">
           <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -885,12 +884,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ejecutable/MAC/IRV360/Scripts/dataProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+        <state relative-caret-position="443">
+          <caret line="127" column="63" lean-forward="false" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#3382#3656#0" expanded="false" />
-            <element signature="e#4368#4898#0" expanded="false" />
+            <element signature="e#3390#3664#0" expanded="false" />
+            <element signature="e#4376#4906#0" expanded="false" />
           </folding>
         </state>
       </provider>
