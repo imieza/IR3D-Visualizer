@@ -6,6 +6,8 @@ import numpy
 from scipy import signal
 from scipy.io import wavfile
 from detect_peaks import detect_peaks
+from wavread_enhanced import read
+
 import sys
 
 class DataProcessing(object):
@@ -151,12 +153,12 @@ class DataProcessing(object):
         audio = []
         if len(file_name)==4:
             audio = [[w, x, y, z] for [w, x, y, z] in zip(
-                wavfile.read(file_name[0], mmap=True)[1],
-                wavfile.read(file_name[1], mmap=True)[1],
-                wavfile.read(file_name[2], mmap=True)[1],
-                wavfile.read(file_name[3], mmap=True)[1],
+                read(file_name[0])[1],
+                read(file_name[1])[1],
+                read(file_name[2])[1],
+                read(file_name[3])[1],
             )]
-            fs = wavfile.read(file_name[0], mmap=True)[0]
+            fs = read(file_name[0])[0]
             audio = numpy.matrix(audio)
         elif len(file_name)!=1:
             sys.stderr.write(
@@ -165,7 +167,8 @@ class DataProcessing(object):
                 'audio files. Please select one multichannel or four mono')
             return
         else:
-            fs, data = wavfile.read(file_name[0], mmap=True)
+
+            fs, data, bits = read(file_name[0])
             audio = numpy.matrix(data)
         return [audio, fs]
 
@@ -283,10 +286,10 @@ class DataProcessing(object):
                 FLU + FRD + BLD - BRU]
 
         filters = [
-            numpy.array(wavfile.read('FiltroW.wav', mmap=True)[1]),
-            numpy.array(wavfile.read('FiltroX.wav', mmap=True)[1]),
-            numpy.array(wavfile.read('FiltroW.wav', mmap=True)[1]),
-            numpy.array(wavfile.read('FiltroY.wav', mmap=True)[1]),
+            numpy.array(read('FiltroW.wav')[1]),
+            numpy.array(read('FiltroX.wav')[1]),
+            numpy.array(read('FiltroW.wav')[1]),
+            numpy.array(read('FiltroY.wav')[1]),
         ]
         filters_filled = numpy.pad(filters, ((0, 0), (0, int(FLU.size - filters[0].size))),
                                    mode='constant', constant_values=0)

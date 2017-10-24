@@ -4,6 +4,7 @@ warnings.filterwarnings('ignore')
 os.environ['ETS_TOOLKIT'] = 'qt4'
 os.environ['QT_API'] = 'pyqt'
 from mayavi import mlab
+import time as time_lib
 
 import sip
 sip.setapi('QString', 2)
@@ -23,12 +24,13 @@ class Visualization(HasTraits):
     scene = Instance(MlabSceneModel, ())
 
     @on_trait_change('scene.activated')
-    def update_plot(self, Self):
+    def update_plot(self, mainSelf):
+        self.mainSelf = mainSelf
         # This function is called when the view is opened. We don't
         # populate the scene when the view is not yet open, as some
         # VTK features require a GLContext.
         # We can do normal mlab calls on the embedded scene.
-        self.generate_data_mayavi(Self)
+        self.generate_data_mayavi()
 
     # the layout of the dialog screated
     view = View(Item('scene', editor=SceneEditor(scene_class=MayaviScene),
@@ -48,16 +50,16 @@ class Visualization(HasTraits):
 
         return i
 
-    def generate_data_mayavi(self, Self):
+    def generate_data_mayavi(self):
 
-        if type(Self) is bool:
+        if type(self.mainSelf) is bool:
             return
 
         self.scene.mlab.clf()
 
-        time = Self.calc["time"][Self.calc["peaks"]]
+        time = self.mainSelf.calc["time"][self.mainSelf.calc["peaks"]]
         grilla = False
-        x, y, z = Self.calc['xyz']
+        x, y, z = self.mainSelf.calc['xyz']
         # Creo los valores del origen 0,0,0 para todos los vectores
         u = v = w = np.zeros(len(x))
 
@@ -77,6 +79,8 @@ class Visualization(HasTraits):
                                            line_width=2)
             obj.module_manager.scalar_lut_manager.reverse_lut = True
             obj.glyph.color_mode = 'color_by_scalar'
+            fig = self.scene.mlab
+            self.snapshotFloorplan(fig)
 
         # obj2 = self.scene.mlab.quiver3d(u[0], v[0], w[0], x[0], y[0], z[0],
         #                                 scalars=time[0],
@@ -87,8 +91,6 @@ class Visualization(HasTraits):
         # print "x[0]", x[0]
         # obj2.module_manager.scalar_lut_manager.reverse_lut = True
         # obj2.glyph.color_mode = 'color_by_scalar'
-
-        self.snapshotFloorplan(Self)
 
         self.scene.background = (0, 0, 0)
         if len(x)>1:
@@ -102,20 +104,20 @@ class Visualization(HasTraits):
         self.scene.mlab.outline(obj) if len(x)>1 else None
         self.scene.mlab.axes()
 
-    def snapshotFloorplan(self, Self):
-        surf = self.scene.mlab.points3d([1, 0, -1, 0], [0, 1, 0, -1], [0, 0, 0, 0], scale_factor=.000000000001)
+    def snapshotFloorplan(self, fig):
+        fig.points3d([1, 0, -1, 0], [0, 1, 0, -1], [0, 0, 0, 0], scale_factor=.000000000000001)
 
-        self.scene.mlab.view(azimuth=0, elevation=180)
-        mlab.show()
-
-        imgmap = mlab.screenshot(mode='rgba', antialiased=False)
+        fig.view(azimuth=0, elevation=180)
+        fig.draw()
+        self.mainSelf.app.processEvents()
+        imgmap = fig.screenshot(mode='rgba', antialiased=False)
 
         newpath = os.getcwd() + '/images'
         if not os.path.exists(newpath):
             os.makedirs(newpath)
 
-        i = Self.calc["name"]
-        plt.imsave(arr=imgmap, fname="images/floorplan_" + i + ".png")
+        i = self.mainSelf.calc["name"]
+        plt.imsave(arr=imgmap, fname=newpath+"/floorplan_" + i + ".png")
 
 
 class MayaviQWidget(QtGui.QWidget):
