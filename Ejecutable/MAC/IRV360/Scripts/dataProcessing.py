@@ -281,15 +281,15 @@ class DataProcessing(object):
             BRU = numpy.squeeze(numpy.asarray(data[:, 3]))
 
         data_b = [FLU + FRD + BLD + BRU,
-                FLU + FRD - BLD - BRU,
-                FLU - FRD + BLD - BRU,
-                FLU + FRD + BLD - BRU]
+                  FLU + FRD - BLD - BRU,
+                  FLU - FRD + BLD - BRU,
+                  FLU - FRD - BLD + BRU]
 
         filters = [
-            numpy.array(read('FiltroW.wav')[1]),
-            numpy.array(read('FiltroX.wav')[1]),
-            numpy.array(read('FiltroW.wav')[1]),
-            numpy.array(read('FiltroY.wav')[1]),
+            numpy.array(wavfile.read('filters/Filter-W.wav')[1]),
+            numpy.array(wavfile.read('filters/Filter-X.wav')[1]),
+            numpy.array(wavfile.read('filters/Filter-Y.wav')[1]),
+            numpy.array(wavfile.read('filters/Filter-Z.wav')[1])
         ]
         filters_filled = numpy.pad(filters, ((0, 0), (0, int(FLU.size - filters[0].size))),
                                    mode='constant', constant_values=0)

@@ -13,6 +13,9 @@ import scipy
 class PlotWidget():
     mainSelf = None
 
+    def __init__(self,mainSelf):
+        self.mainSelf = mainSelf
+
     def plot1D(self, Self, figureWidget, layoutWidget, data, time, show_peaks=False):
         fs = Self.calc["fs"]
         label = ["P", "X", "Y", "Z"]
@@ -84,25 +87,25 @@ class PlotWidget():
             plt.axvline(100, color='green')  # cutoff frequency
             figureWidget.draw()
 
-    def plotFloorplan(self, Self):
-        figureWidget = Self.plotFloorplan
+    def plotFloorplan(self):
+        figureWidget = self.mainSelf.plotFloorplan
         figureWidget.figure.clear()
         ax = figureWidget.figure.add_subplot(111)
-        FloorplanImage = plt.imread(Self.floorplanFile)
+        FloorplanImage = plt.imread(self.mainSelf.floorplanFile)
         ax.imshow(FloorplanImage)
         ax.set_xlim(ax.get_xlim())
         ax.set_ylim(ax.get_ylim())
-        for num in range(Self.ui.listMeasurements.rowCount()):
-            if 'location' in Self.measurements[num]:
+        for num in range(self.mainSelf.ui.listMeasurements.rowCount()):
+            if 'location' in self.mainSelf.measurements[num]:
                 try:
-                    ir3dImage = plt.imread("images/floorplan_" + Self.measurements[num]["name"] + ".png")
-                    ir3dImage_rotated = scipy.ndimage.rotate(ir3dImage, Self.ui.rotationAngle.value())
+                    ir3dImage = plt.imread("images/floorplan_" + self.mainSelf.measurements[num]["name"] + ".png")
+                    ir3dImage_rotated = scipy.ndimage.rotate(ir3dImage, self.mainSelf.ui.rotationAngle.value())
                     heighImage, widthImage, bpp = np.shape(ir3dImage_rotated)
-                    heighImage = heighImage / 5
-                    widthImage = widthImage / 5
+                    heighImage = heighImage / 2
+                    widthImage = widthImage / 2
 
-                    locationX = Self.measurements[num]["location"][0]
-                    locationY = Self.measurements[num]["location"][1]
+                    locationX = self.mainSelf.measurements[num]["location"][0]
+                    locationY = self.mainSelf.measurements[num]["location"][1]
 
                     extent = locationX - widthImage, locationX + widthImage, locationY - heighImage, locationY + heighImage
 
@@ -144,7 +147,7 @@ class PlotWidget():
             book.save(filename)
         if self.mainSelf:
             [azimuth, elevation] = self.mainSelf.calc["az_el_windows"][:,  self.mainSelf.calc["peaks"]]
-            output(filename=self.mainSelf.dir_path+'/Exported/'+self.mainSelf.calc["name"]+'.xls',
+            output(filename=self.mainSelf.dir_path+'/Results/'+self.mainSelf.calc["name"]+'.xls',
                    time=self.mainSelf.calc["time"][self.mainSelf.calc["peaks"]],
                    magnitude=self.mainSelf.calc["normalizado"],
                    az=azimuth.tolist(), el=elevation.tolist())
@@ -184,7 +187,6 @@ class PlotWidget():
 
 
     def ploter(self, Self):
-        self.mainSelf = Self
         self.plot1D(Self, Self.plotPressure, Self.ui.tabLayoutPressureLevel, Self.calc["audio_filtered"], Self.calc['time'],
                     False)
         Self.ui.progressBar.setValue(55)

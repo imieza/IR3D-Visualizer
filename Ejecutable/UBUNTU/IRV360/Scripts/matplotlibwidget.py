@@ -10,12 +10,10 @@ class MatplotlibWidget(Canvas):
         self.setParent(parent)
         self.figure = Figure(dpi=dpi)
         self.canvas = Canvas(self.figure)
-        self.theplot = self.figure.add_subplot(111)
+        self.theplot = self.figure.add_subplot(111, axisbg='black')
 
         self.theplot.set_title(title)
         self.theplot.set_xlabel(xlabel)
         self.theplot.set_ylabel(ylabel)
 
         self.setStyleSheet("QWidget {background-color:   #0ff}")
-
-        ax1f1 = self.figure.add_subplot(111, axisbg='black')

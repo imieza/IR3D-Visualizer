@@ -1,13 +1,5 @@
 import sys
 import os
-
-print "====== SYS PATH ====="
-print(sys.path)
-print "==================="
-print "====== SYS CWD====="
-print(os.getcwd())
-print "==================="
-
 import warnings
 
 from Plotly import PrintInPlotLy
@@ -29,11 +21,12 @@ from PyQt4.QtGui import QSizePolicy
 class MainView(QtGui.QMainWindow):
     parameters = {}
 
-    def __init__(self):
+    def __init__(self, app):
+        self.app = app
         QtGui.QMainWindow.__init__(self)
         self.ui = Ui_IRV360()
         self.ui.setupUi(self)
-        self.plotWidget = PlotWidget()
+        self.plotWidget = PlotWidget(self)
         self.plotly = PrintInPlotLy()
         # Adding toolbar
         self.add1DToolBars()
@@ -90,7 +83,9 @@ class MainView(QtGui.QMainWindow):
         self.get_parameters()
         self.floorplanFile = None
         self.dataProcceser = DataProcessing(self)
+
         self.ui.progressBar.setValue(0)
+        self.app.processEvents()
 
     def add1DToolBars(self):
         self.plotPressure = MatplotlibWidget(self.ui.pressureWidget)
@@ -165,7 +160,7 @@ class MainView(QtGui.QMainWindow):
     def openFileFloorplan(self):
         fileName = QtGui.QFileDialog.getOpenFileNames(None, ("Open Image File"), "../Audios/", "Image Files (*.png)")
         self.floorplanFile = fileName[0]
-        self.plotWidget.plotFloorplan(self)
+        self.plotWidget.plotFloorplan()
 
     def get_parameters(self, fs=44100):
         self.parameters["value2truncate"] = self.ui.audioCutter.value()
@@ -187,7 +182,7 @@ class MainView(QtGui.QMainWindow):
         np.save(filename, [self.measurements, self.floorplanFile])
 
     def export_to_plotly(self):
-        self.plotly.plot(self.calc, self.dir_path+'/Exported/'+self.mainSelf.calc["name"]+'.html')
+        self.plotly.plot(self.calc)
 
     def open_project(self):
         filename = QtGui.QFileDialog.getOpenFileNames(None, ("Open Project"), self.dir_path+"/Proyects/", ("npy Files (*.npy)"))
@@ -228,15 +223,20 @@ class MainView(QtGui.QMainWindow):
         if self.fileName[0] != []:
             self.get_parameters(self.calc["fs"])
             self.ui.progressBar.setValue(8)
+            self.app.processEvents()
             self.calc["data"] = self.dataProcceser.truncate_value(self.calc["data"], self.calc["fs"])
             self.ui.progressBar.setValue(10)
+            self.app.processEvents()
             self.calc["audio_filtered"] = self.dataProcceser.filtering(self.calc["data"], self.calc["fs"])
             self.ui.progressBar.setValue(15)
+            self.app.processEvents()
             self.calc['time'] = self.dataProcceser.generate_time(self.calc['fs'], self.calc['data'])
             self.ui.progressBar.setValue(20)
+            self.app.processEvents()
             if self.parameters["conversion_type"] == "Instantaneous":
                 self.calc["intensity"] = self.dataProcceser.pressure_to_intensity(self.calc["audio_filtered"])
                 self.ui.progressBar.setValue(25)
+                self.app.processEvents()
                 [self.calc["intensity_windows"], self.calc["az_el_windows"],
                  self.calc["i_db"]] = self.dataProcceser.temporal_windowing(self.calc["intensity"], self.calc["fs"])
             else:
@@ -244,9 +244,11 @@ class MainView(QtGui.QMainWindow):
                  self.calc["i_db"]] = self.dataProcceser.pressure_to_intensity_fft(self.calc["fs"], self.calc["audio_filtered"])
 
             self.ui.progressBar.setValue(40)
+            self.app.processEvents()
             self.calc["peaks"] = self.dataProcceser.window_selector(self.calc["i_db"], self.calc["fs"])
             self.dataProcceser.refactoring_time()
             self.ui.progressBar.setValue(45)
+            self.app.processEvents()
             self.calc["normalizado"] = np.asarray(self.dataProcceser.normalizer(self.calc["i_db"]))[self.calc["peaks"]]
             # self.calc["normalizado"] = self.calc["i_db"][self.calc["peaks"]]
             self.calc['xyz'] = self.dataProcceser.sph2cart(self.calc["az_el_windows"], self.calc["peaks"],
@@ -255,6 +257,7 @@ class MainView(QtGui.QMainWindow):
 
             # self.widMatplot.plot(self.audio, self.fs, "Audio")
             self.ui.progressBar.setValue(50)
+            self.app.processEvents()
             #print "xyz antes de plotear: ", self.calc['xyz'][0]
             self.plotWidget.ploter(self)
 
@@ -262,7 +265,7 @@ class MainView(QtGui.QMainWindow):
 
     def locate(self):
         # QApplication.OverrideCursor()
-        self.eventClickLocate = self.ui.plotFloorplan.figure.canvas.mpl_connect('button_press_event', self.clickLocate)
+        self.eventClickLocate = self.plotFloorplan.mpl_connect('button_press_event', self.clickLocate)
 
     def clickLocate(self, event):
 
@@ -272,13 +275,13 @@ class MainView(QtGui.QMainWindow):
             row = self.ui.listMeasurements.currentRow()
             self.measurements[row]["location"] = list(positionLocate)
 
-        self.ui.plotFloorplan.figure.canvas.mpl_disconnect(self.eventClickLocate)
-        self.plotWidget.plotFloorplan(self)
+        self.plotFloorplan.mpl_disconnect(self.eventClickLocate)
+        self.plotWidget.plotFloorplan()
 
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
-    myapp = MainView()
+    myapp = MainView(app)
     myapp.setStyleSheet(darkorange.getStyleSheet())
     myapp.show()
     sys.exit(app.exec_())

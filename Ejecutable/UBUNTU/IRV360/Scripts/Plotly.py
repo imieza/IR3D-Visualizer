@@ -12,7 +12,7 @@ class PrintInPlotLy(object):
     def lineVisible(self):
         self.lineV = not self.lineV
 
-    def plot(self, calc, filename):
+    def plot(self, calc):
         X, Y, Z = calc['xyz']
         time = calc["time"][calc["peaks"]]
         x, y, z, c = [], [], [], []
@@ -110,4 +110,4 @@ class PrintInPlotLy(object):
 
         fig = dict(data=[markers,lines], layout=layout, equal_axes=True)
 
-        plotly.offline.plot(fig, filename=filename, validate=False)
+        plotly.offline.plot(fig, filename='IR3D - Visualizer.html', validate=False)
