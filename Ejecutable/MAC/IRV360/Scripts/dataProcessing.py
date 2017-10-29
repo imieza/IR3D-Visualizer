@@ -285,11 +285,12 @@ class DataProcessing(object):
                   FLU - FRD + BLD - BRU,
                   FLU - FRD - BLD + BRU]
 
+        filters_folder = self.Self.dir_path + '/Scripts/filters/'
         filters = [
-            numpy.array(wavfile.read('filters/Filter-W.wav')[1]),
-            numpy.array(wavfile.read('filters/Filter-X.wav')[1]),
-            numpy.array(wavfile.read('filters/Filter-Y.wav')[1]),
-            numpy.array(wavfile.read('filters/Filter-Z.wav')[1])
+            numpy.array(wavfile.read(filters_folder + 'Filter-W.wav')[1]),
+            numpy.array(wavfile.read(filters_folder + 'Filter-X.wav')[1]),
+            numpy.array(wavfile.read(filters_folder + 'Filter-Y.wav')[1]),
+            numpy.array(wavfile.read(filters_folder + 'Filter-Z.wav')[1])
         ]
         filters_filled = numpy.pad(filters, ((0, 0), (0, int(FLU.size - filters[0].size))),
                                    mode='constant', constant_values=0)

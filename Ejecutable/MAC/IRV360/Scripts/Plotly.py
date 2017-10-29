@@ -2,9 +2,10 @@ import plotly
 import plotly.graph_objs as go
 
 
-class PrintInPlotLy(object):
-    def __init__(self, *args, **kwargs):
+class PrintInPlotly(object):
+    def __init__(self, mainSelf, *args, **kwargs):
         self.markV, self.lineV = True, True
+        self.mainSelf = mainSelf
 
     def markerVisible(self):
         self.markV = not self.markV
@@ -110,4 +111,4 @@ class PrintInPlotLy(object):
 
         fig = dict(data=[markers,lines], layout=layout, equal_axes=True)
 
-        plotly.offline.plot(fig, filename='IR3D - Visualizer.html', validate=False)
+        plotly.offline.plot(fig, filename=self.mainSelf.dir_path+'/Exports/'+self.mainSelf.calc["name"]+'.html', validate=False)

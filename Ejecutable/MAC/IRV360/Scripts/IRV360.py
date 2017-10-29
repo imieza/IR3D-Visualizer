@@ -2,7 +2,7 @@ import sys
 import os
 import warnings
 
-from Plotly import PrintInPlotLy
+from Plotly import PrintInPlotly
 
 warnings.filterwarnings('ignore')
 from MayaviQWidget import MayaviQWidget
@@ -27,7 +27,7 @@ class MainView(QtGui.QMainWindow):
         self.ui = Ui_IRV360()
         self.ui.setupUi(self)
         self.plotWidget = PlotWidget(self)
-        self.plotly = PrintInPlotLy()
+        self.plotly = PrintInPlotly(self)
         # Adding toolbar
         self.add1DToolBars()
         self.dir_path = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
