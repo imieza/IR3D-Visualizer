@@ -13,11 +13,18 @@ class PrintInPlotly(object):
     def lineVisible(self):
         self.lineV = not self.lineV
 
-    def plot(self, calc):
+    def filter(self, calc):
         X, Y, Z = calc['xyz']
-        time = calc["time"][calc["peaks"]]
-        x, y, z, c = [], [], [], []
+        return [index for index,(x,y,z) in enumerate(zip(X,Y,Z)) if sum([x,y,z])]
 
+    def plot(self, calc):
+        index_filter = self.filter(calc)
+        X, Y, Z = calc['xyz']
+        X, Y, Z  = X[index_filter], Y[index_filter], Z[index_filter]
+
+        time = calc["time"][calc["peaks"]][index_filter]
+        x, y, z, c = [], [], [], []
+        print
         for index in range(len(X)):
             x += [0,X[index], None]
             y += [0,Y[index], None]
