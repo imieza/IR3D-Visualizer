@@ -9,7 +9,7 @@ from scipy.signal import correlate, fftconvolve
 
 
 def import_signal():
-    file_name_dir = 'C:\Users\W\Documents\IR3D\IRV360\Audios de prueba\Odeon\Refleccion piso + techo + trasera + lateral.Wav'
+    file_name_dir = 'C:\Users/nahuelcacavelos/Desktop/IRV360/IR3D-Visualizer/Audios/Odeon/Calculo de fft.Wav'
     file_name = 'C:\Users\W\Documents\IR3D\IRV360\Audios de prueba\Odeon\Directo.Wav'
     fs, data = wavfile.read(file_name)
     return fs, data
@@ -92,4 +92,3 @@ def plot(I,Ix,Iy,Iz):
     plt.show()
 
 plot(*pressure_to_intensity_fft(*import_signal()))
-

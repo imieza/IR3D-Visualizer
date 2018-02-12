@@ -2,7 +2,8 @@
 
 # Form implementation generated from reading ui file 'interface.ui'
 #
-# Created by: PyQt4 UI code generator 4.11.4
+# Created: Thu Feb 08 14:49:25 2018
+#      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -148,7 +149,7 @@ class Ui_IRV360(object):
         self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
         IRV360.setCentralWidget(self.widgetTabs)
         self.menubar = QtGui.QMenuBar(IRV360)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1169, 27))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1169, 21))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         self.menuFIle = QtGui.QMenu(self.menubar)
         self.menuFIle.setObjectName(_fromUtf8("menuFIle"))
@@ -207,7 +208,7 @@ class Ui_IRV360(object):
         self.toolBoxSettings.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.toolBoxSettings.setObjectName(_fromUtf8("toolBoxSettings"))
         self.Config = QtGui.QWidget()
-        self.Config.setGeometry(QtCore.QRect(0, 0, 329, 231))
+        self.Config.setGeometry(QtCore.QRect(0, 0, 325, 230))
         self.Config.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.Config.setFocusPolicy(QtCore.Qt.NoFocus)
         self.Config.setObjectName(_fromUtf8("Config"))
@@ -252,6 +253,7 @@ class Ui_IRV360(object):
         self.labelOverlapping.setFont(font)
         self.labelOverlapping.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.labelOverlapping.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.labelOverlapping.setMargin(-1)
         self.labelOverlapping.setObjectName(_fromUtf8("labelOverlapping"))
         self.verticalLayout_3.addWidget(self.labelOverlapping)
         self.Overlapping = QtGui.QComboBox(self.boxWindowing)
@@ -286,6 +288,7 @@ class Ui_IRV360(object):
         self.labelWindowSize.setFont(font)
         self.labelWindowSize.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.labelWindowSize.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.labelWindowSize.setMargin(-1)
         self.labelWindowSize.setIndent(-2)
         self.labelWindowSize.setObjectName(_fromUtf8("labelWindowSize"))
         self.verticalLayout_7.addWidget(self.labelWindowSize)
@@ -316,6 +319,7 @@ class Ui_IRV360(object):
         self.labelQuantity.setFont(font)
         self.labelQuantity.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.labelQuantity.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.labelQuantity.setMargin(-1)
         self.labelQuantity.setObjectName(_fromUtf8("labelQuantity"))
         self.verticalLayout_8.addWidget(self.labelQuantity)
         self.windowingQuantity = QtGui.QSpinBox(self.boxWindowing)
@@ -341,6 +345,7 @@ class Ui_IRV360(object):
         self.thresholdLabel.setFont(font)
         self.thresholdLabel.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.thresholdLabel.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.thresholdLabel.setMargin(-1)
         self.thresholdLabel.setObjectName(_fromUtf8("thresholdLabel"))
         self.verticalLayout.addWidget(self.thresholdLabel)
         self.thresholdValue = QtGui.QDoubleSpinBox(self.boxWindowing)
@@ -391,6 +396,7 @@ class Ui_IRV360(object):
         self.labelAudioCutter.setFont(font)
         self.labelAudioCutter.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.labelAudioCutter.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.labelAudioCutter.setMargin(-1)
         self.labelAudioCutter.setObjectName(_fromUtf8("labelAudioCutter"))
         self.verticalLayout_6.addWidget(self.labelAudioCutter)
         self.audioCutter = QtGui.QDoubleSpinBox(self.boxAudioEditing)
@@ -424,6 +430,7 @@ class Ui_IRV360(object):
         self.lowPassFiltering_2.setFont(font)
         self.lowPassFiltering_2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.lowPassFiltering_2.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
+        self.lowPassFiltering_2.setMargin(-1)
         self.lowPassFiltering_2.setObjectName(_fromUtf8("lowPassFiltering_2"))
         self.verticalLayout_2.addWidget(self.lowPassFiltering_2)
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
@@ -491,6 +498,7 @@ class Ui_IRV360(object):
         self.labelOverlapping_2.setFont(font)
         self.labelOverlapping_2.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.labelOverlapping_2.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.labelOverlapping_2.setMargin(-1)
         self.labelOverlapping_2.setObjectName(_fromUtf8("labelOverlapping_2"))
         self.verticalLayout_10.addWidget(self.labelOverlapping_2)
         self.conversionType = QtGui.QComboBox(self.boxAudioEditing)
@@ -516,7 +524,7 @@ class Ui_IRV360(object):
         self.gridLayout_9.addLayout(self.Layout_measurementValues, 0, 0, 1, 1)
         self.toolBoxSettings.addItem(self.Config, _fromUtf8(""))
         self.MeasurementsList = QtGui.QWidget()
-        self.MeasurementsList.setGeometry(QtCore.QRect(0, 0, 342, 225))
+        self.MeasurementsList.setGeometry(QtCore.QRect(0, 0, 342, 215))
         self.MeasurementsList.setObjectName(_fromUtf8("MeasurementsList"))
         self.gridLayout_2 = QtGui.QGridLayout(self.MeasurementsList)
         self.gridLayout_2.setMargin(0)
@@ -540,8 +548,8 @@ class Ui_IRV360(object):
         self.group_measurementManager.setTitle(_fromUtf8(""))
         self.group_measurementManager.setObjectName(_fromUtf8("group_measurementManager"))
         self.verticalLayout_11 = QtGui.QVBoxLayout(self.group_measurementManager)
-        self.verticalLayout_11.setContentsMargins(-1, 0, -1, 0)
         self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setContentsMargins(-1, 0, -1, 0)
         self.verticalLayout_11.setObjectName(_fromUtf8("verticalLayout_11"))
         self.btnDelete = QtGui.QPushButton(self.group_measurementManager)
         font = QtGui.QFont()
@@ -574,8 +582,8 @@ class Ui_IRV360(object):
         self.group_locate.setTitle(_fromUtf8(""))
         self.group_locate.setObjectName(_fromUtf8("group_locate"))
         self.verticalLayout_12 = QtGui.QVBoxLayout(self.group_locate)
-        self.verticalLayout_12.setContentsMargins(-1, 0, -1, 0)
         self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setContentsMargins(-1, 0, -1, 0)
         self.verticalLayout_12.setObjectName(_fromUtf8("verticalLayout_12"))
         self.btnSelect = QtGui.QPushButton(self.group_locate)
         font = QtGui.QFont()
@@ -610,8 +618,8 @@ class Ui_IRV360(object):
         self.group_angle.setFlat(False)
         self.group_angle.setObjectName(_fromUtf8("group_angle"))
         self.verticalLayout_9 = QtGui.QVBoxLayout(self.group_angle)
-        self.verticalLayout_9.setContentsMargins(9, 0, 9, 9)
         self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setContentsMargins(9, 0, 9, 9)
         self.verticalLayout_9.setObjectName(_fromUtf8("verticalLayout_9"))
         self.dialAngle = QtGui.QDial(self.group_angle)
         self.dialAngle.setMinimumSize(QtCore.QSize(0, 0))
@@ -666,7 +674,7 @@ class Ui_IRV360(object):
         self.gridLayout_2.addWidget(self.listMeasurements, 1, 0, 1, 1)
         self.toolBoxSettings.addItem(self.MeasurementsList, _fromUtf8(""))
         self.directSoundSelectionLayout = QtGui.QWidget()
-        self.directSoundSelectionLayout.setGeometry(QtCore.QRect(0, 0, 342, 225))
+        self.directSoundSelectionLayout.setGeometry(QtCore.QRect(0, 0, 342, 215))
         self.directSoundSelectionLayout.setObjectName(_fromUtf8("directSoundSelectionLayout"))
         self.gridLayout_3 = QtGui.QGridLayout(self.directSoundSelectionLayout)
         self.gridLayout_3.setObjectName(_fromUtf8("gridLayout_3"))
@@ -773,7 +781,7 @@ class Ui_IRV360(object):
 
         self.retranslateUi(IRV360)
         self.tabWidget.setCurrentIndex(1)
-        self.toolBoxSettings.setCurrentIndex(2)
+        self.toolBoxSettings.setCurrentIndex(0)
         self.toolBoxSettings.layout().setSpacing(0)
         QtCore.QMetaObject.connectSlotsByName(IRV360)
 
@@ -803,7 +811,7 @@ class Ui_IRV360(object):
         self.labelOverlapping.setText(_translate("IRV360", "Overlapping", None))
         self.Overlapping.setItemText(0, _translate("IRV360", "Half overlapped", None))
         self.Overlapping.setItemText(1, _translate("IRV360", "Full overlapped", None))
-        self.Overlapping.setItemText(2, _translate("IRV360", "All windows", None))
+        self.Overlapping.setItemText(2, _translate("IRV360", "Non-overlapped", None))
         self.labelWindowSize.setText(_translate("IRV360", "Window size", None))
         self.windowingWindowSize.setSuffix(_translate("IRV360", " ms", None))
         self.labelQuantity.setText(_translate("IRV360", "Quantity", None))
@@ -844,14 +852,4 @@ class Ui_IRV360(object):
         self.import_aformat.setText(_translate("IRV360", "Import A-Format", None))
         self.export_to_Plotly_2.setText(_translate("IRV360", "Plotly (Website)", None))
         self.export_excel.setText(_translate("IRV360", "Excel (.xls)", None))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    IRV360 = QtGui.QMainWindow()
-    ui = Ui_IRV360()
-    ui.setupUi(IRV360)
-    IRV360.show()
-    sys.exit(app.exec_())
 

@@ -1,4 +1,8 @@
+# -*- coding: utf-8 -*-
 from __future__ import division
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 import numpy
@@ -6,6 +10,8 @@ import math
 from scipy import signal
 import numpy as np
 from scipy.signal import correlate, fftconvolve
+import matplotlib as mpl
+import operator
 
 
 def _add_zeros(a, num, side='both'):
@@ -48,22 +54,34 @@ def xcorr(a, b, num, zero_sample=0, normalize=True, domain='freq'):
     return c / stdev1 / stdev2
 
 
-def plot(sig1,sig2,corr,sig1_db,corr_db):
+def plot(sig1,sig2,corr,sig1_db,corr_db, fs):
+    plt.style.use('ggplot')
+    period = 1/fs
     fig, (ax_sig1, ax_sig2, ax_corr, ax_db) = plt.subplots(4, 1, sharex=True)
-    ax_sig1.plot(sig1)
-    ax_sig1.set_title('Original source')
-    ax_sig2.plot(sig2)
-    ax_sig2.set_title('Original signal')
+    time = numpy.linspace(0, len(sig1)/fs, len(sig1))
+    ax_sig1.plot(time, sig1)
+    ax_sig1.set_title('Respuesta al impulso de la fuente')
+    time = numpy.linspace(0, len(sig2)/fs, len(sig2))
+    ax_sig2.plot(time, sig2)
+    ax_sig2.set_title('Respuesta al impulso de la sala')
     direct_diff = numpy.argmax(abs(corr)) - numpy.argmax(abs(sig2))
     corr_values = numpy.arange(len(corr)) - direct_diff
+    corr_values = [val*period for val in corr_values]
     ax_corr.plot(corr_values, corr)
-    ax_corr.set_title('Cross-correlated')
-    ax_db.plot(sig1_db, label="Signal")
-    ax_db.plot(corr_values, corr_db, label="Correlation")
-    ax_db.set_title('Cross-correlated and Signal in dB')
-    ax_db.legend(shadow=True)
+    ax_corr.set_title('Correlación cruzada')
+    time = numpy.linspace(0, len(sig1_db)/fs, len(sig2))
+    ax_db.plot(time, sig1_db,  label="Señal" , linewidth=2.0)
+    ax_db.plot(corr_values, corr_db, ':', label="Correlación", linewidth=4.0)
+    ax_db.set_title('Correlación cruzada y respuesta al impulso de la sala en dB')
+    ax_db.legend(shadow=True, loc=2)
+    ax_db.set_xlim([0, 0.2])
+    # Use the pyplot interface to change just one subplot...
     plt.show()
 
+
+def get_time(ax, fs):
+    values= [label.get_text() for label in ax.get_xticklabels()]
+    return numpy.linspace(0, max(values)/fs, len(values))
 
 def to_db(audio, thres):
     values_dB = []
@@ -76,23 +94,22 @@ def to_db(audio, thres):
             values_dB.append(0)
     return values_dB
 
-file_name = 'C:\Users\W\Documents\IR3D\IRV360\Audios de prueba\Odeon\Refleccion piso + techo + trasera + lateral.Wav'
-file_name_dir = 'C:\Users\W\Documents\IR3D\IRV360\Audios de prueba\Odeon\Directo.Wav'
+file_name = 'audios/intensidad.Wav'
+file_name_dir = 'audios/directo.Wav'
 #file_name = 'C:\Users\W\Documents\IR3D\IRV360\Audios de prueba\stpatricks_s1r1.Wav'
 fs, data = wavfile.read(file_name)
 audio = numpy.matrix(data)
-new_audio= numpy.squeeze(numpy.asarray(audio[:, 0]))
+new_audio= -numpy.squeeze(numpy.asarray(audio[:, 0]))
 threshold = 0
 
 
 fs, data_dir = wavfile.read(file_name_dir)
-audio_dir = numpy.matrix(data_dir)
+audio_dir = -numpy.matrix(data_dir)
 new_audio_dir = numpy.squeeze(numpy.asarray(audio_dir[:, 0]))
 
 
-new_audio_corr = xcorr(new_audio, new_audio_dir, 7000)
+new_audio_corr = xcorr(new_audio, new_audio_dir, 100000)
 
 values_dB = to_db(new_audio, threshold)
 values_dB_corr = to_db(new_audio_corr, threshold)
-plot(new_audio_dir, new_audio, new_audio_corr, values_dB, values_dB_corr)
-
+plot(new_audio_dir, new_audio, new_audio_corr, values_dB, values_dB_corr, fs)

@@ -33,9 +33,13 @@ class PlotWidget():
 
             if peaks is not None:
                 window_of_ds = range(int(peaks[0] - n_window_frames / 2), int(peaks[0] + n_window_frames / 2))
-                ax1f1.plot(time.tolist(), data.tolist()[channel], "w-")
-                ax1f1.plot(time[peaks[1:]], data[:, peaks[1:]].tolist()[channel], "bo")
-                ax1f1.plot(time[window_of_ds], data[:, window_of_ds].tolist()[channel], "r")
+                signal, = ax1f1.plot(time.tolist(), data.tolist()[channel], "w-", label='Signal')
+                windows, = ax1f1.plot(time[peaks[1:]], data[:, peaks[1:]].tolist()[channel], "bo", label='window positions')
+                direct_sound, = ax1f1.plot(time[window_of_ds], data[:, window_of_ds].tolist()[channel], "r", label='Direct sound', linewidth=2)
+                if channel is 0:
+                    leg = ax1f1.legend(handles=[signal, windows, direct_sound], framealpha=0)
+                    for text in leg.get_texts():
+                        plt.setp(text, color='w')
             else:
                 ax1f1.plot(time, data.tolist()[channel])
 
